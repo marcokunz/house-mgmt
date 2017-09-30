@@ -8,6 +8,15 @@
 <h1>Manipake House Management</h1>
 
 <?php
+$conn=mysqli_connect("localhost", "id3094629_housemgmtdbuser", "yZJ-9nZ-PBT-TQH", "id3094629_housemgmtdb");
+if(!$conn) {
+    echo "Not Conntected to DB...";
+}
+
+else {
+    echo "Connection to DB established";
+}
+
 
 
 ?>
