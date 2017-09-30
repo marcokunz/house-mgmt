@@ -6,7 +6,10 @@
 </head>
 <body>
 <h1>Manipake House Management</h1>
+
 <?php
+
+
 ?>
 /**
  * Created by PhpStorm.
