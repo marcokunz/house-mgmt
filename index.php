@@ -7,6 +7,9 @@
 <body>
 <h1>Manipake House Management</h1>
 
+<?php
+include("dbconnection.php");
+?>
 
 </body>
 </html>
