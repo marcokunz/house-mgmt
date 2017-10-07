@@ -13,5 +13,13 @@ selectMieter();
 
 ?>
 
+<h4>Login Fenster</h4>
+<form action="login_pruef.php" method="post">
+    <input type="text" name="benutzer" value="" /> Benutzer <br/>
+    <input type="password" name="passwort" value="" /> Passwort <br/>
+    <input type="submit" value="login" />
+    <input type="reset" value="reset" />
+</form>
+
 </body>
 </html>
