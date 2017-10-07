@@ -9,6 +9,8 @@
 
 <?php
 include("dbconnection.php");
+selectMieter();
+
 ?>
 
 </body>
