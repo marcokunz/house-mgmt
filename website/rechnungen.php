@@ -34,19 +34,9 @@
 
                     <div class="container-fluid">
                         <div class="panel-body">
-                            <!--<h1>Mieter-Panel</h1>-->
-                            <!-- bootstrap table panel https://bootsnipp.com/snippets/ORE6d#comments -->
-                            <!--<div class="container">
-                                <!--<div class="row">
-                                    <!--<nav class="navbar navbar-default">
-                                        <div class="container">
-                                            <div class="navbar-header">
-                                                <span class="navbar-brand"></span>
-                                            </div>
 
-                                        </div>
-                                    </nav>
-                                </div>-->
+                            <!-- bootstrap table panel https://bootsnipp.com/snippets/ORE6d#comments -->
+
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <div class="panel panel-default panel-table">
@@ -153,18 +143,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <!--<nav class="navbar navbar-default">
-                                    <div class="container-fluid">
-                                        <p class="navbar-text">A simple example of how-to put a bordered table within a panel. Responsive, place
-                                            holders in header/footer
-                                            for buttons or pagination.</p>
-                                    </div>
-                                </nav>-->
                             </div>
                         </div>
 
                         <!-- end bootstrap table panel https://bootsnipp.com/snippets/ORE6d#comments -->
+
                         <!-- INPUTS to create a new invoice (popup window) -->
+
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Rechnungen erfassen</h3>

@@ -38,26 +38,15 @@
                         <div class="panel-body">
                             <!--<h1>Mieter-Panel</h1>-->
                             <!-- bootstrap table panel https://bootsnipp.com/snippets/ORE6d#comments -->
-                            <!--<div class="container">
-                                <!--<div class="row">
-                                    <!--<nav class="navbar navbar-default">
-                                        <div class="container">
-                                            <div class="navbar-header">
-                                                <span class="navbar-brand"></span>
-                                            </div>
-
-                                        </div>
-                                    </nav>
-                                </div>-->
                             <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
+                                <div class="col-md-0 col-md-offset-0">
                                     <div class="panel panel-default panel-table">
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col col-xs-6">
-                                                    <h3 class="panel-title">Mieter Panel</h3>
+                                                    <h3 class="panel-title">Mieter Übersicht</h3>
                                                 </div>
-                                                <div class="col col-xs-6 text-right">
+                                                <!--<div class="col col-xs-6 text-right">
                                                     <div class="pull-right">
                                                         <div class="btn-group" data-toggle="buttons">
                                                             <label class="btn btn-success btn-filter active" data-target="completed">
@@ -72,7 +61,7 @@
                                                             </label>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                         <div class="panel-body">
@@ -80,39 +69,27 @@
                                                 <thead>
                                                 <tr>
                                                     <!--<th class="col-check"><input type="checkbox" id="checkall" onclick="test()"/></th>-->
-                                                    <th class="col-tools"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-                                                    </th>
-                                                    <th class="hidden-xs">ID</th>
-                                                    <th class="col-text">Name</th>
-                                                    <th class="col-text">Email</th>
-                                                    <th class="col-text">Cedi</th>
+                                                    <th class="col-tools"><span aria-hidden="true"></span>Anpassen</th>
+                                                    <th class="hidden-xs">Vorname</th>
+                                                    <th class="col-text">Nachname</th>
+                                                    <th class="col-text">Mietobjekt</th>
+                                                    <th class="col-text">Mietzins</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr data-status="completed">
-                                                    <td align="center"><input type="checkbox" class="checkthis"/></td>
-                                                    <td align="center">
+                                                    <td align="left">
                                                         <a class="btn btn-default"><span class="glyphicon glyphicon-pencil"
                                                                                          aria-hidden="true"></span></a>
                                                         <a class="btn btn-danger"><span class="glyphicon glyphicon-trash"
                                                                                         aria-hidden="true"></span></a>
                                                     </td>
-                                                    <td class="hidden-xs">1</td>
-                                                    <td>John Doe</td>
-                                                    <td>johndoe@example.com</td>
+                                                    <td class="hidden-xs">Marco</td>
+                                                    <td>Kunz</td>
+                                                    <td>Wohnung 1</td>
+                                                    <td>2000</td>
                                                 </tr>
-                                                <tr data-status="pending">
-                                                    <td align="center"><input type="checkbox" class="checkthis"/></td>
-                                                    <td align="center">
-                                                        <a class="btn btn-default"><span class="glyphicon glyphicon-pencil"
-                                                                                         aria-hidden="true"></span></a>
-                                                        <a class="btn btn-danger"><span class="glyphicon glyphicon-trash"
-                                                                                        aria-hidden="true"></span></a>
-                                                    </td>
-                                                    <td class="hidden-xs">2</td>
-                                                    <td>Jen Curtis</td>
-                                                    <td>jencurtis@example.com</td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
 
@@ -121,23 +98,6 @@
                                             <div class="row">
                                                 <div class="col col-xs-offset-3 col-xs-6">
                                                     <nav aria-label="Page navigation" class="text-center">
-                                                        <ul class="pagination">
-                                                            <li>
-                                                                <a href="#" aria-label="Previous">
-                                                                    <span aria-hidden="true">«</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="active"><a href="#">1</a></li>
-                                                            <li><a href="#">2</a></li>
-                                                            <li><a href="#">3</a></li>
-                                                            <li><a href="#">4</a></li>
-                                                            <li><a href="#">5</a></li>
-                                                            <li>
-                                                                <a href="#" aria-label="Next">
-                                                                    <span aria-hidden="true">»</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
                                                     </nav>
                                                 </div>
                                                 <div class="col col-xs-3">
@@ -154,15 +114,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <!--<nav class="navbar navbar-default">
-                                    <div class="container-fluid">
-                                        <p class="navbar-text">A simple example of how-to put a bordered table within a panel. Responsive, place
-                                            holders in header/footer
-                                            for buttons or pagination.</p>
-                                    </div>
-                                </nav>-->
-                            </div>
+
                         </div>
 
                         <!-- end bootstrap table panel https://bootsnipp.com/snippets/ORE6d#comments -->
