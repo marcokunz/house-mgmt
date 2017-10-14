@@ -79,10 +79,8 @@
                                                 <tbody>
                                                 <tr data-status="completed">
                                                     <td align="left">
-                                                        <a class="btn btn-default"><span class="glyphicon glyphicon-pencil"
-                                                                                         aria-hidden="true"></span></a>
-                                                        <a class="btn btn-danger"><span class="glyphicon glyphicon-trash"
-                                                                                        aria-hidden="true"></span></a>
+                                                        <a class="btn btn-default" data-target="#mieterEditierenModal" data-toggle="modal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                        <a class="btn btn-danger" data-target="#mieterLöschenModal" data-toggle="modal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                                     </td>
                                                     <td class="hidden-xs">Marco</td>
                                                     <td>Kunz</td>
@@ -102,7 +100,7 @@
                                                 </div>
                                                 <div class="col col-xs-3">
                                                     <div class="pull-right">
-                                                        <button type="button" class="btn btn-primary" data-target="#mieterModal" data-toggle="modal"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Eintrag hinzufügen</button>
+                                                        <button type="button" class="btn btn-primary" data-target="#mieterErfassenModal" data-toggle="modal"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Eintrag hinzufügen</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,40 +114,106 @@
                         <!-- end bootstrap table panel https://bootsnipp.com/snippets/ORE6d#comments -->
 
 
-                        <!-- INPUTS to create a new invoice (popup window) -->
-                        <div class="modal" id="mieterModal" tabindex="-1">
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Mieter erfassen</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <input type="text" class="form-control" placeholder="Vorname">
-                                    <br>
-                                    <input type="text" class="form-control" placeholder="Nachname">
-                                    <br>
-                                    <input type="text" class="form-control" placeholder="Mietzins">
-                                    <br>
-                                    <select class="form-control">
-                                        <option value="cheese">Cheese</option>
-                                        <option value="tomatoes">Tomatoes</option>
-                                        <option value="mozarella">Mozzarella</option>
-                                        <option value="mushrooms">Mushrooms</option>
-                                        <option value="pepperoni">Pepperoni</option>
-                                        <option value="onions">Onions</option>
-                                    </select>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <button type="button" class="btn btn-success"><i class="fa fa-check-circle"></i> Hinzufügen</button>
-                                        </div>
-                                        <div class="col-md-6" class="close">
-                                            <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-warning"></i>Abbrechen</button>
+                        <!-- Boostrap modal - Creating a new "Mieter" -->
+                        <div class="modal" id="mieterErfassenModal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Mieter erfassen</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <input type="text" class="form-control" placeholder="Vorname">
+                                        <br>
+                                        <input type="text" class="form-control" placeholder="Nachname">
+                                        <br>
+                                        <input type="text" class="form-control" placeholder="Mietzins">
+                                        <br>
+                                        <select class="form-control">
+                                            <option value="cheese">Cheese</option>
+                                            <option value="tomatoes">Tomatoes</option>
+                                            <option value="mozarella">Mozzarella</option>
+                                            <option value="mushrooms">Mushrooms</option>
+                                            <option value="pepperoni">Pepperoni</option>
+                                            <option value="onions">Onions</option>
+                                        </select>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-success"><i class="fa fa-check-circle"></i> Hinzufügen</button>
+                                            </div>
+                                            <div class="col-md-6" class="close">
+                                                <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-warning"></i>Abbrechen</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- END INPUTS -->
+                        <!-- END Boostrap modal - Creating a new "Mieter" -->
+
+                        <!-- Boostrap modal - Editing a "Mieter" -->
+                        <div class="modal" id="mieterEditierenModal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Mieter editieren</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <input type="text" class="form-control" placeholder="Vorname">
+                                        <br>
+                                        <input type="text" class="form-control" placeholder="Nachname">
+                                        <br>
+                                        <input type="text" class="form-control" placeholder="Mietzins">
+                                        <br>
+                                        <select class="form-control">
+                                            <option value="cheese">Cheese</option>
+                                            <option value="tomatoes">Tomatoes</option>
+                                            <option value="mozarella">Mozzarella</option>
+                                            <option value="mushrooms">Mushrooms</option>
+                                            <option value="pepperoni">Pepperoni</option>
+                                            <option value="onions">Onions</option>
+                                        </select>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-success"><i class="fa fa-check-circle"></i> Hinzufügen</button>
+                                            </div>
+                                            <div class="col-md-6" class="close">
+                                                <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-warning"></i>Abbrechen</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Boostrap modal - Editing a "Mieter" -->
+
+                        <!-- Boostrap modal - Deleting a "Mieter" -->
+                        <div class="modal" id="mieterLöschenModal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h3 class="modal-title">Mieter löschen</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                    <p>Wollen Sie den Mieter wirklich löschen?</p>
+                                    <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-danger"><i class="fa fa-check-circle"></i>Löschen</button>
+                                            </div>
+                                            <div class="col-md-6" class="close">
+                                                <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-warning"></i>Abbrechen</button>
+                                            </div>
+                                        </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Boostrap modal - Deleting a "Mieter" -->
+
+
                     </div>
                 </div>
             </div>
