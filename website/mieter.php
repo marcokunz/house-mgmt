@@ -198,7 +198,38 @@
                         </div>
 
                         <!-- end bootstrap table panel https://bootsnipp.com/snippets/ORE6d#comments -->
-
+                        <!-- INPUTS to create a new invoice (popup window) -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Mieter erfassen</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" class="form-control" placeholder="Vorname">
+                                <br>
+                                <input type="text" class="form-control" placeholder="Nachname">
+                                <br>
+                                <input type="text" class="form-control" placeholder="Mietzins">
+                                <br>
+                                <select class="form-control">
+                                    <option value="cheese">Cheese</option>
+                                    <option value="tomatoes">Tomatoes</option>
+                                    <option value="mozarella">Mozzarella</option>
+                                    <option value="mushrooms">Mushrooms</option>
+                                    <option value="pepperoni">Pepperoni</option>
+                                    <option value="onions">Onions</option>
+                                </select>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-success"><i class="fa fa-check-circle"></i> Hinzufügen</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-warning"><i class="fa fa-warning"></i>Abbrechen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END INPUTS -->
                     </div>
                 </div>
             </div>
