@@ -1,5 +1,3 @@
-
-
 <!-- LEFT SIDEBAR -->
 <div id="sidebar-nav" class="sidebar">
     <div class="sidebar-scroll">
