@@ -2,30 +2,28 @@
 <html lang="en">
 
 <head>
-	<title>Typography | Klorofil - Free Bootstrap Dashboard Template</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="assets/css/main.css">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="assets/css/demo.css">
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+	<title>Manipake | Mieter</title>
+    <?php include "headAll.php";?>
+    <?php include "database.php";?>
+    <?php
+    // Create connection
+    $conn = new mysqli(localhost, $benutzer, $passwort, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT vorname, nachname, adresse, mietzins FROM Mieter";
+    $result = $conn->query($sql);
+    $numberOfRows = mysqli_num_fields($result);
+    ?>
 </head>
 
 <body>
 	<!-- WRAPPER -->
 	<div id="wrapper">
-        <?php include "NavBar.html";?>
-        <?php include "leftSidebar.php"; ?>
+        <?php include "navigationBar.php";?>
+        <?php include "sideBar.php"; ?>
 
 		<!-- MAIN -->
         <!-- MAIN -->
@@ -46,50 +44,38 @@
                                                 <div class="col col-xs-6">
                                                     <h3 class="panel-title">Mieter Übersicht</h3>
                                                 </div>
-                                                <!--<div class="col col-xs-6 text-right">
-                                                    <div class="pull-right">
-                                                        <div class="btn-group" data-toggle="buttons">
-                                                            <label class="btn btn-success btn-filter active" data-target="completed">
-                                                                <input type="radio" name="options" id="option1" autocomplete="off" checked>
-                                                                Completed
-                                                            </label>
-                                                            <label class="btn btn-warning btn-filter" data-target="pending">
-                                                                <input type="radio" name="options" id="option2" autocomplete="off"> Pending
-                                                            </label>
-                                                            <label class="btn btn-default btn-filter" data-target="all">
-                                                                <input type="radio" name="options" id="option3" autocomplete="off"> All
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>-->
                                             </div>
                                         </div>
                                         <div class="panel-body">
-                                            <table id="mytable" class="table table-striped table-bordered table-list">
-                                                <thead>
-                                                <tr>
-                                                    <!--<th class="col-check"><input type="checkbox" id="checkall" onclick="test()"/></th>-->
-                                                    <th class="col-tools"><span aria-hidden="true"></span>Anpassen</th>
-                                                    <th class="hidden-xs">Vorname</th>
-                                                    <th class="col-text">Nachname</th>
-                                                    <th class="col-text">Mietobjekt</th>
-                                                    <th class="col-text">Mietzins</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr data-status="completed">
-                                                    <td align="left">
-                                                        <a class="btn btn-default" data-target="#mieterEditierenModal" data-toggle="modal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                                        <a class="btn btn-danger" data-target="#mieterLöschenModal" data-toggle="modal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-                                                    </td>
-                                                    <td class="hidden-xs">Marco</td>
-                                                    <td>Kunz</td>
-                                                    <td>Wohnung 1</td>
-                                                    <td>2000</td>
-                                                </tr>
 
-                                                </tbody>
-                                            </table>
+
+                                                <table id="mytable" class="table table-striped table-bordered table-list">
+                                                    <?php
+                                                    echo "<thead>";
+                                                    if ($result->num_rows > 0) {
+                                                    echo "<tr align='left'>";
+                                                        echo "<th>anpassen</th>";
+                                                        for ($i=0; $i<$numberOfRows; $i++)
+                                                        {$finfo = mysqli_fetch_field_direct($result, $i); echo "<th>".$finfo->name."</th>\n";
+                                                        }echo "</tr>\n";
+                                                    echo "</thead>";
+
+                                                    echo "<tbody>";
+
+                                                    // output data of each row
+                                                    while($row = $result->fetch_assoc()) {
+                                                    echo "<tr><td align=\"left\">
+                                                            <a class=\"btn btn-default\" data-target=\"#mieterEditierenModal\" data-toggle=\"modal\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span></a>
+                                                            <a class=\"btn btn-danger\" data-target=\"#mieterLöschenModal\" data-toggle=\"modal\"><span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></a>
+                                                        </td><td>".$row["vorname"]."</td><td>".$row["nachname"]."</td><td>".$row["adresse"]."</td><td>".$row["mietzins"]."</td></tr>";
+                                                    }
+                                                    echo "</tbody>";
+                                                    echo "</table>";
+                                            } else {
+                                            echo "0 results";
+                                            }
+                                            $conn->close();
+                                            ?>
 
                                         </div>
                                         <div class="panel-footer">
@@ -235,6 +221,7 @@
 	<script src="assets/vendor/jquery/jquery.min.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/vendor/jquery.bootgrid-1.3.1/jquery.bootgrid.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
 </body>
 

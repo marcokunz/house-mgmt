@@ -9,7 +9,7 @@ if (isset($_POST['email']) AND isset($_POST['passwort']))
     $pass=md5($pass);
 
     // Datenbankverbindung
-    include "db.inc.php";
+    include "database.php";
 
     $link=mysqli_connect("localhost", $benutzer, $passwort) or die("Keine Verbindung zur Datenbank!");
     mysqli_select_db($link, $dbname) or die("Datenbank nicht gefunden!");
@@ -23,7 +23,7 @@ if (isset($_POST['email']) AND isset($_POST['passwort']))
     {
         $_SESSION['eingeloggt']=true;
         $_SESSION['email']=$email;
-        header('Location: http://house-mgmt.000webhostapp.com/main_page.php');
+        header('Location: http://house-mgmt.000webhostapp.com/view/main_page.php');
         exit();
         echo "Herzlich willkommen im VIP-Bereich!<br/>";
         echo "Ihre Session-ID: ".session_id();

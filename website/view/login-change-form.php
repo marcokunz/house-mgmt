@@ -15,7 +15,7 @@ if ($_SESSION['eingeloggt']== true)
 $email = $_SESSION['email'];
 
 // Datenbankverbindung
-include "db.inc.php";
+include "database.php";
 $link=mysqli_connect("localhost", $benutzer, $passwort) or die("Keine Verbindung zur Datenbank!");
 mysqli_select_db($link, $dbname) or die("Datenbank nicht gefunden!");
  

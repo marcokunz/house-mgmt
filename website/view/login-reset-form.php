@@ -27,7 +27,7 @@ Freundliche Gr�sse\nIhr FH-Weiterbildungs-Team\nwww.fh-weiterbildung.ch";
   mail($email,$betreff,$inhalt,$header);
   
   // Datenbankupdate
-  include "db.inc.php";
+  include "database.php";
   $link=mysqli_connect("localhost", $benutzer, $passwort) or die("Keine Verbindung zur Datenbank!");
   mysqli_select_db($link, $dbname) or die("Datenbank nicht gefunden!");
   
@@ -40,7 +40,7 @@ Freundliche Gr�sse\nIhr FH-Weiterbildungs-Team\nwww.fh-weiterbildung.ch";
 	{
 	  echo "Das neue Passwort wurde eingetragen!<br/>";
 	  echo "Ihr Passwort lautet: ".$newpwd;
-	  echo "<br/> <a href=\"index.php\">Login</a><br/>";
+	  echo ">Login</a><br/>";
       echo ">Passwort anpassen</a><br/>";
 	} 
 }
