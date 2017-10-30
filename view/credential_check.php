@@ -23,7 +23,7 @@ if (isset($_POST['email']) AND isset($_POST['passwort']))
     {
         $_SESSION['eingeloggt']=true;
         $_SESSION['email']=$email;
-        header('Location: http://house-mgmt.000webhostapp.com/view/main_page.php');
+        header('Location: https://house-mgmt.herokuapp.com/view/main_page.php');
         exit();
         echo "Herzlich willkommen im VIP-Bereich!<br/>";
         echo "Ihre Session-ID: ".session_id();
@@ -33,7 +33,7 @@ if (isset($_POST['email']) AND isset($_POST['passwort']))
     else
     {
         $_SESSION['eingeloggt']=false;
-        header('Location: http://www.google.com/');
+        header('Location: https://house-mgmt.herokuapp.com/view/main_page.php');
         exit();
         //header("Location:index.php");
         echo "Login nicht geklappt";
