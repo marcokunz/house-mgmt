@@ -14,7 +14,7 @@ class MieterDAO extends BasicDAO {
 	 * @access public
 	 * @param Mieter
 	 * @return Mieter
-	 * @ParamType customer Mieter
+	 * @ParamType mieter Mieter
 	 * @ReturnType Mieter
 	 */
 	public function create(Mieter $mieter) {

@@ -56,7 +56,7 @@ This is a reference project elaborated by the students step-by-step in every FHN
 ## Analysis
 
 ### Scenario
-WE-CRM (Web Engineering Customer-Relationship-Management) is the smallest possible and lightweight demonstration tool that allows agents to manage their customer data. Agents have an own access to their customer data. Besides, agents can email themselves an complete extract or create a PDF of their customers.
+WE-CRM (Web Engineering Customer-Relationship-Management) is the smallest possible and lightweight demonstration tool that allows agents to manage their mieter data. Agents have an own access to their mieter data. Besides, agents can email themselves an complete extract or create a PDF of their customers.
 
 ### Use Case
 
@@ -64,10 +64,10 @@ WE-CRM (Web Engineering Customer-Relationship-Management) is the smallest possib
 
 - UC-1 [Login on WE-CRM]: Agents can log-in by entering an email address and password. As an extension, new agents my register first.
 - UC-2 [Register on WE-CRM]: Agents can register to get an account (profile) to access the WE-CRM system.
-- UC-3 [Edit a customer]: Agents can create, update and delete customers.
-- UC-4 [Show a customer list]: Agents can get an overview over their customers based on a customer list. As an extension they can create, update and delete customers (UC-3), generate a PDF (UC-5) or send an email (UC-6).
-- UC-5 [Generate a PDF customer list]: Agents can generate a PDF containing a list of their customers.
-- UC-6 [Send customer list via email]: Agents can send an email containing a list of their customers to their own inbox.
+- UC-3 [Edit a mieter]: Agents can create, update and delete customers.
+- UC-4 [Show a mieter list]: Agents can get an overview over their customers based on a mieter list. As an extension they can create, update and delete customers (UC-3), generate a PDF (UC-5) or send an email (UC-6).
+- UC-5 [Generate a PDF mieter list]: Agents can generate a PDF containing a list of their customers.
+- UC-6 [Send mieter list via email]: Agents can send an email containing a list of their customers to their own inbox.
 
 ### Constraints
 
@@ -317,23 +317,23 @@ if (password_verify($_POST["password"], $hashedPassword)) {
 
 ### Stage 4: Dynamic Views
 
-In stage 4, the web-application is extended with functionality to store and retrieve customer data in a procedural way and similar as described in the ([PDO](#pdo)) section.
+In stage 4, the web-application is extended with functionality to store and retrieve mieter data in a procedural way and similar as described in the ([PDO](#pdo)) section.
 
 The view files are extended with `<?php ?>` tags injecting the required dynamic data. In this stage, it is still a procedural implementation. The following example shows how a HTML table can be dynamically populated:
 ```PHP
-<?php foreach($customers as $customer): ?>
+<?php foreach($customers as $mieter): ?>
     <tr>
-        <td><?php echo $customer["id"] ?> </td>
-        <td><?php echo $customer["name"] ?></td>
-        <td><?php echo $customer["email"] ?> </td>
-        <td><?php echo $customer["mobile"] ?> </td>
+        <td><?php echo $mieter["id"] ?> </td>
+        <td><?php echo $mieter["name"] ?></td>
+        <td><?php echo $mieter["email"] ?> </td>
+        <td><?php echo $mieter["mobile"] ?> </td>
     </tr>
 <?php endforeach; ?>
 ```
 
 The following code snipped shows how an HTML form input field value can be set, if data is available:
 ```PHP
-<input class="form-control" type="email" name="email" value="<?php echo !empty($customer["email"]) ? $customer["email"] : ''; ?>">
+<input class="form-control" type="email" name="email" value="<?php echo !empty($mieter["email"]) ? $mieter["email"] : ''; ?>">
 ```
 
 ### Stage 5: namespace/use, Auto-Loading and Class Oriented Router
@@ -514,7 +514,7 @@ class View {
 Once the view has been instantiated, data can be injected into the view by using a magic `__set()` method. Finally, the view will be rendered by using the `render()` method:
 ```PHP
 $contentView = new View("customerEdit.php");
-$contentView->customer = WECRMServiceImpl::getInstance()->readCustomer($id);
+$contentView->mieter = WECRMServiceImpl::getInstance()->readCustomer($id);
 echo $contentView->render();
 ```
 ___
@@ -539,7 +539,7 @@ class View {
 
 The data that has been injected can be accessed within a view `.php` file by using a magic `__get()` method. At the same time it may make sense to validate if a variable has been set:
 ```PHP
-<input class="form-control" type="text" name="id" readonly="" value="<?php echo isset($this->customer) ? $this->customer->getId() : ''; ?>">
+<input class="form-control" type="text" name="id" readonly="" value="<?php echo isset($this->mieter) ? $this->mieter->getId() : ''; ?>">
 ```
 ___
 ```PHP
@@ -564,7 +564,7 @@ class View {
 To prevent XSS (Cross-Site Scripting) attacks any character in a user input that can affect the structure of the HTML document must be escaped on output (when displaying to a user). Following the guidelines of the [Paragon Initiative Enterprises Blog](https://paragonie.com/blog/2015/06/preventing-xss-vulnerabilities-in-php-everything-you-need-know) the View class consists of a static method that can be used in a view `.php` file:
 
 ```PHP
-<input class="form-control" type="text" name="name" value="<?php echo isset($this->customer) ? View::noHTML($this->customer->getName()) : ''; ?>">
+<input class="form-control" type="text" name="name" value="<?php echo isset($this->mieter) ? View::noHTML($this->mieter->getName()) : ''; ?>">
 ```
 ___
 ```PHP
@@ -610,20 +610,20 @@ class CustomerController
     public static function edit(){
         $id = $_GET["id"];
         $contentView = new View("customerEdit.php");
-        $contentView->customer = WECRMServiceImpl::getInstance()->readCustomer($id);
+        $contentView->mieter = WECRMServiceImpl::getInstance()->readCustomer($id);
         LayoutRendering::basicLayout($contentView);
     }
 
     public static function update(){
-        $customer = new Customer();
-        $customer->setId($_POST["id"]);
-        $customer->setName($_POST["name"]);
-        $customer->setEmail($_POST["email"]);
-        $customer->setMobile($_POST["mobile"]);
-        if ($customer->getId() === "") {
-            WECRMServiceImpl::getInstance()->createCustomer($customer);
+        $mieter = new Customer();
+        $mieter->setId($_POST["id"]);
+        $mieter->setName($_POST["name"]);
+        $mieter->setEmail($_POST["email"]);
+        $mieter->setMobile($_POST["mobile"]);
+        if ($mieter->getId() === "") {
+            WECRMServiceImpl::getInstance()->createCustomer($mieter);
         } else {
-            WECRMServiceImpl::getInstance()->updateCustomer($customer);
+            WECRMServiceImpl::getInstance()->updateCustomer($mieter);
         }
     }
 

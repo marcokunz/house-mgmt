@@ -86,7 +86,7 @@ Router::route("GET", "/logout", function () {
 Router::route_auth("GET", "/", $authFunction, function () {
     /*$pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            SELECT * FROM customer WHERE agentid = :agentId ORDER BY id;');
+            SELECT * FROM mieter WHERE agentid = :agentId ORDER BY id;');
     $stmt->bindValue(':agentId', $_SESSION["agentLogin"]["id"]);
     $stmt->execute();
     global $customers;
@@ -110,27 +110,27 @@ Router::route_auth("GET", "/einnahmen", $authFunction, function () {
     layoutSetContent("view/einnahmen.php");
 });
 
-Router::route_auth("GET", "/customer/create", $authFunction, function () {
+Router::route_auth("GET", "/mieter/create", $authFunction, function () {
     layoutSetContent("mieterEdit.php");
 });
 
-Router::route_auth("GET", "/customer/edit", $authFunction, function () {
+Router::route_auth("GET", "/mieter/edit", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            SELECT * FROM customer WHERE id = :id;');
+            SELECT * FROM mieter WHERE id = :id;');
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    global $customer;
-    $customer = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+    global $mieter;
+    $mieter = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
     layoutSetContent("mieterEdit.php");
 });
 
-Router::route_auth("GET", "/customer/delete", $authFunction, function () {
+Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            DELETE FROM customer
+            DELETE FROM mieter
             WHERE id = :id
         ');
     $stmt->bindValue(':id', $id);
@@ -138,7 +138,7 @@ Router::route_auth("GET", "/customer/delete", $authFunction, function () {
     Router::redirect("/");
 });
 
-Router::route_auth("POST", "/customer/update", $authFunction, function () {
+Router::route_auth("POST", "/mieter/update", $authFunction, function () {
     $id = $_POST["id"];
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -146,7 +146,7 @@ Router::route_auth("POST", "/customer/update", $authFunction, function () {
     if ($id === "") {
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
-            INSERT INTO customer (name, email, mobile, agentid)
+            INSERT INTO mieter (name, email, mobile, agentid)
             VALUES (:name, :email , :mobile, :agentid)');
         $stmt->bindValue(':name', $name);
         $stmt->bindValue(':email', $email);
@@ -156,7 +156,7 @@ Router::route_auth("POST", "/customer/update", $authFunction, function () {
     } else {
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
-            UPDATE customer SET name = :name,
+            UPDATE mieter SET name = :name,
                 email = :email,
                 mobile = :mobile
             WHERE id = :id');
