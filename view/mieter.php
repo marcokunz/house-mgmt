@@ -23,7 +23,7 @@
             <tbody>
             <?php
             global $mieter;
-            foreach($customers as $mieter): ?>
+            foreach($mieter as $mieter): ?>
             <tr>
                 <td><?php echo $mieter["vorname"] ?> </td>
                 <td><?php echo $mieter["nachname"] ?></td>

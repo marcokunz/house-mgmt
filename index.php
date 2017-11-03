@@ -157,7 +157,8 @@ Router::route_auth("POST", "/mieter/update", $authFunction, function () {
     } else {
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
-            UPDATE mieter SET vorname = :vorname,
+            UPDATE mieter SET 
+                vorname = :vorname,
                 nachname = :nachname,
                 adresse = :adresse,
                 mietzins = :mietzins
