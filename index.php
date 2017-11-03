@@ -54,9 +54,8 @@ Router::route("POST", "/register", function () {
 });*/
 
 Router::route("POST", "/login", function () {
-    $email = $_POST["name"];
+    $email = $_POST["email"];
     $pdoInstance = Database::connect();
-    echo "burri";
     $stmt = $pdoInstance->prepare('
             SELECT * FROM USER WHERE NAME = :email');
     $stmt->bindValue(':email', $email);
