@@ -1,91 +1,159 @@
-<?PHP
+<?php
+/**
+ * Created by PhpStorm.
+ * User: andreas.martin
+ * Date: 12.09.2017
+ * Time: 21:30
+ */
+require_once("config/Autoloader.php");
+require_once("view/layout.php");
+
+use router\Router;
+use database\Database;
+
 session_start();
 
-// Session beenden
-// damit können wir diese Seite als "Logout" verwenden
-session_unset();
-session_destroy();
-unset($_SESSION); // Session-Array löschen
-// Session-Cookie löschen
-if (ini_get("session.use_cookies")) {
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 42000, $params["path"],
-        $params["domain"], $params["secure"], $params["httponly"]
-    );
-}
+$authFunction = function () {
+    if (isset($_SESSION["agentLogin"])) {
+        return true;
+    }
+    Router::redirect("/login");
+    return false;
+};
 
-?>
+$errorFunction = function () {
+    Router::errorHeader();
+    require_once("view/404.php");
+};
 
-<!doctype html>
-<html lang="en" class="fullscreen-bg">
+Router::route("GET", "/login", function () {
+    require_once("view/agentLogin.php");
+});
 
-<head>
-	<title>Login | Manipake House Management</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="view/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="view/assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="view/assets/vendor/linearicons/style.css">
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="view/assets/css/main.css">
+Router::route("GET", "/register", function () {
+    require_once("view/agentEdit.php");
+});
 
+Router::route("POST", "/register", function () {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+        INSERT INTO agent (name, email, password)
+          SELECT :name,:email,:password
+          WHERE NOT EXISTS (
+            SELECT email FROM agent WHERE email = :emailExist
+        );');
+    $stmt->bindValue(':name', $name);
+    $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':emailExist', $email);
+    $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
+    $stmt->execute();
+    Router::redirect("/logout");
+});
 
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="view/assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="view/assets/img/favicon.png">
-</head>
+Router::route("POST", "/login", function () {
+    $email = $_POST["email"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            SELECT * FROM agent WHERE email = :email;');
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        $agent = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        if (password_verify($_POST["password"], $agent["password"])) {
+            $_SESSION["agentLogin"]["name"] = $agent["name"];
+            $_SESSION["agentLogin"]["email"] = $email;
+            $_SESSION["agentLogin"]["id"] = $agent["id"];
+            if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
+                $stmt = $pdoInstance->prepare('
+                UPDATE agent SET password=:password WHERE id = :id;');
+                $stmt->bindValue(':id', $agent["id"]);
+                $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
+                $stmt->execute();
+            }
+        }
+    }
+    Router::redirect("/");
+});
 
-<body>
-	<!-- WRAPPER -->
-	<div id="wrapper">
-		<div class="vertical-align-wrap">
-			<div class="vertical-align-middle">
-				<div class="auth-box ">
-					<div class="left">
-						<div class="content">
-							<div class="header">
-								<div class="logo text-center"><img src="view/assets/img/manihacke.png" alt="Klorofil Logo"></div>
-								<p class="lead">Login to your account</p>
-							</div>
-							<form class="form-auth-small" action="view/credential_check.php" method="post">
-								<div class="form-group">
-									<label for="signin-email" class="control-label sr-only">Email</label>
-									<input type="text" class="form-control" id="signin-email" name="email" value="" placeholder="Email">
-								</div>
-								<div class="form-group">
-									<label for="signin-password" class="control-label sr-only">Password</label>
-									<input type="password" class="form-control" id="signin-password" name="passwort" value="" placeholder="Password">
-								</div>
-								<div class="form-group clearfix">
-									<label class="fancy-checkbox element-left">
-										<input type="checkbox">
-										<span>Remember me</span>
-									</label>
-								</div>
-								<button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-								<div class="bottom">
-									<span class="helper-text"><i class="fa fa-lock"></i> <a href="login-reset-form.php">Forgot password?</a></span>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="right">
-						<div class="overlay"></div>
-						<div class="content text">
-							<h1 class="heading">Welcome Cedi.. Schoooo?</h1>
-							<p>jo scho!</p>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END WRAPPER -->
-</body>
+Router::route("GET", "/logout", function () {
+    session_destroy();
+    Router::redirect("/login");
+});
 
-</html>
+Router::route_auth("GET", "/", $authFunction, function () {
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            SELECT * FROM customer WHERE agentid = :agentId ORDER BY id;');
+    $stmt->bindValue(':agentId', $_SESSION["agentLogin"]["id"]);
+    $stmt->execute();
+    global $customers;
+    $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    layoutSetContent("customers.php");
+});
+
+Router::route_auth("GET", "/agent/edit", $authFunction, function () {
+    require_once("view/agentEdit.php");
+});
+
+Router::route_auth("GET", "/customer/create", $authFunction, function () {
+    layoutSetContent("customerEdit.php");
+});
+
+Router::route_auth("GET", "/customer/edit", $authFunction, function () {
+    $id = $_GET["id"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            SELECT * FROM customer WHERE id = :id;');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    global $customer;
+    $customer = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+    layoutSetContent("customerEdit.php");
+});
+
+Router::route_auth("GET", "/customer/delete", $authFunction, function () {
+    $id = $_GET["id"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            DELETE FROM customer
+            WHERE id = :id
+        ');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    Router::redirect("/");
+});
+
+Router::route_auth("POST", "/customer/update", $authFunction, function () {
+    $id = $_POST["id"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $mobile = $_POST["mobile"];
+    if ($id === "") {
+        $pdoInstance = Database::connect();
+        $stmt = $pdoInstance->prepare('
+            INSERT INTO customer (name, email, mobile, agentid)
+            VALUES (:name, :email , :mobile, :agentid)');
+        $stmt->bindValue(':name', $name);
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':mobile', $mobile);
+        $stmt->bindValue(':agentid', $_SESSION["agentLogin"]["id"]);
+        $stmt->execute();
+    } else {
+        $pdoInstance = Database::connect();
+        $stmt = $pdoInstance->prepare('
+            UPDATE customer SET name = :name,
+                email = :email,
+                mobile = :mobile
+            WHERE id = :id');
+        $stmt->bindValue(':name', $name);
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':mobile', $mobile);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+    }
+    Router::redirect("/");
+});
+
+Router::call_route($_SERVER['REQUEST_METHOD'], $_SERVER['PATH_INFO'], $errorFunction);
