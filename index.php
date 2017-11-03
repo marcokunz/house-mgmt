@@ -140,30 +140,31 @@ Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
 
 Router::route_auth("POST", "/mieter/update", $authFunction, function () {
     $id = $_POST["id"];
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $mobile = $_POST["mobile"];
+    $vorname = $_POST["vorname"];
+    $nachname = $_POST["nachname"];
+    $mietzins = $_POST["mietzins"];
     if ($id === "") {
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
-            INSERT INTO mieter (name, email, mobile, agentid)
-            VALUES (:name, :email , :mobile, :agentid)');
-        $stmt->bindValue(':name', $name);
-        $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':mobile', $mobile);
-        $stmt->bindValue(':agentid', $_SESSION["agentLogin"]["id"]);
+            INSERT INTO mieter (vorname, nachname, adresse, mietzins)
+            VALUES (:vorname, :nachname , :adresse, :mietzins)');
+        $stmt->bindValue(':vorname', $mieter->getVorname());
+        $stmt->bindValue(':nachname', $mieter->getNachname());
+        $stmt->bindValue(':adresse', $mieter->getAdresse());
+        $stmt->bindValue(':mietzins', $mieter->getMietzins());
         $stmt->execute();
     } else {
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
-            UPDATE mieter SET name = :name,
-                email = :email,
-                mobile = :mobile
+            UPDATE mieter SET vorname = :vorname,
+                nachname = :nachname,
+                adresse = :adresse,
+                mietzins = :mietzins
             WHERE id = :id');
-        $stmt->bindValue(':name', $name);
-        $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':mobile', $mobile);
-        $stmt->bindValue(':id', $id);
+        $stmt->bindValue(':vorname', $mieter->getVorname());
+        $stmt->bindValue(':nachname', $mieter->getNachname());
+        $stmt->bindValue(':adresse', $mieter->getAdresse());
+        $stmt->bindValue(':mietzins', $mieter->getMietzins());
         $stmt->execute();
     }
     Router::redirect("/");
