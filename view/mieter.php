@@ -8,16 +8,16 @@
 ?>
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center">My <strong>customers</strong>.</h2></div>
+        <h2 class="text-center">Unsere <strong>mieter</strong>.</h2></div>
     <div class="table-responsive">
         <table class="table">
             <thead>
             <tr>
                 <th>ID </th>
-                <th>Name </th>
-                <th>Email </th>
-                <th>Mobile </th>
-                <th>Action </th>
+                <th>Vorname </th>
+                <th>Nachname </th>
+                <th>Adresse </th>
+                <th>Mietzins </th>
             </tr>
             </thead>
             <tbody>
