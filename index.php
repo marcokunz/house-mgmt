@@ -57,11 +57,10 @@ Router::route("POST", "/login", function () {
     $email = $_POST["email"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            SELECT * FROM USER WHERE NAME = :email');
+            SELECT * FROM USER WHERE email = :email');
     $stmt->bindValue(':email', $email);
     $stmt->execute();
-    echo "burri";
-    /*if ($stmt->rowCount() > 0) {
+    if ($stmt->rowCount() > 0) {
         $agent = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
         if (password_verify($_POST["password"], $agent["password"])) {
             $_SESSION["agentLogin"]["name"] = $agent["name"];
@@ -75,7 +74,7 @@ Router::route("POST", "/login", function () {
                 $stmt->execute();
             }
         }
-    }*/
+    }
     Router::redirect("/");
 });
 
