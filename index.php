@@ -149,10 +149,10 @@ Router::route_auth("POST", "/mieter/update", $authFunction, function () {
         $stmt = $pdoInstance->prepare('
             INSERT INTO mieter (vorname, nachname, adresse, mietzins)
             VALUES (:vorname, :nachname , :adresse, :mietzins)');
-        $stmt->bindValue(':vorname', $mieter->getVorname());
-        $stmt->bindValue(':nachname', $mieter->getNachname());
-        $stmt->bindValue(':adresse', $mieter->getAdresse());
-        $stmt->bindValue(':mietzins', $mieter->getMietzins());
+        $stmt->bindValue(':vorname', $vorname);
+        $stmt->bindValue(':nachname', $nachname);
+        $stmt->bindValue(':adresse', $adresse);
+        $stmt->bindValue(':mietzins', $mietzins);
         $stmt->execute();
     } else {
         $pdoInstance = Database::connect();
@@ -162,10 +162,10 @@ Router::route_auth("POST", "/mieter/update", $authFunction, function () {
                 adresse = :adresse,
                 mietzins = :mietzins
             WHERE id = :id');
-        $stmt->bindValue(':vorname', $mieter->getVorname());
-        $stmt->bindValue(':nachname', $mieter->getNachname());
-        $stmt->bindValue(':adresse', $mieter->getAdresse());
-        $stmt->bindValue(':mietzins', $mieter->getMietzins());
+        $stmt->bindValue(':vorname', $vorname);
+        $stmt->bindValue(':nachname', $nachname);
+        $stmt->bindValue(':adresse', $adresse);
+        $stmt->bindValue(':mietzins', $mietzins);
         $stmt->execute();
     }
     Router::redirect("/");
