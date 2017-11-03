@@ -30,7 +30,8 @@ Router::route("GET", "/login", function () {
     require_once("view/agentLogin.php");
 });
 
-Router::route("GET", "/register", function () {
+// not using register functionality
+/*Router::route("GET", "/register", function () {
     require_once("view/agentEdit.php");
 });
 
@@ -50,18 +51,18 @@ Router::route("POST", "/register", function () {
     $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
     $stmt->execute();
     Router::redirect("/logout");
-});
+});*/
 
 Router::route("POST", "/login", function () {
     $email = $_POST["email"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            SELECT * FROM agent WHERE email = :email;');
+            SELECT * FROM USER WHERE NAME = :email;');
     $stmt->bindValue(':email', $email);
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
         $agent = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-        if (password_verify($_POST["password"], $agent["password"])) {
+        /*if (password_verify($_POST["password"], $agent["password"])) {
             $_SESSION["agentLogin"]["name"] = $agent["name"];
             $_SESSION["agentLogin"]["email"] = $email;
             $_SESSION["agentLogin"]["id"] = $agent["id"];
@@ -72,7 +73,7 @@ Router::route("POST", "/login", function () {
                 $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
                 $stmt->execute();
             }
-        }
+        }*/
     }
     Router::redirect("/");
 });
