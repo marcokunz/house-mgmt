@@ -14,11 +14,12 @@ use database\Database;
 session_start();
 
 $authFunction = function () {
-    if (isset($_SESSION["agentLogin"])) {
+    /*if (isset($_SESSION["agentLogin"])) {
         return true;
     }
     Router::redirect("/login");
-    return false;
+    return false;*/
+    return true;
 };
 
 $errorFunction = function () {
@@ -66,13 +67,13 @@ Router::route("POST", "/login", function () {
             $_SESSION["agentLogin"]["name"] = $agent["name"];
             $_SESSION["agentLogin"]["email"] = $email;
             $_SESSION["agentLogin"]["id"] = $agent["id"];
-            /*if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
+            if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
                 $stmt = $pdoInstance->prepare('
                 UPDATE agent SET password=:password WHERE id = :id;');
                 $stmt->bindValue(':id', $agent["id"]);
                 $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
                 $stmt->execute();
-            }*/
+            }
         }
     }
     Router::redirect("/");
@@ -84,8 +85,8 @@ Router::route("GET", "/logout", function () {
 });
 
 Router::route_auth("GET", "/", $authFunction, function () {
-    $pdoInstance = Database::connect();
-    /*$stmt = $pdoInstance->prepare('
+    /*$pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
             SELECT * FROM customer WHERE agentid = :agentId ORDER BY id;');
     $stmt->bindValue(':agentId', $_SESSION["agentLogin"]["id"]);
     $stmt->execute();
