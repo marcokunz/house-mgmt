@@ -54,7 +54,7 @@ Router::route("POST", "/register", function () {
 });*/
 
 Router::route("POST", "/login", function () {
-    $email = $_POST["email"];
+    $email = $_POST["name"];
     $pdoInstance = Database::connect();
     echo "burri";
     $stmt = $pdoInstance->prepare('
