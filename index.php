@@ -28,12 +28,11 @@ $errorFunction = function () {
 };
 
 Router::route("GET", "/login", function () {
-    require_once("view/agentLogin.php");
+    require_once("view/userLogin.php");
 });
 
-// not using register functionality
-/*Router::route("GET", "/register", function () {
-    require_once("view/agentEdit.php");
+Router::route("GET", "/register", function () {
+    require_once("view/userEdit.php");
 });
 
 Router::route("POST", "/register", function () {
@@ -52,7 +51,7 @@ Router::route("POST", "/register", function () {
     $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
     $stmt->execute();
     Router::redirect("/logout");
-});*/
+});
 
 Router::route("POST", "/login", function () {
     $email = $_POST["email"];
@@ -67,13 +66,13 @@ Router::route("POST", "/login", function () {
             // $_SESSION["agentLogin"]["name"] = $agent["name"];
             $_SESSION["agentLogin"]["email"] = $email;
            // $_SESSION["agentLogin"]["id"] = $agent["id"];
-            /*if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
+            if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
                 $stmt = $pdoInstance->prepare('
-                UPDATE agent SET password=:password WHERE id = :id;');
+                UPDATE "User" SET password=:password WHERE id = :id;');
                 $stmt->bindValue(':id', $agent["id"]);
                 $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
                 $stmt->execute();
-            }*/
+            }
         }
     }
     Router::redirect("/");
@@ -92,15 +91,15 @@ Router::route_auth("GET", "/", $authFunction, function () {
     $stmt->execute();
     global $customers;
     $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
-    layoutSetContent("customers.php");
+    layoutSetContent("mieter.php");
 });
 
 Router::route_auth("GET", "/agent/edit", $authFunction, function () {
-    require_once("view/agentEdit.php");
+    require_once("view/userEdit.php");
 });
 
 Router::route_auth("GET", "/customer/create", $authFunction, function () {
-    layoutSetContent("customerEdit.php");
+    layoutSetContent("mieterEdit.php");
 });
 
 Router::route_auth("GET", "/customer/edit", $authFunction, function () {
@@ -112,7 +111,7 @@ Router::route_auth("GET", "/customer/edit", $authFunction, function () {
     $stmt->execute();
     global $customer;
     $customer = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-    layoutSetContent("customerEdit.php");
+    layoutSetContent("mieterEdit.php");
 });
 
 Router::route_auth("GET", "/customer/delete", $authFunction, function () {
