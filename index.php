@@ -85,12 +85,12 @@ Router::route("GET", "/logout", function () {
 
 Router::route_auth("GET", "/", $authFunction, function () {
     $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
+    /*$stmt = $pdoInstance->prepare('
             SELECT * FROM customer WHERE agentid = :agentId ORDER BY id;');
     $stmt->bindValue(':agentId', $_SESSION["agentLogin"]["id"]);
     $stmt->execute();
     global $customers;
-    $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
     layoutSetContent("customers.php");
 });
 
