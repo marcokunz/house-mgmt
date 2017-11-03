@@ -1,12 +1,12 @@
 {
-  "name": "fhnw/we-crm",
+  /*"name": "fhnw/we-crm",
   "description": "Reference Project",
   "authors": [
     {
       "name": "Andreas Martin",
       "email": "andreas.martin@andreasmartin.ch"
     }
-  ]/*,
+  ],
   "require": {
     "php": "~7.1.0"
   },
