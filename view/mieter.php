@@ -22,20 +22,21 @@ use view\View;
             </thead>
             <tbody>
             <?php
-            foreach($this->customers as $mieter): ?>
-            <tr>
-                <td><?php echo $mieter->getId(); ?> </td>
-                <td><?php echo View::noHTML($mieter->getVorname()); ?></td>
-                <td><?php echo View::noHTML($mieter->getNachname()); ?> </td>
-                <td><?php echo View::noHTML($mieter->getAdresse()); ?> </td>
-                <td><?php echo View::noHTML($mieter->getMietzins()); ?> </td>
-                <td>
-                    <div class="btn-group btn-group-sm" role="group">
-                        <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $mieter->getId(); ?>"> <i class="fa fa-edit"></i></a>
-                        <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mieter["id"] ?>"> <i class="glyphicon glyphicon-trash"></i></button>
-                    </div>
-                </td>
-            </tr>
+            global $mieter;
+            foreach($mieter as $fritz): ?>
+                <tr>
+                    <td><?php echo $fritz["id"] ?> </td>
+                    <td><?php echo $fritz["vorname"] ?></td>
+                    <td><?php echo $fritz["nachname"] ?> </td>
+                    <td><?php echo $fritz["adresse"] ?> </td>
+                    <td><?php echo $fritz["mietzins"] ?> </td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $customer["id"] ?>"> <i class="fa fa-edit"></i></a>
+                            <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $customer["id"] ?>"> <i class="glyphicon glyphicon-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
