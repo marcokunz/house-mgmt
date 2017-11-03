@@ -139,8 +139,7 @@ Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/update", $authFunction, function () {
-    if(MieterController::update())
-    /*$id = $_POST["id"];
+    $id = $_POST["id"];
     $vorname = $_POST["vorname"];
     $nachname = $_POST["nachname"];
     $adresse = $_POST ["adresse"];
@@ -168,7 +167,7 @@ Router::route_auth("POST", "/mieter/update", $authFunction, function () {
         $stmt->bindValue(':adresse', $mieter->getAdresse());
         $stmt->bindValue(':mietzins', $mieter->getMietzins());
         $stmt->execute();
-    }*/
+    }
     Router::redirect("/");
 });
 
