@@ -99,19 +99,19 @@ Router::route_auth("GET", "/agent/edit", $authFunction, function () {
 });
 
 Router::route_auth("GET", "/mieter", $authFunction, function () {
-    require_once("view/mieter.php");
+    layoutSetContent("view/mieter.php");
 });
 
 Router::route_auth("GET", "/rechnungen", $authFunction, function () {
-    require_once("view/rechnungen.php");
+    layoutSetContent("view/rechnungen.php");
 });
 
 Router::route_auth("GET", "/einnahmen", $authFunction, function () {
-    require_once("view/einnahmen.php");
+    layoutSetContent("view/einnahmen.php");
 });
 
 Router::route_auth("GET", "/dashboard", $authFunction, function () {
-    require_once("view/dashboard.php");
+    layoutSetContent("view/dashboard.php");
 });
 
 Router::route_auth("GET", "/customer/create", $authFunction, function () {
