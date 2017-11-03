@@ -6,6 +6,7 @@
  * Time: 16:59
  */
 use view\View;
+
 ?>
 <div class="container">
     <div class="page-header">
