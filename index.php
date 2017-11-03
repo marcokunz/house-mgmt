@@ -19,7 +19,7 @@ $authFunction = function () {
     }
     Router::redirect("/login");
     return false;
-    
+
 };
 
 $errorFunction = function () {
@@ -64,16 +64,16 @@ Router::route("POST", "/login", function () {
     if ($stmt->rowCount() > 0) {
         $agent = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
         if (password_verify($_POST["password"], $agent["password"])) {
-            $_SESSION["agentLogin"]["name"] = $agent["name"];
+            // $_SESSION["agentLogin"]["name"] = $agent["name"];
             $_SESSION["agentLogin"]["email"] = $email;
-            $_SESSION["agentLogin"]["id"] = $agent["id"];
-            if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
+           // $_SESSION["agentLogin"]["id"] = $agent["id"];
+            /*if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
                 $stmt = $pdoInstance->prepare('
                 UPDATE agent SET password=:password WHERE id = :id;');
                 $stmt->bindValue(':id', $agent["id"]);
                 $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
                 $stmt->execute();
-            }
+            }*/
         }
     }
     Router::redirect("/");
