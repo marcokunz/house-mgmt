@@ -139,9 +139,10 @@ Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/update", $authFunction, function () {
-    $id = $_POST["id"];
+    /*$id = $_POST["id"];
     $vorname = $_POST["vorname"];
     $nachname = $_POST["nachname"];
+    $adresse = $_POST ["adresse"];
     $mietzins = $_POST["mietzins"];
     if ($id === "") {
         $pdoInstance = Database::connect();
@@ -166,7 +167,7 @@ Router::route_auth("POST", "/mieter/update", $authFunction, function () {
         $stmt->bindValue(':adresse', $mieter->getAdresse());
         $stmt->bindValue(':mietzins', $mieter->getMietzins());
         $stmt->execute();
-    }
+    }*/
     Router::redirect("/");
 });
 
