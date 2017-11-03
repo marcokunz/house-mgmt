@@ -56,6 +56,7 @@ Router::route("POST", "/register", function () {
 Router::route("POST", "/login", function () {
     $email = $_POST["email"];
     $pdoInstance = Database::connect();
+    echo "burri";
     $stmt = $pdoInstance->prepare('
             SELECT * FROM USER WHERE NAME = :email');
     $stmt->bindValue(':email', $email);
@@ -66,13 +67,13 @@ Router::route("POST", "/login", function () {
             $_SESSION["agentLogin"]["name"] = $agent["name"];
             $_SESSION["agentLogin"]["email"] = $email;
             $_SESSION["agentLogin"]["id"] = $agent["id"];
-            if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
+            /*if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
                 $stmt = $pdoInstance->prepare('
                 UPDATE agent SET password=:password WHERE id = :id;');
                 $stmt->bindValue(':id', $agent["id"]);
                 $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
                 $stmt->execute();
-            }
+            }*/
         }
     }
     Router::redirect("/");
