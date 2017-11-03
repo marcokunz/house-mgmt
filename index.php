@@ -98,6 +98,22 @@ Router::route_auth("GET", "/agent/edit", $authFunction, function () {
     require_once("view/userEdit.php");
 });
 
+Router::route_auth("GET", "/mieter", $authFunction, function () {
+    require_once("view/mieter.php");
+});
+
+Router::route_auth("GET", "/rechnungen", $authFunction, function () {
+    require_once("view/rechnungen.php");
+});
+
+Router::route_auth("GET", "/einnahmen", $authFunction, function () {
+    require_once("view/einnahmen.php");
+});
+
+Router::route_auth("GET", "/dashboard", $authFunction, function () {
+    require_once("view/dashboard.php");
+});
+
 Router::route_auth("GET", "/customer/create", $authFunction, function () {
     layoutSetContent("mieterEdit.php");
 });
