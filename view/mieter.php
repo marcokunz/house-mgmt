@@ -6,6 +6,7 @@
  * Time: 16:59
  */
 use view\View;
+require_once("config/Autoloader.php");
 
 ?>
 <div class="container">
@@ -23,6 +24,7 @@ use view\View;
             </thead>
             <tbody>
             <?php
+
             global $mieter;
             foreach($mieter as $mieter): ?>
                 <tr>
