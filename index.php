@@ -110,10 +110,6 @@ Router::route_auth("GET", "/einnahmen", $authFunction, function () {
     layoutSetContent("view/einnahmen.php");
 });
 
-Router::route_auth("GET", "/dashboard", $authFunction, function () {
-    layoutSetContent("view/dashboard.php");
-});
-
 Router::route_auth("GET", "/customer/create", $authFunction, function () {
     layoutSetContent("mieterEdit.php");
 });
