@@ -40,10 +40,10 @@ Router::route("POST", "/register", function () {
     $email = $_POST["email"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-        INSERT INTO agent (name, email, password)
+        INSERT INTO "User" (name, email, password)
           SELECT :name,:email,:password
           WHERE NOT EXISTS (
-            SELECT email FROM agent WHERE email = :emailExist
+            SELECT email FROM USER WHERE email = :emailExist
         );');
     $stmt->bindValue(':name', $name);
     $stmt->bindValue(':email', $email);
