@@ -9,7 +9,7 @@ use view\View;
 ?>
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center">Unsere <strong>mieter</strong>.</h2></div>
+        <h2 class="text-center">Unsere <strong>Mieter</strong>.</h2></div>
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -23,13 +23,13 @@ use view\View;
             <tbody>
             <?php
             global $mieter;
-            foreach($mieter as $fritz): ?>
+            foreach($mieter as $mieter): ?>
                 <tr>
-                    <td><?php echo $fritz["id"] ?> </td>
-                    <td><?php echo $fritz["vorname"] ?></td>
-                    <td><?php echo $fritz["nachname"] ?> </td>
-                    <td><?php echo $fritz["adresse"] ?> </td>
-                    <td><?php echo $fritz["mietzins"] ?> </td>
+                    <td><?php echo $mieter["id"] ?> </td>
+                    <td><?php echo $mieter["vorname"] ?></td>
+                    <td><?php echo $mieter["nachname"] ?> </td>
+                    <td><?php echo $mieter["adresse"] ?> </td>
+                    <td><?php echo $mieter["mietzins"] ?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $customer["id"] ?>"> <i class="fa fa-edit"></i></a>
