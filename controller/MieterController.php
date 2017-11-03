@@ -8,8 +8,8 @@
 
 namespace controller;
 
-use domain\Customer;
-use validator\CustomerValidator;
+use domain\Mieter;
+use validator\MieterValidator;
 use service\houseMgmtServiceImpl;
 use view\View;
 use view\LayoutRendering;
@@ -49,7 +49,7 @@ class MieterController
             }
         }
         else{
-            $contentView = new View("customerEdit.php");
+            $contentView = new View("mieterEdit.php");
             $contentView->mieter = $mieter;
             $contentView->mieterValidator = $mieterValidator;
             LayoutRendering::basicLayout($contentView);
