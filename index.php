@@ -14,12 +14,12 @@ use database\Database;
 session_start();
 
 $authFunction = function () {
-    /*if (isset($_SESSION["agentLogin"])) {
+    if (isset($_SESSION["agentLogin"])) {
         return true;
     }
     Router::redirect("/login");
-    return false;*/
-    return true;
+    return false;
+    
 };
 
 $errorFunction = function () {
