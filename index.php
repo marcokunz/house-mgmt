@@ -91,7 +91,7 @@ Router::route_auth("GET", "/", $authFunction, function () {
     $stmt->execute();
     global $customers;
     $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
-    layoutSetContent("mieter.php");
+    layoutSetContent("dashboard.php");
 });
 
 Router::route_auth("GET", "/agent/edit", $authFunction, function () {
