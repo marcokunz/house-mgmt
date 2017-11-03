@@ -66,6 +66,7 @@ Router::route("POST", "/login", function () {
             $_SESSION["agentLogin"]["name"] = $agent["name"];
             $_SESSION["agentLogin"]["email"] = $email;
             $_SESSION["agentLogin"]["id"] = $agent["id"];
+            echo "burri";
             /*if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
                 $stmt = $pdoInstance->prepare('
                 UPDATE agent SET password=:password WHERE id = :id;');
