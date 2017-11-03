@@ -57,7 +57,7 @@ Router::route("POST", "/login", function () {
     $email = $_POST["email"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            SELECT * FROM USER WHERE email = :email');
+            SELECT * FROM "User" WHERE email = :email');
     $stmt->bindValue(':email', $email);
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
