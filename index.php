@@ -43,7 +43,7 @@ Router::route("POST", "/register", function () {
         INSERT INTO "User" (name, email, password)
           SELECT :name,:email,:password
           WHERE NOT EXISTS (
-            SELECT email FROM USER WHERE email = :emailExist
+            SELECT email FROM "User" WHERE email = :emailExist
         );');
     $stmt->bindValue(':name', $name);
     $stmt->bindValue(':email', $email);
