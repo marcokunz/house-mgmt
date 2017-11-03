@@ -14,7 +14,7 @@ use database\Database;
 session_start();
 
 $authFunction = function () {
-    if (isset($_SESSION["agentLogin"])) {
+    if (isset($_SESSION["userLogin"])) {
         return true;
     }
     Router::redirect("/login");
@@ -61,15 +61,15 @@ Router::route("POST", "/login", function () {
     $stmt->bindValue(':email', $email);
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
-        $agent = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-        if (password_verify($_POST["password"], $agent["password"])) {
-            // $_SESSION["agentLogin"]["name"] = $agent["name"];
-            $_SESSION["agentLogin"]["email"] = $email;
-           // $_SESSION["agentLogin"]["id"] = $agent["id"];
-            if (password_needs_rehash($agent["password"], PASSWORD_DEFAULT)) {
+        $user = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        if (password_verify($_POST["password"], $user["password"])) {
+            $_SESSION["userLogin"]["name"] = $user["name"];
+            $_SESSION["userLogin"]["email"] = $email;
+            $_SESSION["userLogin"]["id"] = $user["id"];
+            if (password_needs_rehash($user["password"], PASSWORD_DEFAULT)) {
                 $stmt = $pdoInstance->prepare('
                 UPDATE "User" SET password=:password WHERE id = :id;');
-                $stmt->bindValue(':id', $agent["id"]);
+                $stmt->bindValue(':id', $user["id"]);
                 $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
                 $stmt->execute();
             }
