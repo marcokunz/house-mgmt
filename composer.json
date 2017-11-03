@@ -1,5 +1,5 @@
 {
-  "name": "fhnw/we-crm",
+  /*"name": "fhnw/we-crm",
   "description": "Reference Project",
   "authors": [
     {
@@ -13,5 +13,5 @@
   "scripts": {
     //"post-install-cmd": ["cd stageT1 && composer install -o"],
     //"post-update-cmd": ["cd stageT1 && composer update -o"]
-  }
+  }*/
 }
