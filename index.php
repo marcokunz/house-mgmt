@@ -139,6 +139,7 @@ Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/update", $authFunction, function () {
+    if(MieterController::update())
     /*$id = $_POST["id"];
     $vorname = $_POST["vorname"];
     $nachname = $_POST["nachname"];

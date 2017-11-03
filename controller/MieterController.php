@@ -10,7 +10,7 @@ namespace controller;
 
 use domain\Customer;
 use validator\CustomerValidator;
-use service\WECRMServiceImpl;
+use service\houseMgmtServiceImpl;
 use view\View;
 use view\LayoutRendering;
 
@@ -23,14 +23,14 @@ class MieterController
 
     public static function readAll(){
         $contentView = new View("mieter.php");
-        $contentView->mieter = WECRMServiceImpl::getInstance()->findAllMieter();
+        $contentView->mieter = houseMgmtServiceImpl::getInstance()->findAllMieter();
         LayoutRendering::basicLayout($contentView);
     }
 
     public static function edit(){
         $id = $_GET["id"];
         $contentView = new View("mieterEdit.php");
-        $contentView->mieter = WECRMServiceImpl::getInstance()->readMieter($id);
+        $contentView->mieter = houseMgmtServiceImpl::getInstance()->readMieter($id);
         LayoutRendering::basicLayout($contentView);
     }
 
@@ -43,9 +43,9 @@ class MieterController
         $mieterValidator = new MieterValidator($mieter);
         if($mieterValidator->isValid()) {
             if ($mieter->getId() === "") {
-                WECRMServiceImpl::getInstance()->createMieter($mieter);
+                houseMgmtServiceImpl::getInstance()->createMieter($mieter);
             } else {
-                WECRMServiceImpl::getInstance()->updateMieter($mieter);
+                houseMgmtServiceImpl::getInstance()->updateMieter($mieter);
             }
         }
         else{
@@ -60,7 +60,7 @@ class MieterController
 
     public static function delete(){
         $id = $_GET["id"];
-        WECRMServiceImpl::getInstance()->deleteMieter($id);
+        houseMgmtServiceImpl::getInstance()->deleteMieter($id);
     }
 
 }
