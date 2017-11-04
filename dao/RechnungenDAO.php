@@ -9,7 +9,7 @@ use domain\Rechnungen;
  * @access public
  * @author patrick.tuescher
  */
-class RechnugenDAO extends BasicDAO {
+class RechnungenDAO extends BasicDAO {
 
     /**
      * @access public
