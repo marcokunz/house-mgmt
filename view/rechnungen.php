@@ -30,9 +30,9 @@ require_once("config/Autoloader.php");
             foreach($rechnungen as $rechnungen): ?>
 
                 <tr>
-                    <td><?php echo $rechnungen["datum"] ?></td>
-                    <td><?php echo $rechnungen["typ"] ?> </td>
-                    <td><?php echo $rechnungen["betrag"] ?> </td>
+                    <td><?php echo $rechnungen->getDatum(); ?></td>
+                    <td><?php echo $rechnungen->getTyp(); ?> </td>
+                    <td><?php echo $rechnungen->getBetrag(); ?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-default" role="button" href="rechnungen/edit?id=<?php echo $rechnungen["id"] ?>"> <i class="fa fa-edit"></i></a>
