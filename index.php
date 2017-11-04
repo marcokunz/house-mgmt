@@ -143,6 +143,8 @@ Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/update", $authFunction, function () {
+    \dao\MieterDAO::create();
+
     /*$id = $_POST["id"];
     $vorname = $_POST["vorname"];
     $nachname = $_POST["nachname"];
