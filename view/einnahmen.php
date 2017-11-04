@@ -25,7 +25,8 @@ require_once("config/Autoloader.php");
             <?php
 
             //global $mieter;
-            $einnahme = EinnahmeDAO(1);
+            $einnahme = EinnahmeDAO;
+            $einnahme = $einnahme->read(1);
             //foreach($mieter as $mieter): ?>
                 <tr>
                     <td><?php echo $einname->getDatum() ?> </td>
