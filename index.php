@@ -11,6 +11,7 @@ require_once("view/layout.php");
 use router\Router;
 use database\Database;
 use dao\RechnungenDAO;
+use dao\MieterDAO;
 
 session_start();
 
@@ -139,11 +140,11 @@ Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
         ');
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    Router::redirect("/");
+    Router::redirect("/mieter");
 });
 
 Router::route_auth("POST", "/mieter/update", $authFunction, function () {
-    \dao\MieterDAO::create();
+
 
     /*$id = $_POST["id"];
     $vorname = $_POST["vorname"];
