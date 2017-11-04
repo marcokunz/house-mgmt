@@ -10,6 +10,7 @@ require_once("view/layout.php");
 
 use router\Router;
 use database\Database;
+use dao\RechnungenDAO;
 
 session_start();
 
@@ -103,6 +104,9 @@ Router::route_auth("GET", "/mieter", $authFunction, function () {
 });
 
 Router::route_auth("GET", "/rechnungen", $authFunction, function () {
+    $rechnungenDAO = new RechnungenDAO();
+    global $rechnungen;
+    $rechnungen = $rechnungenDAO->readAll();
     layoutSetContent("view/rechnungen.php");
 });
 

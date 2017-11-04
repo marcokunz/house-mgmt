@@ -28,6 +28,7 @@ require_once("config/Autoloader.php");
 
             global $rechnungen;
             foreach($rechnungen as $rechnungen): ?>
+
                 <tr>
                     <td><?php echo $rechnungen["datum"] ?></td>
                     <td><?php echo $rechnungen["typ"] ?> </td>
