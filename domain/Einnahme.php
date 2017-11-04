@@ -4,21 +4,11 @@ namespace domain;
  * @access public
  * @author marcokunz
  */
-class Einnahmen {
-    /**
-     * @AttributeType Date
-     */
-    protected $_datum;
-    /**
-     * @AttributeType BigDecimal
-     */
-    protected $_betrag;
-    /**
-     * @AssociationType Mieter
-     * @AssociationMultiplicity 1
-     */
-    private $_mieter;
+class Einnahme {
 
+    protected $_datum; //@AttributeType Date
+    protected $_betrag;// @AttributeType BigDecimal
+    private $_mieter;
 
     /**
      * @return mixed
