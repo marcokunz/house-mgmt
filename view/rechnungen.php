@@ -40,6 +40,8 @@ require_once("config/Autoloader.php");
                     </td>
                 </tr>
             <?php endforeach; ?>
+
+
             </tbody>
         </table>
     </div>
