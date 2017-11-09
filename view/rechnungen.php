@@ -26,8 +26,9 @@ require_once("config/Autoloader.php");
             <tbody>
             <?php
 
-            global $rechnungen;
-            foreach($rechnungen as $rechnungen): ?>
+            global $rechnung;
+
+            foreach($rechnung as $rechnungen): ?>
 
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>

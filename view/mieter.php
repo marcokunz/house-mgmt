@@ -28,7 +28,7 @@ require_once("config/Autoloader.php");
             global $mieter;
             foreach($mieter as $mieter): ?>
                 <tr>
-                    <td><?php echo $mieter["id"] ?> </td>
+                    <td><?php echo $mieter. ["id"] ?> </td>
                     <td><?php echo $mieter["vorname"] ?></td>
                     <td><?php echo $mieter["nachname"] ?> </td>
                     <td><?php echo $mieter["adresse"] ?> </td>
