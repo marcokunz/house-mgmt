@@ -11,6 +11,7 @@ require_once("view/layout.php");
 use router\Router;
 use database\Database;
 use dao\RechnungenDAO;
+use domain\Rechnungen;
 use dao\MieterDAO;
 
 session_start();

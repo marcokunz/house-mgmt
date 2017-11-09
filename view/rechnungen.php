@@ -8,7 +8,6 @@
 
 use view\View;
 require_once("config/Autoloader.php");
-require_once ("domain/Rechnungen.php");
 
 ?>
 <div class="container">
