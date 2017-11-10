@@ -12,7 +12,6 @@ require_once("config/Autoloader.php");
 
 
 
-global $rechnung;
 foreach ($rechnung as $rechnungen):
 echo $rechnungen->getTyp();
 endforeach;
@@ -20,6 +19,7 @@ echo "Hallo";
 
 ?>
 
+/*
 
 
 <div class="container">
@@ -37,7 +37,6 @@ echo "Hallo";
             <tbody>
             <?php
 
-            global $rechnung;
 
             foreach($rechnung as $rechnungen): ?>
 
@@ -78,3 +77,5 @@ echo "Hallo";
         </div>
     </div>
 </div>
+
+*/
