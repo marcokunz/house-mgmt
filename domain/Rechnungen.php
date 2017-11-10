@@ -8,19 +8,19 @@ class Rechnungen {
     /**
      * @AttributeType int
      */
-    public $_id;
+    public $id;
     /**
      * @AttributeType String
      */
-    public $_typ;
+    public $typ;
     /**
      * @AttributeType String
      */
-    public $_betrag;
+    public $betrag;
     /**
      * @AttributeType Date
      */
-    public $_datum;
+    public $datum;
 
     /**
      * @return mixed
