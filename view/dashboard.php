@@ -10,7 +10,6 @@
 global $rechnung;
 
 
-foreach ($rechnung as $rechnungen):
-    echo $rechnungen->getTyp();
-endforeach;
+
+var_dump($rechnung);
 
