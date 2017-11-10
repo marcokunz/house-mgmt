@@ -8,8 +8,8 @@
 
 echo "dashboard";
 
+global $customers;
 
-foreach ($rechnung as $test):
-    echo $test->getTyp();
-endforeach;
+    echo $customers;
+
 echo "Hallo";
