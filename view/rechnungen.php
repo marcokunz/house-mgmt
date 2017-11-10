@@ -14,7 +14,9 @@ require_once("config/Autoloader.php");
 
 global $rechnung;
 foreach ($rechnung as $rechnungen):
-echo $rechnungen->getTyo();
+echo $rechnungen->getTyp();
+endforeach;
+echo "Hallo";
 
 ?>
 
