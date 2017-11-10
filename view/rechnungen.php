@@ -16,7 +16,7 @@ global $rechnung;
 
 
 foreach ($rechnung as $rechnungen):
-echo $rechnungen;
+echo $rechnungen->getTyp();
 endforeach;
 
 

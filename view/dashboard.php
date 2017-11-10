@@ -7,11 +7,10 @@
 **/
 
 
-global $customers;
+global $rechnung;
 
-foreach ($customers as $test):
 
-    echo $test;
-
+foreach ($rechnung as $rechnungen):
+    echo $rechnungen->getTyp();
 endforeach;
 
