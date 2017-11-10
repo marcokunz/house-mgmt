@@ -92,7 +92,7 @@ Router::route_auth("GET", "/", $authFunction, function () {
             SELECT * FROM mieter');
     $stmt->execute();
     global $customers;
-    $customers = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
     layoutSetContent("dashboard.php");
 });
 

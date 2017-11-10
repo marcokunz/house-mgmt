@@ -6,7 +6,6 @@
  * Time: 15:09.
 **/
 
-echo "dashboard";
 
 global $customers;
 
@@ -16,5 +15,3 @@ foreach ($customers as $test):
 
 endforeach;
 
-
-echo "Hallo";
