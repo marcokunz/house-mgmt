@@ -4,6 +4,7 @@ namespace dao;
 
 use domain\Mieter;
 use domain\Rechnungen;
+use database\Database;
 
 /**
  * @access public
