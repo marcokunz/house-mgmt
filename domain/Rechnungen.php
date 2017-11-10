@@ -58,7 +58,7 @@ class Rechnungen {
      */
     public function getTyp()
     {
-        return $this->_typ;
+        return $this->typ;
     }
 
     /**

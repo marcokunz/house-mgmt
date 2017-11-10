@@ -15,9 +15,9 @@ require_once("config/Autoloader.php");
 global $rechnung;
 
 
-//foreach ($rechnung as $rechnungen):
-//echo $rechnungen;
-//endforeach;
+foreach ($rechnung as $rechnungen):
+echo $rechnungen->getTyp();
+endforeach;
 
 var_dump($rechnung)
 
