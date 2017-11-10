@@ -6,6 +6,8 @@
  * Time: 15:09.
 **/
 
+use dao\RechnungenDAO;
+use domain\Rechnungen;
 
 global $rechnung;
 
