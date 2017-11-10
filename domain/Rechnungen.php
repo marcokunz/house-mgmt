@@ -25,7 +25,6 @@ class Rechnungen {
      * @AssociationType Kosten
      * @AssociationMultiplicity 1
      */
-    private $_kosten;
 
     /**
      * Rechnungen constructor.
