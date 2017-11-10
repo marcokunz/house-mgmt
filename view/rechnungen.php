@@ -17,7 +17,7 @@ echo $rechnungen->getTyp();
 endforeach;
 echo "Hallo";
 
-?>
+
 
 /*
 
