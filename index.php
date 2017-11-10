@@ -93,6 +93,9 @@ Router::route_auth("GET", "/", $authFunction, function () {
     $stmt->execute();
     global $customers;
     $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
+    $rechnungenDAO = new RechnungenDAO();
+    global $rechnung;
+    $rechnung = $rechnungenDAO-> readAll();
     layoutSetContent("dashboard.php");
 });
 
