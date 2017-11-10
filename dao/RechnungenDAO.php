@@ -86,7 +86,7 @@ class RechnungenDAO extends BasicDAO {
         $stmt = $pdoInstance->prepare('
             SELECT * FROM rechnungen');
         $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_COLUMN, "1");
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Rechnungen");
     }
 
 
