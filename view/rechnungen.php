@@ -13,6 +13,7 @@ require_once("config/Autoloader.php");
 
 
 global $rechnung;
+echo $rechnung;
 
 foreach ($rechnung as $rechnungen):
 echo $rechnungen;
