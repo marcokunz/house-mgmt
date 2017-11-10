@@ -9,12 +9,40 @@
 use dao\RechnungenDAO;
 use domain\Rechnungen;
 
-global $rechnung;
-
-
-
-echo $rechnung[0];
-
 ?>
 
-<iframe src="https://house-mgmt.herokuapp.com/rechnungen"></iframe>
+
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h2 class="text-center"><strong>Rechnungen</strong>.</h2></div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Typ</th>
+                <th>Betrag</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+
+            global $rechnung;
+            foreach($rechnung as $rechnungen):
+                ?>
+
+                <tr>
+                    <td><?php echo $rechnungen->getDatum(); ?></td>
+                    <td><?php echo $rechnungen->getTyp(); ?> </td>
+                    <td><?php echo $rechnungen->getBetrag(); ?> </td>
+                </tr>
+            <?php endforeach; ?>
+
+
+            </tbody>
+        </table>
+    </div>
