@@ -8,7 +8,7 @@ class Rechnungen {
     /**
      * @AttributeType int
      */
-   // public $_id;
+    public $_id;
     /**
      * @AttributeType String
      */
@@ -16,16 +16,16 @@ class Rechnungen {
     /**
      * @AttributeType String
      */
-  //  public $_betrag;
+    public $_betrag;
     /**
      * @AttributeType Date
      */
- //   public $_datum;
+    public $_datum;
     /**
      * @AssociationType Kosten
      * @AssociationMultiplicity 1
      */
-//    private $_kosten;
+    private $_kosten;
 
 
 
