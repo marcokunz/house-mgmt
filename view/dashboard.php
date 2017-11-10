@@ -17,4 +17,4 @@ echo $rechnung[0];
 
 ?>
 
-<iframe src="rechnungen.php"></iframe>
+<iframe src="mieter.php"></iframe>
