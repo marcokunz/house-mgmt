@@ -7,3 +7,9 @@
 **/
 
 echo "dashboard";
+
+
+foreach ($rechnung as $rechnungen):
+    echo $rechnungen->getTyp();
+endforeach;
+echo "Hallo";
