@@ -17,4 +17,4 @@ echo $rechnung[0];
 
 ?>
 
-<iframe src="mieter.php"></iframe>
+<iframe src="https://house-mgmt.herokuapp.com/rechnungen"></iframe>
