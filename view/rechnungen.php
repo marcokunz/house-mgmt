@@ -9,7 +9,17 @@
 use view\View;
 require_once("config/Autoloader.php");
 
+
+
+
+global $rechnung;
+foreach ($rechnung as $rechnungen):
+echo $rechnungen->getTyo();
+
 ?>
+
+
+
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Rechnungen</strong>.</h2></div>
