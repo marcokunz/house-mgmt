@@ -17,9 +17,10 @@ global $rechnung;
 
 foreach ($rechnung as $rechnungen):
 echo $rechnungen->getTyp();
+echo $rechnungen->getDatum();
 endforeach;
 
-var_dump($rechnung)
+//var_dump($rechnung)
 
 
 
