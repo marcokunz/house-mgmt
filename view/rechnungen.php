@@ -12,20 +12,20 @@ use domain\Rechnungen;
 require_once("config/Autoloader.php");
 
 
-global $rechnung;
+//global $rechnung;
 
 
-foreach ($rechnung as $rechnungen):
-echo $rechnungen->getTyp();
-echo $rechnungen->getDatum();
-endforeach;
+//foreach ($rechnung as $rechnungen):
+//echo $rechnungen->getTyp();
+//echo $rechnungen->getDatum();
+//endforeach;
 
 //var_dump($rechnung)
 
 
 
 
-/*
+?>
 
 
 <div class="container">
@@ -43,8 +43,9 @@ endforeach;
             <tbody>
             <?php
 
-
-            foreach($rechnung as $rechnungen): ?>
+            global $rechnung;
+            foreach($rechnung as $rechnungen):
+            ?>
 
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>
@@ -84,6 +85,5 @@ endforeach;
     </div>
 </div>
 
-*/
 
-?>
+
