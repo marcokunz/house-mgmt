@@ -12,7 +12,7 @@ use domain\Rechnungen;
 require_once("config/Autoloader.php");
 
 
-//global $rechnung;
+global $rechnung;
 
 
 //foreach ($rechnung as $rechnungen):
@@ -20,7 +20,7 @@ require_once("config/Autoloader.php");
 //echo $rechnungen->getDatum();
 //endforeach;
 
-//var_dump($rechnung)
+var_dump($rechnung)
 
 
 
