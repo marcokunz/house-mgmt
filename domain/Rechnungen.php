@@ -8,19 +8,19 @@ class Rechnungen {
     /**
      * @AttributeType int
      */
-    protected $_id;
+    public $_id;
     /**
      * @AttributeType String
      */
-    protected $_typ;
+    public $_typ;
     /**
      * @AttributeType String
      */
-    protected $_betrag;
+    public $_betrag;
     /**
      * @AttributeType Date
      */
-    protected $_datum;
+    public $_datum;
     /**
      * @AssociationType Kosten
      * @AssociationMultiplicity 1

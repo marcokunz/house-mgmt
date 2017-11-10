@@ -9,7 +9,7 @@
 echo "dashboard";
 
 
-foreach ($rechnung as $rechnungen):
-    echo $rechnungen->getTyp();
+foreach ($rechnung as $test):
+    echo $test->getTyp();
 endforeach;
 echo "Hallo";
