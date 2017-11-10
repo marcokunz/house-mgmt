@@ -13,7 +13,7 @@ require_once("config/Autoloader.php");
 
 
 global $rechnung;
-echo $rechnung;
+echo $rechnung[0]->getTyp();
 
 foreach ($rechnung as $rechnungen):
 echo $rechnungen;
