@@ -17,5 +17,4 @@ echo $rechnung[0];
 
 ?>
 
-<div class="modal-content" content="view\rechnungen"></div>
-
+<iframe src="rechnungen.php"></iframe>
