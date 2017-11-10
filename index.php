@@ -109,7 +109,7 @@ Router::route_auth("GET", "/rechnungen", $authFunction, function () {
     $rechnungenDAO = new RechnungenDAO();
     global $rechnung;
     $rechnung = $rechnungenDAO-> readAll();
-    layoutSetContent("view/rechnungen.php");
+    layoutSetContent("view/dashboard.php");
 });
 
 Router::route_auth("GET", "/einnahmen", $authFunction, function () {
