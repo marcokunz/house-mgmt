@@ -34,13 +34,6 @@ class Rechnungen {
      * @param $_betrag
      * @param $_datum
      */
-    public function __construct($_id, $_typ, $_betrag, $_datum)
-    {
-        $this->_id = $_id;
-        $this->_typ = $_typ;
-        $this->_betrag = $_betrag;
-        $this->_datum = $_datum;
-    }
 
 
     /**
