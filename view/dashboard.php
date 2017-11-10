@@ -13,5 +13,5 @@ global $rechnung;
 
 
 
-var_dump($rechnung);
+echo $rechnung[0];
 
