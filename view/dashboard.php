@@ -10,6 +10,11 @@ echo "dashboard";
 
 global $customers;
 
-    echo $customers;
+foreach ($customers as $test):
+
+    echo $test;
+
+endforeach;
+
 
 echo "Hallo";
