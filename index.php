@@ -151,9 +151,6 @@ Router::route_auth("GET", "/einnahmen", $authFunction, function () {
     layoutSetContent("view/einnahmen.php");
 });
 
-Router::route_auth("GET", "/mieter/create", $authFunction, function () {
-    layoutSetContent("mieterEdit.php");
-});
 
 Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
     layoutSetContent("rechnungenCreate.php");
@@ -162,65 +159,5 @@ Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
 
 
 
-
-Router::route_auth("GET", "/mieter/edit", $authFunction, function () {
-    $id = $_GET["id"];
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            SELECT * FROM mieter WHERE id = :id;');
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
-    global $mieter;
-    $mieter = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-    layoutSetContent("mieterEdit.php");
-});
-
-Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
-    $id = $_GET["id"];
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            DELETE FROM mieter
-            WHERE id = :id
-        ');
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
-    Router::redirect("/mieter");
-});
-
-Router::route_auth("POST", "/mieter/update", $authFunction, function () {
-
-
-    /*$id = $_POST["id"];
-    $vorname = $_POST["vorname"];
-    $nachname = $_POST["nachname"];
-    $adresse = $_POST ["adresse"];
-    $mietzins = $_POST["mietzins"];
-    if ($id === "") {
-        $pdoInstance = Database::connect();
-        $stmt = $pdoInstance->prepare('
-            INSERT INTO mieter (vorname, nachname, adresse, mietzins)
-            VALUES (:vorname, :nachname , :adresse, :mietzins)');
-        $stmt->bindValue(':vorname', $vorname);
-        $stmt->bindValue(':nachname', $nachname);
-        $stmt->bindValue(':adresse', $adresse);
-        $stmt->bindValue(':mietzins', $mietzins);
-        $stmt->execute();
-    } else {
-        $pdoInstance = Database::connect();
-        $stmt = $pdoInstance->prepare('
-            UPDATE mieter SET 
-                vorname = :vorname,
-                nachname = :nachname,
-                adresse = :adresse,
-                mietzins = :mietzins
-            WHERE id = :id');
-        $stmt->bindValue(':vorname', $vorname);
-        $stmt->bindValue(':nachname', $nachname);
-        $stmt->bindValue(':adresse', $adresse);
-        $stmt->bindValue(':mietzins', $mietzins);
-        $stmt->execute();
-    }*/
-    Router::redirect("/mieter");
-});
 
 Router::call_route($_SERVER['REQUEST_METHOD'], $_SERVER['PATH_INFO'], $errorFunction);
