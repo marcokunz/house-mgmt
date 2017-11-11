@@ -126,6 +126,18 @@ Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
     Router::redirect("/rechnungen");
 });
 
+Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
+    $id = $_GET["id"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            DELETE FROM rechnungen
+            WHERE id = :id
+        ');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    Router::redirect("/rechnungen");
+});
+
 Router::route_auth("GET", "/einnahmen", $authFunction, function () {
     layoutSetContent("view/einnahmen.php");
 });
