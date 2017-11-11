@@ -21,7 +21,7 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Vorname </span></div>
-                <input class="form-control" type="text" name="name" value="<?php echo !empty($mietertabelle["vorname"]) ? $mietertabelle["vorname"] : ''; ?>">
+                <input class="form-control" type="text" name="vorname" value="<?php echo !empty($mietertabelle["vorname"]) ? $mietertabelle["vorname"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
