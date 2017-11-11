@@ -93,6 +93,12 @@ Router::route("GET", "/logout", function () {
 // Dashboard
 
 Router::route_auth("GET", "/", $authFunction, function () {
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            SELECT * FROM mieter');
+    $stmt->execute();
+    global $customers;
+    $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
     layoutSetContent("dashboard.php");
 });
 
