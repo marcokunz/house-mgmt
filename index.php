@@ -123,7 +123,7 @@ Router::route_auth("POST", "/rechnungen", $authFunction, function () {
     $rechnungenDAO->create($rechnung);
 
 
-    layoutSetContent("rechnungen.php");
+    //layoutSetContent("rechnungen.php");
 });
 
 Router::route_auth("GET", "/einnahmen", $authFunction, function () {
