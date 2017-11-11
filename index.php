@@ -123,7 +123,7 @@ Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
     layoutSetContent("rechnungenEdit.php");
 });
 
-Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
+Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
     $typ = $_POST["typ"];
     $betrag = $_POST["betrag"];
     $datum = $_POST["datum"];
