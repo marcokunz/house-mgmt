@@ -38,21 +38,7 @@ Router::route("GET", "/register", function () {
     require_once("view/userEdit.php");
 });
 
-Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
-    $id = $_POST["id"];
-    $typ = $_POST["typ"];
-    $betrag = $_POST["betrag"];
-    $datum = $_POST["datum"];
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-        INSERT INTO rechnungen (id,typ, betrag, datum) SELECT :id,:typ,:betrag,:datum;');
-    $stmt->bindValue(':id', $id);
-    $stmt->bindValue(':typ', $typ);
-    $stmt->bindValue(':betrag', $betrag);
-    $stmt->bindValue(':datum', $datum);
-    $stmt->execute();
-    layoutSetContent("rechnungen.php");
-});
+
 
 Router::route("POST", "/register", function () {
     $name = $_POST["name"];
@@ -124,6 +110,19 @@ Router::route_auth("GET", "/rechnungen", $authFunction, function () {
     $rechnungenDAO = new RechnungenDAO();
     global $rechnung;
     $rechnung = $rechnungenDAO-> readAll();
+    layoutSetContent("view/rechnungen.php");
+});
+
+Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
+    $rechnung = new Rechnungen();
+    $rechnung->setId($_POST["id"]);
+    $rechnung->setTyp($_POST["typ"]);
+    $rechnung->setBetrag($_POST["betrag"]);
+    $rechnung->setDatum($_POST["datum"]);
+    $rechnungenDAO = new RechnungenDAO();
+    $rechnungenDAO->create($rechnung);
+
+
     layoutSetContent("view/rechnungen.php");
 });
 
