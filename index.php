@@ -101,7 +101,7 @@ Router::route("GET", "/logout", function () {
 Router::route_auth("GET", "/", $authFunction, function () {
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            SELECT * FROM mieter');
+            SELECT * FROM mietertabelle');
     $stmt->execute();
     global $customers;
     $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
@@ -116,7 +116,7 @@ Router::route_auth("GET", "/", $authFunction, function () {
 Router::route_auth("GET", "/mieter", $authFunction, function () {
     $mieterDAO = new MieterDAO();
     global $mieter;
-    //$mieter = $mieterDAO-> readAll();
+    $mieter = $mieterDAO-> readAll();
     layoutSetContent("view/mieter.php");
 });
 

@@ -19,7 +19,7 @@ class MieterDAO extends BasicDAO {
 	 */
 	public function create(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO mieter (vorname, nachname, adresse, mietzins)
+            INSERT INTO mietertabelle (vorname, nachname, adresse, mietzins)
             VALUES (:vorname, :nachname , :adresse, :mietzins)');
         $stmt->bindValue(':vorname', $mieter->getVorname());
         $stmt->bindValue(':nachname', $mieter->getNachname());
@@ -38,7 +38,7 @@ class MieterDAO extends BasicDAO {
 	 */
 	public function read($mieterId) {
         $stmt = $this->pdoInstance->prepare('
-            SELECT * FROM mieter WHERE id = :id;');
+            SELECT * FROM mietertabelle WHERE id = :id;');
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter")[0];
@@ -53,7 +53,7 @@ class MieterDAO extends BasicDAO {
 	 */
 	public function update(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
-            UPDATE mieter SET 
+            UPDATE mietertabelle SET 
                 vorname = :vorname,
                 nachname = :nachname,
                 adresse = :adresse,
@@ -74,7 +74,7 @@ class MieterDAO extends BasicDAO {
 	 */
 	public function delete(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
-            DELETE FROM mieter
+            DELETE FROM mietertabelle
             WHERE id = :id
         ');
         $stmt->bindValue(':id', $mieter->getId());
@@ -84,7 +84,7 @@ class MieterDAO extends BasicDAO {
     public function readAll(){
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
-            SELECT * FROM mieter');
+            SELECT * FROM mietertabelle');
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter");
         //return $stmt->fetchAll(\PDO::FETCH_COLUMN, "2");

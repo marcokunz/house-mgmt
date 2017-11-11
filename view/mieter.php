@@ -29,13 +29,13 @@ require_once("config/Autoloader.php");
             <?php
 
             global $mieter;
-            foreach($mieter as $mieter): ?>
+            foreach($mieter as $mietertabelle): ?>
                 <tr>
-                    <td><?php echo $mieter->getId();?></td>
-                    <td><?php echo $mieter->getVorname();?></td>
-                    <td><?php echo $mieter->getNachname();?> </td>
-                    <td><?php echo $mieter->getAdresse();?> </td>
-                    <td><?php echo $mieter->getMietzins();?> </td>
+                    <td><?php echo $mietertabelle->getId();?></td>
+                    <td><?php echo $mietertabelle->getVorname();?></td>
+                    <td><?php echo $mietertabelle->getNachname();?> </td>
+                    <td><?php echo $mietertabelle->getAdresse();?> </td>
+                    <td><?php echo $mietertabelle->getMietzins();?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $mieter->getId(); ?>"> <i class="fa fa-edit"></i></a>
