@@ -42,7 +42,7 @@ require_once("config/Autoloader.php");
                     <td><?php echo $rechnungen->getBetrag(); ?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <a class="btn btn-default" role="button" href="rechnungen/edit"> <i class="fa fa-edit"></i></a>
+                            <a class="btn btn-default" role="button" href="rechnungen/edit?id=<?php echo $rechnungen->getId(); ?>"> <i class="fa fa-edit"></i></a>
                             <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="rechnungen/delete?id=<?php echo $rechnungen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
                         </div>
                     </td>
