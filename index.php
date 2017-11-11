@@ -117,7 +117,7 @@ Router::route_auth("GET", "/mieter", $authFunction, function () {
     $mieterDAO = new MieterDAO();
     global $mieter;
     $mieter = $mieterDAO-> readAll();
-    layoutSetContent("view/Mieter.php");
+    layoutSetContent("view/mieter.php");
 });
 
 
