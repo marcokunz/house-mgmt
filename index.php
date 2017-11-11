@@ -147,7 +147,7 @@ Router::route_auth("GET", "/mieter/create", $authFunction, function () {
 });
 
 Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
-    layoutSetContent("rechnungenEdit.php");
+    layoutSetContent("rechnungenCreate.php");
 });
 
 
