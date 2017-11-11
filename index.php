@@ -30,6 +30,8 @@ $errorFunction = function () {
     require_once("view/404.php");
 };
 
+// Login, Logout, Register
+
 Router::route("GET", "/login", function () {
     require_once("view/userLogin.php");
 });
@@ -88,13 +90,9 @@ Router::route("GET", "/logout", function () {
     Router::redirect("/login");
 });
 
+// Dashboard
+
 Router::route_auth("GET", "/", $authFunction, function () {
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            SELECT * FROM mieter');
-    $stmt->execute();
-    global $customers;
-    $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
     layoutSetContent("dashboard.php");
 });
 
@@ -103,6 +101,9 @@ Router::route_auth("GET", "/", $authFunction, function () {
 Router::route_auth("GET", "/mieter", $authFunction, function () {
     layoutSetContent("view/mieter.php");
 });
+
+
+//Rechnungen
 
 Router::route_auth("GET", "/rechnungen", $authFunction, function () {
     $rechnungenDAO = new RechnungenDAO();
