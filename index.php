@@ -38,6 +38,22 @@ Router::route("GET", "/register", function () {
     require_once("view/userEdit.php");
 });
 
+Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
+    $id = $_POST["id"];
+    $typ = $_POST["typ"];
+    $betrag = $_POST["betrag"];
+    $datum = $_POST["datum"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+        INSERT INTO rechnungen (id,typ, betrag, datum) SELECT :id,:typ,:betrag,:datum;');
+    $stmt->bindValue(':id', $id);
+    $stmt->bindValue(':typ', $typ);
+    $stmt->bindValue(':betrag', $betrag);
+    $stmt->bindValue(':datum', $datum);
+    $stmt->execute();
+    layoutSetContent("rechnungen.php");
+});
+
 Router::route("POST", "/register", function () {
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -123,21 +139,7 @@ Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
     layoutSetContent("rechnungenEdit.php");
 });
 
-Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
-    $id = $_POST["id"];
-    $typ = $_POST["typ"];
-    $betrag = $_POST["betrag"];
-    $datum = $_POST["datum"];
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-        INSERT INTO "rechnungen" (id,typ, betrag, datum) SELECT :id,:typ,:betrag,:datum;');
-    $stmt->bindValue(':id', $id);
-    $stmt->bindValue(':typ', $typ);
-    $stmt->bindValue(':betrag', $betrag);
-    $stmt->bindValue(':datum', $datum);
-    $stmt->execute();
-    layoutSetContent("rechnungen.php");
-});
+
 
 
 
