@@ -125,13 +125,13 @@ Router::route_auth("GET", "/mieter/create", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/create", $authFunction, function () {
-    /*$mieter = new Mieter();
+    $mieter = new Mieter();
     $mieter->setId($_POST["id"]);
     $mieter->setTyp($_POST["typ"]);
     $mieter->setBetrag($_POST["betrag"]);
     $mieter->setDatum($_POST["datum"]);
     $mieterDAO = new MieterDAO();
-    $mieterDAO->create($mieter);*/
+    $mieterDAO->create($mieter);
 
     Router::redirect("/mieter");
 });
