@@ -13,6 +13,7 @@ use database\Database;
 use dao\RechnungenDAO;
 use domain\Rechnungen;
 use dao\MieterDAO;
+use domain\Mieter;
 
 session_start();
 
