@@ -136,6 +136,26 @@ Router::route_auth("POST", "/mieter/create", $authFunction, function () {
     Router::redirect("/mieter");
 });
 
+Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
+    $id = $_GET["id"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            DELETE FROM mietertabelle
+            WHERE id = :id
+        ');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    Router::redirect("/mieter");
+});
+
+Router::route_auth("GET", "/mieter/edit", $authFunction, function () {
+    $id = $_GET["id"];
+    $rechnungenDAO = new RechnungenDAO();
+    global $mietertabelle;
+    $mietertabelle = $rechnungenDAO->read($id);
+    layoutSetContent("mieterEdit.php");
+});
+
 
 
 //Rechnungen
