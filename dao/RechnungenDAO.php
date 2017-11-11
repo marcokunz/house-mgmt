@@ -56,6 +56,7 @@ class RechnungenDAO extends BasicDAO {
     public function update(Rechnungen $rechnungen) {
         $stmt = $this->pdoInstance->prepare('
              UPDATE rechnungen SET 
+                id = :id,
                 typ = :typ,
                 betrag = :betrag,
                 datum = :datum,
