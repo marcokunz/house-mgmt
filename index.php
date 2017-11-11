@@ -146,7 +146,7 @@ Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
     $stmt->bindValue(':id', $id);
     $stmt->execute();
     global $rechnungen;*/
-    layoutSetContent("rechnungenEdit");
+    layoutSetContent("rechnungenEdit.php");
 });
 
 Router::route_auth("GET", "/einnahmen", $authFunction, function () {
