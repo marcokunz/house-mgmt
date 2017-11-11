@@ -38,8 +38,8 @@ require_once("config/Autoloader.php");
                     <td><?php echo $mietertabelle->getMietzins();?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <a class="btn btn-default" role="button" href="mieter/edit"> <i class="fa fa-edit"></i></a>
-                            <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?>"> <i class="glyphicon glyphicon-trash"></i></button>
+                            <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-edit"></i></a>
+                            <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mietertabelle->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
                         </div>
                     </td>
                 </tr>
