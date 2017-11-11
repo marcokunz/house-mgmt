@@ -124,12 +124,14 @@ Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
+    $id = $_POST["id"];
     $typ = $_POST["typ"];
     $betrag = $_POST["betrag"];
     $datum = $_POST["datum"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-        INSERT INTO "rechnungen" (typ, betrag, datum) SELECT :typ,:betrag,:datum;');
+        INSERT INTO "rechnungen" (id,typ, betrag, datum) SELECT :id,:typ,:betrag,:datum;');
+    $stmt->bindValue(':id', $id);
     $stmt->bindValue(':typ', $typ);
     $stmt->bindValue(':betrag', $betrag);
     $stmt->bindValue(':datum', $datum);
