@@ -138,13 +138,9 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
 
 Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
     $id = $_GET["id"];
-    /*$id = $_GET["id"];
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            SELECT * FROM rechnungen WHERE id = :id;');
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
-    global $rechnungen;*/
+    $rechnungenDAO = new RechnungenDAO();
+    global $rechnungen;
+    $rechnungen = $rechnungenDAO->read($id);
     layoutSetContent("rechnungenEdit.php");
 });
 
