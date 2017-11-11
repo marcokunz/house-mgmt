@@ -98,9 +98,7 @@ Router::route_auth("GET", "/", $authFunction, function () {
     layoutSetContent("dashboard.php");
 });
 
-Router::route_auth("GET", "/agent/edit", $authFunction, function () {
-    require_once("view/userEdit.php");
-});
+
 
 Router::route_auth("GET", "/mieter", $authFunction, function () {
     layoutSetContent("view/mieter.php");
