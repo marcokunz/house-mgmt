@@ -113,7 +113,7 @@ Router::route_auth("GET", "/rechnungen", $authFunction, function () {
     layoutSetContent("view/rechnungen.php");
 });
 
-Router::route_auth("POST", "/rechnungen", $authFunction, function () {
+Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
     $rechnung = new Rechnungen();
     $rechnung->setId($_POST["id"]);
     $rechnung->setTyp($_POST["typ"]);
