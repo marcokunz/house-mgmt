@@ -28,7 +28,7 @@ class RechnungenDAO extends BasicDAO {
         $stmt->bindValue(':betrag', $rechnungen->getBetrag());
         $stmt->bindValue(':datum', $rechnungen->getDatum());
         $stmt->execute();
-        return $this->read($this->pdoInstance->lastInsertId());
+        //return $this->read($this->pdoInstance->lastInsertId());
     }
 
     /**
