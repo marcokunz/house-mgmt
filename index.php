@@ -87,13 +87,12 @@ Router::route("GET", "/logout", function () {
 });
 
 Router::route_auth("GET", "/", $authFunction, function () {
-    /*$pdoInstance = Database::connect();
+    $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
-            SELECT * FROM mieter WHERE agentid = :agentId ORDER BY id;');
-    $stmt->bindValue(':agentId', $_SESSION["agentLogin"]["id"]);
+            SELECT * FROM mieter');
     $stmt->execute();
     global $customers;
-    $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
+    $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
     layoutSetContent("dashboard.php");
 });
 

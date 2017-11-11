@@ -6,10 +6,9 @@
  * Time: 15:09.
 **/
 
-echo "dashboard";
+use dao\RechnungenDAO;
+use domain\Rechnungen;
+
+?>
 
 
-foreach ($rechnung as $test):
-    echo $test->getTyp();
-endforeach;
-echo "Hallo";

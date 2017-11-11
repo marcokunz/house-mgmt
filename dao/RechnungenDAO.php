@@ -81,12 +81,18 @@ class RechnungenDAO extends BasicDAO {
     }
 
 
+
+
+
     public function readAll(){
-        $stmt = $this->pdoInstance->prepare('
-            SELECT typ FROM rechnungen');
+        $pdoInstance = Database::connect();
+        $stmt = $pdoInstance->prepare('
+            SELECT * FROM rechnungen');
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Rechnungen");
+        //return $stmt->fetchAll(\PDO::FETCH_COLUMN, "2");
     }
+
 
 
 }

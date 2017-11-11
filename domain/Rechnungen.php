@@ -8,33 +8,26 @@ class Rechnungen {
     /**
      * @AttributeType int
      */
-   // public $_id;
+    public $id;
     /**
      * @AttributeType String
      */
-    public $_typ;
+    public $typ;
     /**
      * @AttributeType String
      */
-  //  public $_betrag;
+    public $betrag;
     /**
      * @AttributeType Date
      */
- //   public $_datum;
-    /**
-     * @AssociationType Kosten
-     * @AssociationMultiplicity 1
-     */
-//    private $_kosten;
-
-
+    public $datum;
 
     /**
      * @return mixed
      */
     public function getKosten()
     {
-        return $this->_kosten;
+        return $this->kosten;
     }
 
     /**
@@ -42,14 +35,14 @@ class Rechnungen {
      */
     public function setKosten($kosten)
     {
-        $this->_kosten = $kosten;
+        $this->kosten = $kosten;
     }
     /**
      * @return mixed
      */
     public function getId()
     {
-        return $this->_id;
+        return $this->id;
     }
 
     /**
@@ -57,7 +50,7 @@ class Rechnungen {
      */
     public function setId($id)
     {
-        $this->_id = $id;
+        $this->id = $id;
     }
 
     /**
@@ -65,7 +58,7 @@ class Rechnungen {
      */
     public function getTyp()
     {
-        return $this->_typ;
+        return $this->typ;
     }
 
     /**
@@ -73,7 +66,7 @@ class Rechnungen {
      */
     public function setTyp($typ)
     {
-        $this->_typ = $typ;
+        $this->typ = $typ;
     }
 
     /**
@@ -81,7 +74,7 @@ class Rechnungen {
      */
     public function getBetrag()
     {
-        return $this->_betrag;
+        return $this->betrag;
     }
 
     /**
@@ -89,7 +82,7 @@ class Rechnungen {
      */
     public function setBetrag($betrag)
     {
-        $this->_betrag = $betrag;
+        $this->betrag = $betrag;
     }
 
     /**
@@ -97,7 +90,7 @@ class Rechnungen {
      */
     public function getDatum()
     {
-        return $this->_datum;
+        return $this->datum;
     }
 
     /**
@@ -105,8 +98,12 @@ class Rechnungen {
      */
     public function setDatum($datum)
     {
-        $this->_datum = $datum;
+        $this->datum = $datum;
     }
+
+
+
+
 
 }
 ?>
