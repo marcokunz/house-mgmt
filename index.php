@@ -124,6 +124,11 @@ Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
     Router::redirect("/rechnungen");
 });
 
+Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
+    layoutSetContent("rechnungenCreate.php");
+});
+
+
 Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();
@@ -164,9 +169,7 @@ Router::route_auth("GET", "/einnahmen", $authFunction, function () {
 });
 
 
-Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
-    layoutSetContent("rechnungenCreate.php");
-});
+
 
 
 
