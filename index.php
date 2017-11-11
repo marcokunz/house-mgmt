@@ -120,6 +120,10 @@ Router::route_auth("GET", "/mieter/create", $authFunction, function () {
     layoutSetContent("mieterEdit.php");
 });
 
+Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
+    layoutSetContent("rechnungenEdit.php");
+});
+
 Router::route_auth("GET", "/mieter/edit", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();

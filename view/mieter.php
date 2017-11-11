@@ -9,6 +9,7 @@ use view\View;
 require_once("config/Autoloader.php");
 
 ?>
+
 <div class="container">
     <div class="page-header">
         <h2 class="text-center">Unsere <strong>Mieter</strong>.</h2></div>
