@@ -5,12 +5,13 @@
  * Date: 13.09.2017
  * Time: 16:59
  */
+
 use view\View;
 use dao\MieterDAO;
 use domain\Mieter;
 require_once("config/Autoloader.php");
-
 ?>
+
 
 <div class="container">
     <div class="page-header">

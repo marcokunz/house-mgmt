@@ -3,6 +3,7 @@
 namespace dao;
 
 use domain\Mieter;
+use database\Database;
 
 /**
  * @access public
