@@ -150,13 +150,13 @@ Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/rechnungen/edit", $authFunction, function () {
-    $rechnung = new Rechnungen();
+    /*$rechnung = new Rechnungen();
     $rechnung->setId($_POST["id"]);
     $rechnung->setTyp($_POST["typ"]);
     $rechnung->setBetrag($_POST["betrag"]);
     $rechnung->setDatum($_POST["datum"]);
     $rechnungenDAO = new RechnungenDAO();
-    $rechnungenDAO->update($rechnung);
+    $rechnungenDAO->update($rechnung);*/
 
 
     Router::redirect("/rechnungen");
