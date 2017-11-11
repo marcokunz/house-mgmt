@@ -12,19 +12,6 @@ use domain\Rechnungen;
 require_once("config/Autoloader.php");
 
 
-global $rechnung;
-
-
-//foreach ($rechnung as $rechnungen):
-//echo $rechnungen->getTyp();
-//echo $rechnungen->getDatum();
-//endforeach;
-
-var_dump($rechnung)
-
-
-
-
 ?>
 
 
@@ -38,6 +25,7 @@ var_dump($rechnung)
                 <th>Datum</th>
                 <th>Typ</th>
                 <th>Betrag</th>
+                <th></th>
 
             </tr>
             </thead>
@@ -52,6 +40,12 @@ var_dump($rechnung)
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
                     <td><?php echo $rechnungen->getBetrag(); ?> </td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a class="btn btn-default" role="button" href="rechnungen/update?id=<?php echo $rechnungen->getId(); ?>"> <i class="fa fa-edit"></i></a>
+                            <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="rechnungen/update?id=<?php echo $rechnungen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
+                        </div>
+                    </td>
                 </tr>
             <?php endforeach; ?>
 
