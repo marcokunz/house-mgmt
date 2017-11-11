@@ -152,10 +152,24 @@ Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
 
 Router::route_auth("GET", "/mieter/edit", $authFunction, function () {
     $id = $_GET["id"];
-    $rechnungenDAO = new RechnungenDAO();
+    $mieterDAO = new MieterDAO();
     global $mietertabelle;
-    $mietertabelle = $rechnungenDAO->read($id);
+    $mietertabelle = $mieterDAO->read($id);
     layoutSetContent("mieterEdit.php");
+});
+
+Router::route_auth("POST", "/mieter/edit", $authFunction, function () {
+    $mieter = new Mieter();
+    $mieter->setId($_POST["id"]);
+    $mieter->setVorname($_POST["vorname"]);
+    $mieter->setNachname($_POST["nachname"]);
+    $mieter->setAdresse($_POST["adresse"]);
+    $mieter->setMietzins($_POST["mietzins"]);
+    $mieterDAO = new MieterDAO();
+    $mieterDAO->create($mieter);
+
+
+    Router::redirect("/mieter");
 });
 
 
