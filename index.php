@@ -139,14 +139,14 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
 });
 
 Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
-    $id = $_GET["id"];
+    /*$id = $_GET["id"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
             SELECT * FROM rechnungen WHERE id = :id;');
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    global $rechnungen;
-    Router::redirect("/rechnungen");
+    global $rechnungen;*/
+    layoutSetContent("rechnungenEdit");
 });
 
 Router::route_auth("GET", "/einnahmen", $authFunction, function () {
