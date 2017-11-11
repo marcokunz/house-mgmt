@@ -7,29 +7,41 @@
  */
 require_once("config/Autoloader.php");
 require_once("view/layout.php");
+
 use router\Router;
 use database\Database;
 use dao\RechnungenDAO;
 use domain\Rechnungen;
 use dao\MieterDAO;
+
 session_start();
+
 $authFunction = function () {
     if (isset($_SESSION["userLogin"])) {
         return true;
     }
     Router::redirect("/login");
     return false;
+
 };
+
 $errorFunction = function () {
     Router::errorHeader();
     require_once("view/404.php");
 };
+
+// Login, Logout, Register
+
 Router::route("GET", "/login", function () {
     require_once("view/userLogin.php");
 });
+
 Router::route("GET", "/register", function () {
     require_once("view/userEdit.php");
 });
+
+
+
 Router::route("POST", "/register", function () {
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -47,6 +59,7 @@ Router::route("POST", "/register", function () {
     $stmt->execute();
     Router::redirect("/logout");
 });
+
 Router::route("POST", "/login", function () {
     $email = $_POST["email"];
     $pdoInstance = Database::connect();
@@ -71,41 +84,53 @@ Router::route("POST", "/login", function () {
     }
     Router::redirect("/");
 });
+
 Router::route("GET", "/logout", function () {
     session_destroy();
     Router::redirect("/login");
 });
+
+// Dashboard
+
 Router::route_auth("GET", "/", $authFunction, function () {
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            SELECT * FROM mieter');
-    $stmt->execute();
-    global $customers;
-    $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
     layoutSetContent("dashboard.php");
 });
+
+// Mieter
+
 Router::route_auth("GET", "/mieter", $authFunction, function () {
     layoutSetContent("view/mieter.php");
 });
+
+
+//Rechnungen
+
+
 Router::route_auth("GET", "/rechnungen", $authFunction, function () {
     $rechnungenDAO = new RechnungenDAO();
     global $rechnung;
     $rechnung = $rechnungenDAO-> readAll();
     layoutSetContent("view/rechnungen.php");
 });
+
 Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
-    $rechnung = new Rechnungen();
+    /*$rechnung = new Rechnungen();
     $rechnung->setId($_POST["id"]);
     $rechnung->setTyp($_POST["typ"]);
     $rechnung->setBetrag($_POST["betrag"]);
     $rechnung->setDatum($_POST["datum"]);
     $rechnungenDAO = new RechnungenDAO();
-    $rechnungenDAO->create($rechnung);
+    $rechnungenDAO->create($rechnung);*/
+
+
     Router::redirect("/rechnungen");
 });
+
 Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
     layoutSetContent("rechnungenCreate.php");
 });
+
+
 Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();
@@ -117,6 +142,7 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
     $stmt->execute();
     Router::redirect("/rechnungen");
 });
+
 Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
     $id = $_GET["id"];
     $rechnungenDAO = new RechnungenDAO();
@@ -124,6 +150,7 @@ Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
     $rechnungen = $rechnungenDAO->read($id);
     layoutSetContent("rechnungenEdit.php");
 });
+
 Router::route_auth("POST", "/rechnungen/edit", $authFunction, function () {
     $rechnung = new Rechnungen();
     $rechnung->setId($_POST["id"]);
@@ -132,9 +159,22 @@ Router::route_auth("POST", "/rechnungen/edit", $authFunction, function () {
     $rechnung->setDatum($_POST["datum"]);
     $rechnungenDAO = new RechnungenDAO();
     $rechnungenDAO->update($rechnung);
+
+
     Router::redirect("/rechnungen");
 });
+
+
+
 Router::route_auth("GET", "/einnahmen", $authFunction, function () {
     layoutSetContent("view/einnahmen.php");
 });
+
+
+
+
+
+
+
+
 Router::call_route($_SERVER['REQUEST_METHOD'], $_SERVER['PATH_INFO'], $errorFunction);
