@@ -113,7 +113,7 @@ Router::route_auth("GET", "/rechnungen", $authFunction, function () {
     layoutSetContent("view/rechnungen.php");
 });
 
-Router::route_auth("POST", "/rechnungen/update", $authFunction, function () {
+Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
     $rechnung = new Rechnungen();
     $rechnung->setId($_POST["id"]);
     $rechnung->setTyp($_POST["typ"]);
@@ -135,6 +135,17 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
         ');
     $stmt->bindValue(':id', $id);
     $stmt->execute();
+    Router::redirect("/rechnungen");
+});
+
+Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
+    $id = $_GET["id"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+            SELECT * FROM rechnungen WHERE id = :id;');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    global $rechnungen;
     Router::redirect("/rechnungen");
 });
 

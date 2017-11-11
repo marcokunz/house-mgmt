@@ -11,7 +11,7 @@ global $rechnungen;
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Rechnung</strong> erfassen. </h2></div>
-    <form action="update" method="post">
+    <form action="create" method="post">
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>ID </span></div>
