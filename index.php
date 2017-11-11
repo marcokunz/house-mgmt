@@ -30,6 +30,9 @@ $errorFunction = function () {
     require_once("view/404.php");
 };
 
+
+
+
 // Login, Logout, Register
 
 Router::route("GET", "/login", function () {
@@ -90,6 +93,9 @@ Router::route("GET", "/logout", function () {
     Router::redirect("/login");
 });
 
+
+
+
 // Dashboard
 
 Router::route_auth("GET", "/", $authFunction, function () {
@@ -102,6 +108,9 @@ Router::route_auth("GET", "/", $authFunction, function () {
     layoutSetContent("dashboard.php");
 });
 
+
+
+
 // Mieter
 
 Router::route_auth("GET", "/mieter", $authFunction, function () {
@@ -110,6 +119,9 @@ Router::route_auth("GET", "/mieter", $authFunction, function () {
     $mieter = $mieterDAO-> readAll();
     layoutSetContent("view/Mieter.php");*/
 });
+
+
+
 
 
 //Rechnungen
