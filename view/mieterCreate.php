@@ -5,41 +5,41 @@
  * Date: 13.09.2017
  * Time: 17:06
  */
-global $mieter;
+global $mietertabelle;
 
 ?>
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Mieter</strong> editieren. </h2></div>
-    <form action="update" method="post">
+    <form action="create" method="post">
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>ID </span></div>
-                <input class="form-control" type="text" name="id" readonly="" value="<?php echo !empty($mieter["id"]) ? $mieter["id"] : ''; ?>">
+                <input class="form-control" type="text" name="id" readonly="" value="<?php echo !empty($mietertabelle["id"]) ? $mietertabelle["id"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Vorname </span></div>
-                <input class="form-control" type="text" name="name" value="<?php echo !empty($mieter["vorname"]) ? $mieter["vorname"] : ''; ?>">
+                <input class="form-control" type="text" name="name" value="<?php echo !empty($mietertabelle["vorname"]) ? $mietertabelle["vorname"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Nachname </span></div>
-                <input class="form-control" type="text" name="nachname" value="<?php echo !empty($mieter["nachname"]) ? $mieter["nachname"] : ''; ?>">
+                <input class="form-control" type="text" name="nachname" value="<?php echo !empty($mietertabelle["nachname"]) ? $mietertabelle["nachname"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Adresse </span></div>
-                <input class="form-control" type="text" name="adresse" value="<?php echo !empty($mieter["adresse"]) ? $mieter["adresse"] : ''; ?>">
+                <input class="form-control" type="text" name="adresse" value="<?php echo !empty($mietertabelle["adresse"]) ? $mietertabelle["adresse"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mietzins </span></div>
-                <input class="form-control" type="text" name="mietzins" value="<?php echo !empty($mieter["mietzins"]) ? $mieter["mietzins"] : ''; ?>">
+                <input class="form-control" type="text" name="mietzins" value="<?php echo !empty($mietertabelle["mietzins"]) ? $mietertabelle["mietzins"] : ''; ?>">
             </div>
         </div>
         <div class="btn-group" role="group">

@@ -120,7 +120,9 @@ Router::route_auth("GET", "/mieter", $authFunction, function () {
     layoutSetContent("view/mieter.php");
 });
 
-
+Router::route_auth("GET", "/mieter/create", $authFunction, function () {
+    layoutSetContent("mieterCreate.php");
+});
 
 
 
