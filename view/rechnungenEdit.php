@@ -10,7 +10,7 @@ global $rechnungen;
 ?>
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center"><strong>Mieter</strong> editieren. </h2></div>
+        <h2 class="text-center"><strong>Rechnung</strong> editieren. </h2></div>
     <form action="update" method="post">
         <div class="form-group">
             <div class="input-group">

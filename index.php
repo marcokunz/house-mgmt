@@ -123,6 +123,22 @@ Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
     layoutSetContent("rechnungenEdit.php");
 });
 
+Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
+    $typ = $_POST["typ"];
+    $betrag = $_POST["betrag"];
+    $datum = $_POST["datum"];
+    $pdoInstance = Database::connect();
+    $stmt = $pdoInstance->prepare('
+        INSERT INTO "rechnungen" (typ, betrag, datum) SELECT :typ,:betrag,:datum;');
+    $stmt->bindValue(':typ', $typ);
+    $stmt->bindValue(':betrag', $betrag);
+    $stmt->bindValue(':datum', $datum);
+    $stmt->execute();
+    layoutSetContent("rechnungen.php");
+});
+
+
+
 Router::route_auth("GET", "/mieter/edit", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();
