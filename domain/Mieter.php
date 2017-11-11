@@ -13,11 +13,11 @@ class Mieter
 
 {
 
-    protected $id; // integer
-    protected $vorname; // varchar(255)
-    protected $nachname; // varchar(255)
-    protected $adresse; // varchar(255)
-    protected $mietzins; // integer
+    public $id; // integer
+    public $vorname; // varchar(255)
+    public $nachname; // varchar(255)
+    public $adresse; // varchar(255)
+    public $mietzins; // integer
 
 
     /**

@@ -6,6 +6,8 @@
  * Time: 16:59
  */
 use view\View;
+use dao\MieterDAO;
+use domain\Mieter;
 require_once("config/Autoloader.php");
 
 ?>
@@ -29,14 +31,14 @@ require_once("config/Autoloader.php");
             global $mieter;
             foreach($mieter as $mieter): ?>
                 <tr>
-                    <td><?php echo $mieter. ["id"] ?> </td>
-                    <td><?php echo $mieter["vorname"] ?></td>
-                    <td><?php echo $mieter["nachname"] ?> </td>
-                    <td><?php echo $mieter["adresse"] ?> </td>
-                    <td><?php echo $mieter["mietzins"] ?> </td>
+                    <td><?php echo $mieter->getId();?></td>
+                    <td><?php echo $mieter->getVorname();?></td>
+                    <td><?php echo $mieter->getNachname();?> </td>
+                    <td><?php echo $mieter->getAdresse();?> </td>
+                    <td><?php echo $mieter->getMietzins();?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $mieter["id"] ?>"> <i class="fa fa-edit"></i></a>
+                            <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $mieter->getId(); ?>"> <i class="fa fa-edit"></i></a>
                             <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mieter["id"] ?>"> <i class="glyphicon glyphicon-trash"></i></button>
                         </div>
                     </td>
