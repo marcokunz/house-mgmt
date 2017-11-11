@@ -15,7 +15,7 @@ global $rechnungen;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>ID </span></div>
-                <input class="form-control" type="text" name="id"  value="<?php echo isset($rechnungen) ? $rechnungen->getId() : ''; ?>">
+                <input class="form-control" type="text" name="id"  readonly ="" value="<?php echo isset($rechnungen) ? $rechnungen->getId() : ''; ?>">
             </div>
         </div>
         <div class="form-group">
@@ -27,13 +27,13 @@ global $rechnungen;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Betrag </span></div>
-                <input class="form-control" type="text" name="betrag" value="<?php echo isset($this->rechnungen) ? ($this->rechnungen->getBetrag()) : ''; ?>">
+                <input class="form-control" type="text" name="betrag" value="<?php echo isset($rechnungen) ? ($rechnungen->getBetrag()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Datum </span></div>
-                <input class="form-control" type="text" name="datum" value="<?php echo isset($this->rechnungen) ? ($this->rechnungen->getDatum()) : ''; ?>">
+                <input class="form-control" type="text" name="datum" value="<?php echo isset($rechnungen) ? ($rechnungen->getDatum()) : ''; ?>">
             </div>
         </div>
         <div class="btn-group" role="group">
