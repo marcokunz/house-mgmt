@@ -137,6 +137,7 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
 });
 
 Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
+    $id = $_GET["id"];
     /*$id = $_GET["id"];
     $pdoInstance = Database::connect();
     $stmt = $pdoInstance->prepare('
