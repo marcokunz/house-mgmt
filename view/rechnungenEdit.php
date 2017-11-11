@@ -10,12 +10,12 @@ global $rechnungen;
 ?>
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center"><strong>Rechnung</strong> erfassen. </h2></div>
+        <h2 class="text-center"><strong>Rechnung</strong> editieren. </h2></div>
     <form action="update" method="post">
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>ID </span></div>
-                <input class="form-control" type="text" name="id"  value="<?php echo !empty($rechnungen["id"]) ? $rechnungen["id"] : ''; ?>">
+                <input class="form-control" type="text" name="id" onload="<?php echo $rechnungen->getId();?>" value="<?php echo !empty($rechnungen["id"]) ? $rechnungen["id"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
