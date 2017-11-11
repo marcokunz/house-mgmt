@@ -155,7 +155,7 @@ Router::route_auth("POST", "/rechnungen/edit", $authFunction, function () {
     $rechnung->setTyp($_POST["typ"]);
     $rechnung->setBetrag($_POST["betrag"]);
     $rechnung->setDatum($_POST["datum"]);
-    //$rechnungenDAO = new RechnungenDAO();
+    $rechnungenDAO = new RechnungenDAO();
     //$rechnungenDAO->update($rechnung);
 
 
