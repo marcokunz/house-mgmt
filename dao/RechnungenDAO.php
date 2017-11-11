@@ -60,6 +60,7 @@ class RechnungenDAO extends BasicDAO {
                 betrag = :betrag,
                 datum = :datum,
             WHERE id = :id');
+        $stmt->bindValue(':id', $rechnungen->getId());
         $stmt->bindValue(':typ', $rechnungen->getTyp());
         $stmt->bindValue(':betrag', $rechnungen->getBetrag());
         $stmt->bindValue(':datum', $rechnungen->getDatum());
