@@ -132,7 +132,7 @@ Router::route_auth("POST", "/mieter/create", $authFunction, function () {
     $mieter->setBetrag($_POST["betrag"]);
     $mieter->setDatum($_POST["datum"]);
     $mieterDAO = new MieterDAO();
-    $mieterDAO->create($mieter);
+    //$mieterDAO->create($mieter);
 
     Router::redirect("/mieter");
 });
