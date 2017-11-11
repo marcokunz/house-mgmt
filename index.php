@@ -116,8 +116,8 @@ Router::route_auth("GET", "/", $authFunction, function () {
 Router::route_auth("GET", "/mieter", $authFunction, function () {
     /*$mieterDAO = new MieterDAO();
     global $mieter;
-    $mieter = $mieterDAO-> readAll();
-    layoutSetContent("view/Mieter.php");*/
+    $mieter = $mieterDAO-> readAll();*/
+    layoutSetContent("view/Mieter.php");
 });
 
 
@@ -141,7 +141,7 @@ Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
     $rechnung->setBetrag($_POST["betrag"]);
     $rechnung->setDatum($_POST["datum"]);
     $rechnungenDAO = new RechnungenDAO();
-    $rechnungenDAO->create($rechnung);
+    //$rechnungenDAO->create($rechnung);
 
 
     Router::redirect("/rechnungen");
