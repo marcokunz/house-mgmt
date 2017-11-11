@@ -54,9 +54,7 @@ require_once("config/Autoloader.php");
         </table>
     </div>
     <div class="btn-group" role="group">
-        <a class="btn btn-default" role="button" href="rechnungen/create"> <i class="fa fa-plus-square-o"></i></a>
-        <button class="btn btn-default" type="button"> <i class="fa fa-file-pdf-o"></i></button>
-        <button class="btn btn-default" type="button"> <i class="fa fa-envelope-o"></i></button>
+        <a class="btn btn-default" role="button" href="rechnungen/create"> <i class="fa fa-plus-square-o"></i>Rechnung erfassen</a>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
         <div class="modal-dialog modal-sm" role="document">
