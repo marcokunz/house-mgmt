@@ -81,6 +81,15 @@ class MieterDAO extends BasicDAO {
         $stmt->execute();
 	}
 
+    public function readAll(){
+        $pdoInstance = Database::connect();
+        $stmt = $pdoInstance->prepare('
+            SELECT * FROM mieter');
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter");
+        //return $stmt->fetchAll(\PDO::FETCH_COLUMN, "2");
+    }
+
 
 }
 ?>
