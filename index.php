@@ -100,12 +100,12 @@ Router::route("GET", "/logout", function () {
 // Dashboard
 
 Router::route_auth("GET", "/", $authFunction, function () {
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            SELECT * FROM mietertabelle');
-    $stmt->execute();
-    global $customers;
-    $customers = $stmt->fetchAll(PDO::FETCH_COLUMN, "2");
+    $mieterDAO = new MieterDAO();
+    global $mieter;
+    $mieter = $mieterDAO-> readAll();
+    $rechnungenDAO = new RechnungenDAO();
+    global $rechnung;
+    $rechnung = $rechnungenDAO-> readAll();
     layoutSetContent("dashboard.php");
 });
 

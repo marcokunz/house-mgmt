@@ -26,7 +26,6 @@ require_once("config/Autoloader.php");
                 <th>Datum</th>
                 <th>Typ</th>
                 <th>Betrag</th>
-                <th></th>
 
             </tr>
             </thead>
