@@ -18,7 +18,7 @@ require_once("config/Autoloader.php");
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Übersicht</strong>.</h2></div>
-    <div class="header"><h3 class="text-center">Rechnungen</h3></div>
+    <div class="header"><h3 class="text-left">Rechnungen</h3></div>
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -45,7 +45,7 @@ require_once("config/Autoloader.php");
             </tbody>
         </table>
     </div>
-        <div class="header"><h3 class="text-center">Mieter</h3></div>
+        <div class="header"><h3 class="text-left">Mieter</h3></div>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
