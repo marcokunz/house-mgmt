@@ -24,7 +24,7 @@ require_once("config/Autoloader.php");
 
         if($counter%3==0):
             ?>
-    <div class="row" style="margin:0px;padding:50px;">
+    <div class="row" style="margin:0px;padding:42px;">
 
 
     <?php endif; ?>
