@@ -1,5 +1,7 @@
 <?php
-
+use view\View;
+use dao\MieterDAO;
+use domain\Mieter;
 require('fpdf/fpdf.php');
 $pdf = new FPDF('P','mm','A4');
 $pdf->AddPage();
