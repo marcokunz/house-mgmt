@@ -81,8 +81,10 @@ class PDF extends FPDF
         $fill = false;
         foreach($data as $row)
         {
-            $this->Cell($w[$row],6,$data[$row],'LR',0,'L',$fill);
-
+            $this->Cell($w[0],6,$data[0],'LR',0,'L',$fill);
+            $this->Cell($w[1],6,$data[1],'LR',0,'L',$fill);
+            $this->Cell($w[2],6,$data[2],'LR',0,'R',$fill);
+            $this->Cell($w[3],6,$data[3],'LR',0,'R',$fill);
             $this->Ln();
             $fill = !$fill;
         }
