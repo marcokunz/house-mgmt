@@ -21,25 +21,25 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Vorname </span></div>
-                <input class="form-control" type="text" name="name" value="<?php echo !empty($mietertabelle["vorname"]) ? ($mietertabelle->getVorname()) : ''; ?>">
+                <input class="form-control" type="text" name="name" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getVorname()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Nachname </span></div>
-                <input class="form-control" type="text" name="nachname" value="<?php echo !empty($mietertabelle["nachname"]) ? ($mietertabelle->getNachname()) : ''; ?>">
+                <input class="form-control" type="text" name="nachname" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getNachname()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Adresse </span></div>
-                <input class="form-control" type="text" name="adresse" value="<?php echo !empty($mietertabelle["adresse"]) ? ($mietertabelle->getAdresse()) : ''; ?>">
+                <input class="form-control" type="text" name="adresse" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getAdresse()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mietzins </span></div>
-                <input class="form-control" type="text" name="mietzins" value="<?php echo !empty($mietertabelle["mietzins"]) ? ($mietertabelle->getMietzins()): ''; ?>">
+                <input class="form-control" type="text" name="mietzins" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getMietzins()): ''; ?>">
             </div>
         </div>
         <div class="btn-group" role="group">
