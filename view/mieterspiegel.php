@@ -21,7 +21,7 @@ class PDF extends FPDF
         // Colors, line width and bold font
         $this->SetFillColor(0,0,255);
         $this->SetTextColor(255);
-        $this->SetDrawColor(128,0,0);
+        $this->SetDrawColor(0,0,255);
         $this->SetLineWidth(.3);
         $this->SetFont('','B');
         // Header
@@ -41,7 +41,7 @@ class PDF extends FPDF
             $this->Cell($w[0],6,iconv('UTF-8', 'windows-1252',$row->getVorname()),'LR',0,'L',$fill);
             $this->Cell($w[1],6,iconv('UTF-8', 'windows-1252',$row->getNachname()),'LR',0,'L',$fill);
             $this->Cell($w[2],6,iconv('UTF-8', 'windows-1252',$row->getAdresse()),'LR',0,'L',$fill);
-            $this->Cell($w[3],6,iconv('UTF-8', 'windows-1252',number_format($row->getMietzins())),'LR',0,'L',$fill);
+            $this->Cell($w[3],6,iconv('UTF-8', 'windows-1252',number_format($row->getMietzins())),'LR',0,'R',$fill);
             $total += $row->getMietzins();
             $this->Ln();
             $fill = !$fill;
@@ -49,7 +49,7 @@ class PDF extends FPDF
         $this->Cell($w[0],6,"TOTAL",'LR',0,'L',$fill);
         $this->Cell($w[1],6,"",'LR',0,'L',$fill);
         $this->Cell($w[2],6,"",'LR',0,'L',$fill);
-        $this->Cell($w[3],6,number_format($total),'LR',0,'L',$fill);
+        $this->Cell($w[3],6,number_format($total),'LR',0,'R',$fill);
         $this->Ln();
 
         // Closing line
