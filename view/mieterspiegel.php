@@ -92,7 +92,7 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 // Column headings
-$header = array('Country', 'Capital', 'Area (sq km)', 'Pop. (thousands)');
+$header = array('Vornamen');
 // Data loading
 $data = $pdf->LoadData();
 $pdf->SetFont('Arial','',14);
