@@ -50,6 +50,8 @@ class PDF extends FPDF
         $this->Cell($w[1],6,"",'LR',0,'L',$fill);
         $this->Cell($w[2],6,"",'LR',0,'L',$fill);
         $this->Cell($w[3],6,$total,'LR',0,'L',$fill);
+        $this->Ln();
+
         // Closing line
         $this->Cell(array_sum($w),0,'','T');
     }
