@@ -53,10 +53,10 @@ class MieterDAO extends BasicDAO {
 	 * @ParamType  Mieter
 	 * @ReturnType Mieter
 	 */
-	public function update(Mieter $mieter) {
+    public function update(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
-            UPDATE mietertabelle SET
-                id = :id, 
+             UPDATE mietertabelle SET 
+                id = :id,
                 vorname = :vorname,
                 nachname = :nachname,
                 adresse = :adresse,
