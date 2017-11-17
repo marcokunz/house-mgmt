@@ -17,11 +17,12 @@ require_once("config/Autoloader.php");
 
         <?php
     global $mieter;
+        $counter = 0;
     foreach($mieter as $mietertabelle): ?>
 
         <?php
-        $counter = 0;
-        if(counter%3==0):
+
+        if($counter%3==0):
             $counter++;?>
     <div class="row" style="margin:0px;padding:50px;">
         <div class="col-md-4" style="background-color:rgba(227,221,221,0);">
