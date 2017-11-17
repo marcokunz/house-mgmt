@@ -12,7 +12,7 @@ global $mietertabelle;
     <div class="page-header">
         <h2 class="text-center"><strong>Mieter</strong> erfassen. </h2></div>
     <form action="create" method="post">
-        <div class="form-group">
+        <div class="form-group" style="display: none">
             <div class="input-group">
                 <div class="input-group-addon"><span>ID </span></div>
                 <input class="form-control" type="hidden" name="id" value="<?php echo !empty($mietertabelle["id"]) ? $mietertabelle["id"] : ''; ?>">
