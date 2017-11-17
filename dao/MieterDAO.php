@@ -60,7 +60,7 @@ class MieterDAO extends BasicDAO {
                 vorname = :vorname,
                 nachname = :nachname,
                 adresse = :adresse,
-                mietzins = :mietzins,
+                mietzins = :mietzins
             WHERE id = :id');
         $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':vorname', $mieter->getVorname());
