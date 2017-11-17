@@ -21,9 +21,9 @@ class RechnungenDAO extends BasicDAO {
      */
     public function create(Rechnungen $rechnungen) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO rechnungen (id,typ, betrag, datum)
-            VALUES (:id, :typ, :betrag, :datum)');
-        $stmt->bindValue(':id', $rechnungen->getId());
+            INSERT INTO rechnungen (typ, betrag, datum)
+            VALUES (:typ, :betrag, :datum)');
+        //$stmt->bindValue(':id', $rechnungen->getId());
         $stmt->bindValue(':typ', $rechnungen->getTyp());
         $stmt->bindValue(':betrag', $rechnungen->getBetrag());
         $stmt->bindValue(':datum', $rechnungen->getDatum());
