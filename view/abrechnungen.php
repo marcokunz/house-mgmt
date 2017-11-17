@@ -14,13 +14,13 @@ require_once("config/Autoloader.php");
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Abrechnungen</strong> erstellen.</h2></div>
-    
+
         <?php
     global $mieter;
     foreach($mieter as $mietertabelle): ?>
     <div class="row" style="margin:0px;padding:50px;">
         <div class="col-md-4" style="background-color:rgba(227,221,221,0);">
-            <h4 class="text-left"><?php echo $mietertabelle->getNachname();?></h4>
+            <h4 class="text-left"><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
