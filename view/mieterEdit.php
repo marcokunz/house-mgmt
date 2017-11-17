@@ -21,7 +21,7 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Vorname </span></div>
-                <input class="form-control" type="text" name="name" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getVorname()) : ''; ?>">
+                <input class="form-control" type="text" name="vorname" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getVorname()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
