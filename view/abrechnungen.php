@@ -18,7 +18,16 @@ require_once("config/Autoloader.php");
         <?php
     global $mieter;
     foreach($mieter as $mietertabelle): ?>
+
+        <?php
+        $counter = 0;
+        if(counter%3==0):
+            $counter++;?>
     <div class="row" style="margin:0px;padding:50px;">
+
+    <?php endif; ?>
+
+    <!--<div class="row" style="margin:0px;padding:50px;">-->
         <div class="col-md-4" style="background-color:rgba(227,221,221,0);">
             <h4 class="text-left"><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></h4>
             <div class="table-responsive">
