@@ -12,10 +12,12 @@ class PDF extends FPDF
     {
         // Read file lines
         global $mieter;
-        $data = array();
+        $data = array('Cedi');
+        /*
         foreach($mieter as $mietertabelle) {
             $data[] = $mietertabelle->getVorname();
         }
+        */
         return $data;
     }
 
