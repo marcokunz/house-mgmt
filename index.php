@@ -236,6 +236,9 @@ Router::route_auth("POST", "/rechnungen/edit", $authFunction, function () {
 
 
 Router::route_auth("GET", "/abrechnungen", $authFunction, function () {
+    $mieterDAO = new MieterDAO();
+    global $mieter;
+    $mieter = $mieterDAO-> readAll();
     layoutSetContent("view/abrechnungen.php");
 });
 
