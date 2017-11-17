@@ -159,16 +159,15 @@ Router::route_auth("GET", "/mieter/edit", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/edit", $authFunction, function () {
-    /*$mieter = new Mieter();
+    $mieter = new Mieter();
     $mieter->setId($_POST["id"]);
     $mieter->setVorname($_POST["vorname"]);
     $mieter->setNachname($_POST["nachname"]);
     $mieter->setAdresse($_POST["adresse"]);
     $mieter->setMietzins($_POST["mietzins"]);
     $mieterDAO = new MieterDAO();
-    $mieterDAO->update($mieter);
+    //$mieterDAO->update($mieter);
 
-*/
     Router::redirect("/");
 });
 
