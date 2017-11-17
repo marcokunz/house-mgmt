@@ -41,7 +41,7 @@ require_once("config/Autoloader.php");
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Heizkosten </td>
+                        <td>Heizkosten</td>
                         <td>Cell 2</td>
                     </tr>
                     <tr>

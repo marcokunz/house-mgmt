@@ -39,7 +39,7 @@ require_once("config/Autoloader.php");
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-edit"></i></a>
-                            <button class="btn type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mietertabelle->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
+                            <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mietertabelle->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
                         </div>
                     </td>
                 </tr>
