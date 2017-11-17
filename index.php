@@ -124,7 +124,7 @@ Router::route_auth("GET", "/mieter", $authFunction, function () {
 // Mieterspiegel
 
 Router::route_auth("GET", "/mieterspiegel", $authFunction, function () {
-    require_once('view/mieterspiegel.php');
+    require_once('/view/mieterspiegel.php');
 });
 
 Router::route_auth("GET", "/mieter/create", $authFunction, function () {
