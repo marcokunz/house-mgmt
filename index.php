@@ -168,7 +168,7 @@ Router::route_auth("POST", "/mieter/edit", $authFunction, function () {
     $mieterDAO = new MieterDAO();
     $mieterDAO->update($mieter);
 
-    Router::redirect("/");
+    Router::redirect("/mieter");
 });
 
 
