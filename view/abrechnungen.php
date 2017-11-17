@@ -60,8 +60,9 @@ require_once("config/Autoloader.php");
         <?php
 
         if($counter%3==0):
-        $counter++;?>
+        ?>
     </div>
         <?php endif; ?>
+        <?php $counter++;?>
     <?php endforeach; ?>
 </div>
