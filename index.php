@@ -127,7 +127,7 @@ Router::route_auth("GET", "/mieter/create", $authFunction, function () {
 
 Router::route_auth("POST", "/mieter/create", $authFunction, function () {
     $mieter = new Mieter();
-    $mieter->setId($_POST["id"]);
+    //$mieter->setId($_POST["id"]);
     $mieter->setVorname($_POST["vorname"]);
     $mieter->setNachname($_POST["nachname"]);
     $mieter->setAdresse($_POST["adresse"]);

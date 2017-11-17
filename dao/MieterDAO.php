@@ -20,9 +20,9 @@ class MieterDAO extends BasicDAO {
 	 */
 	public function create(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO mietertabelle (id, vorname, nachname, adresse, mietzins)
-            VALUES (:id, :vorname, :nachname , :adresse, :mietzins)');
-        $stmt->bindValue(':id', $mieter->getId());
+            INSERT INTO mietertabelle (vorname, nachname, adresse, mietzins)
+            VALUES (:vorname, :nachname , :adresse, :mietzins)');
+      //  $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':vorname', $mieter->getVorname());
         $stmt->bindValue(':nachname', $mieter->getNachname());
         $stmt->bindValue(':adresse', $mieter->getAdresse());
