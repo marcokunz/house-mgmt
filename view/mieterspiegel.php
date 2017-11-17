@@ -79,6 +79,9 @@ class PDF extends FPDF
         foreach($data as $row)
         {
             $this->Cell($w[0],6,$row->getVorname(),'LR',0,'L',$fill);
+            $this->Cell($w[0],6,$row->getNachname(),'LR',0,'L',$fill);
+            $this->Cell($w[0],6,$row->getAdresse(),'LR',0,'L',$fill);
+            $this->Cell($w[0],6,$row->getMietzins(),'LR',0,'L',$fill);
 
             $this->Ln();
             $fill = !$fill;
@@ -90,7 +93,7 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 // Column headings
-$header = array('Vornamen', 'Name', 'Mietzins');
+$header = array('Vornamen', 'Name','Adresse', 'Mietzins');
 // Data loading
 $data = $pdf->LoadData();
 $pdf->SetFont('Arial','',14);
