@@ -10,6 +10,12 @@ use view\View;
 use dao\MieterDAO;
 use domain\Mieter;
 require_once("config/Autoloader.php");
+require_once("fpdf/pdf.php");
+$pdf = new FPDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(40,10,'Hello World!');
+$pdf->Output();
 ?>
 
 
