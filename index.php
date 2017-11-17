@@ -166,7 +166,7 @@ Router::route_auth("POST", "/mieter/edit", $authFunction, function () {
     $mieter->setAdresse($_POST["adresse"]);
     $mieter->setMietzins($_POST["mietzins"]);
     $mieterDAO = new MieterDAO();
-    $mieterDAO->create($mieter);
+    $mieterDAO->update($mieter);
 
 
     Router::redirect("/mieter");
