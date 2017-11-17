@@ -19,13 +19,13 @@ class PDF extends FPDF
     function FancyTable($header, $data)
     {
         // Colors, line width and bold font
-        $this->SetFillColor(255,0,0);
+        $this->SetFillColor(0,0,255);
         $this->SetTextColor(255);
         $this->SetDrawColor(128,0,0);
         $this->SetLineWidth(.3);
         $this->SetFont('','B');
         // Header
-        $w = array(40, 35, 50, 20);
+        $w = array(40, 35, 60, 40);
         for($i=0;$i<count($header);$i++)
             $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
         $this->Ln();
@@ -41,7 +41,7 @@ class PDF extends FPDF
             $this->Cell($w[0],6,iconv('UTF-8', 'windows-1252',$row->getVorname()),'LR',0,'L',$fill);
             $this->Cell($w[1],6,iconv('UTF-8', 'windows-1252',$row->getNachname()),'LR',0,'L',$fill);
             $this->Cell($w[2],6,iconv('UTF-8', 'windows-1252',$row->getAdresse()),'LR',0,'L',$fill);
-            $this->Cell($w[3],6,iconv('UTF-8', 'windows-1252',$row->getMietzins()),'LR',0,'L',$fill);
+            $this->Cell($w[3],6,iconv('UTF-8', 'windows-1252',number_format($row->getMietzins())),'LR',0,'L',$fill);
             $total += $row->getMietzins();
             $this->Ln();
             $fill = !$fill;
@@ -49,7 +49,7 @@ class PDF extends FPDF
         $this->Cell($w[0],6,"TOTAL",'LR',0,'L',$fill);
         $this->Cell($w[1],6,"",'LR',0,'L',$fill);
         $this->Cell($w[2],6,"",'LR',0,'L',$fill);
-        $this->Cell($w[3],6,$total,'LR',0,'L',$fill);
+        $this->Cell($w[3],6,number_format($total),'LR',0,'L',$fill);
         $this->Ln();
 
         // Closing line
