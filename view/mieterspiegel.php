@@ -1,6 +1,6 @@
 <?php
 require('fpdf.php');
-
+echo "hello";
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
