@@ -23,7 +23,7 @@ require_once("config/Autoloader.php");
         <?php
 
         if($counter%3==0):
-            $counter++;?>
+            ?>
     <div class="row" style="margin:0px;padding:50px;">
 
 
@@ -57,6 +57,11 @@ require_once("config/Autoloader.php");
                 </table>
             </div>
         </div>
+        <?php
+
+        if($counter%3==0):
+        $counter++;?>
     </div>
+        <?php endif; ?>
     <?php endforeach; ?>
 </div>
