@@ -22,8 +22,8 @@ global $rechnungen;
             <div class="input-group">
                 <div class="input-group-addon"><span>Typ </span></div>
                 <select class="form-control" name="typ">
-                    <option value="1" <?php if ($myVar==1) echo'selected="selected"';?>>Heizkosten</option>
-                    <option value="2" <?php if ($myVar==1) echo'selected="selected"';?>>Nebenkosten</option>
+                    <option value="Heizkosten" <?php if ($myVar=="Heizkosten") echo'selected="selected"';?>>Heizkosten</option>
+                    <option value="Nebenkosten" <?php if ($myVar=="Nebenkosten") echo'selected="selected"';?>>Nebenkosten</option>
                 </select>
                 <!--<input class="form-control" type="text" name="typ" value="<?php echo !empty($rechnungen["typ"]) ? $rechnungen["typ"] : ''; ?>">-->
             </div>
