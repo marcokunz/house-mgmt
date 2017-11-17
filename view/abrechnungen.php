@@ -24,12 +24,12 @@ require_once("config/Autoloader.php");
 
         if($counter%3==0):
             ?>
-    <div class="row" style="margin:0px;padding:42px;">
+    <div class="row" style="margin:0px;padding:50px;">
 
 
     <?php endif; ?>
 
-        <div class="col-md-4" style="background-color:rgb(248,248,248);margin-right:5px;">
+        <div class="col-md-4" style="background-color:rgb(248,248,248);">
             <h4 class="text-left"><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></h4>
             <div class="table-responsive">
                 <table class="table">
