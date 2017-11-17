@@ -37,10 +37,10 @@ class PDF extends FPDF
         $fill = false;
         foreach($data as $row)
         {
-            $this->Cell($w[0],6,$row->getVorname(),'LR',0,'L',$fill);
-            $this->Cell($w[1],6,$row->getNachname(),'LR',0,'L',$fill);
-            $this->Cell($w[2],6,$row->getAdresse(),'LR',0,'L',$fill);
-            $this->Cell($w[3],6,$row->getMietzins(),'LR',0,'L',$fill);
+            $this->Cell($w[0],6,iconv('UTF-8', 'windows-1252',$row->getVorname()),'LR',0,'L',$fill);
+            $this->Cell($w[1],6,iconv('UTF-8', 'windows-1252',$row->getNachname()),'LR',0,'L',$fill);
+            $this->Cell($w[2],6,iconv('UTF-8', 'windows-1252',$row->getAdresse()),'LR',0,'L',$fill);
+            $this->Cell($w[3],6,iconv('UTF-8', 'windows-1252',$row->getMietzins()),'LR',0,'L',$fill);
 
             $this->Ln();
             $fill = !$fill;
