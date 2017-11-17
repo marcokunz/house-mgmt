@@ -12,7 +12,7 @@ class PDF extends FPDF
     {
         // Read file lines
         global $mieter;
-        $data = array('Cedi');
+        $data = array('Cedi', 'Cedi', 'Cedi', 'Cedi');
         /*
         foreach($mieter as $mietertabelle)
             $data[] = $mietertabelle->getVorname();
@@ -94,7 +94,7 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 // Column headings
-$header = array('Vornamen');
+$header = array('Vornamen', 'Namen', 'Adresse', 'Ort');
 // Data loading
 $data = $pdf->LoadData();
 $pdf->SetFont('Arial','',14);
