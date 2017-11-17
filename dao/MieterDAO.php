@@ -68,7 +68,6 @@ class MieterDAO extends BasicDAO {
         $stmt->bindValue(':adresse', $mieter->getAdresse());
         $stmt->bindValue(':mietzins', $mieter->getMietzins());
         $stmt->execute();
-        //return $this->read($mieter->getId());
 	}
 
 	/**
