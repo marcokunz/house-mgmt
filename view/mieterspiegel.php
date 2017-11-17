@@ -8,13 +8,13 @@ require('fpdf/fpdf.php');
 class PDF extends FPDF
 {
 // Load data
-    function LoadData($file)
+    function LoadData()
     {
         // Read file lines
-        $lines = file($file);
+        global $mieter;
         $data = array();
-        foreach($lines as $line)
-            $data[] = explode(';',trim($line));
+        foreach($mieter as $mietertabelle)
+            $data[] = $mietertabelle->getVorname();
         return $data;
     }
 
