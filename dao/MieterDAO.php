@@ -55,12 +55,14 @@ class MieterDAO extends BasicDAO {
 	 */
 	public function update(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
-            UPDATE mietertabelle SET 
+            UPDATE mietertabelle SET
+                id = :id, 
                 vorname = :vorname,
                 nachname = :nachname,
                 adresse = :adresse,
                 mietzins = :mietzins,
             WHERE id = :id');
+        $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':vorname', $mieter->getVorname());
         $stmt->bindValue(':nachname', $mieter->getNachname());
         $stmt->bindValue(':adresse', $mieter->getAdresse());
