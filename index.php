@@ -236,7 +236,7 @@ Router::route_auth("POST", "/rechnungen/edit", $authFunction, function () {
 
 
 
-Router::route_auth("GET", "/einnahmen", $authFunction, function () {
+Router::route_auth("GET", "/abrechnungen", $authFunction, function () {
     layoutSetContent("view/abrechnungen.php");
 });
 
