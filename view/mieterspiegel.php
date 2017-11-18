@@ -12,11 +12,12 @@ class PDF extends FPDF
     function Header()
     {
         // Arial bold 15
-        $this->SetFont('Arial','B',15);
+        $this->SetFont('Arial','B',30);
+        $this->SetFillColor(0, 0, 255);
         // Move to the right
         $this->Cell(80);
         // Title
-        $this->Cell(30,10,'Dein Mieterspiegel.',1,0,'C');
+        $this->Cell(30,10,'Dein Mieterspiegel.',0,0,'C');
         // Line break
         $this->Ln(20);
     }
