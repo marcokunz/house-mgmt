@@ -56,7 +56,7 @@ class KostenDAO extends BasicDAO{
         $mieter = $mieterDAO->readAll();
 
         $stmt = $this->pdoInstance->prepare('
-            SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND rechnungen.typ = Heizkosten LIMIT 1;');
+            SELECT sum(betrag) FROM kosten WHERE mieter_fk = :id LIMIT 1;');
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
 
