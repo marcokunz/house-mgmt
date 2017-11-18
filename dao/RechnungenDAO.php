@@ -34,9 +34,15 @@ class RechnungenDAO extends BasicDAO {
         $currentRechnung = $this->pdoInstance->lastInsertId();
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
-        $betrag = $rechnungen->getBetrag();
+        $totalgroesse = 0;
+        foreach($mieter as $mietertabelle){
+            $totalgroesse += $mietertabelle->getQuadratmeter();
+        }
         foreach($mieter as $mietertabelle){
             $kosten = new Kosten();
+            //Betrag berechnen
+            $betrag = $rechnungen->getBetrag()/$totalgroesse*$mietertabelle->getQuadratmeter();
+
             $kosten->setBetrag($betrag);
             $kosten->setRechnungen_fk($currentRechnung);
             $kosten->setMieter_fk($mietertabelle->getId());
