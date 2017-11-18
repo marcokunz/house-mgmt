@@ -39,7 +39,6 @@ class RechnungenDAO extends BasicDAO {
         $kosten->setRechnungen_fk($currentRechnung);
         $kosten->setMieter_fk($mieterDAO->read(1));
         $kostenDAO = new KostenDAO();
-        /*
         $kostenDAO->create($kosten);
         //return $this->read($this->pdoInstance->lastInsertId());*/
     }
