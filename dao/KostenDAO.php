@@ -28,8 +28,8 @@ class KostenDAO extends BasicDAO{
         //  $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':betrag', $kosten->getBetrag());
         $stmt->bindValue(':rechnungen_fk', $kosten->getRechnungen_fk());
-        $stmt->bindValue(':mieter_fk', 1);
-        //$stmt->bindValue(':mieter_fk', $kosten->getMieter_fk()->getId());
+        //$stmt->bindValue(':mieter_fk', 1);
+        $stmt->bindValue(':mieter_fk', $kosten->getMieter_fk());
 
         $stmt->execute();
         //return $this->read($this->pdoInstance->lastInsertId());
