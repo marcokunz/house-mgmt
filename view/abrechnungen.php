@@ -50,7 +50,7 @@ require_once("config/Autoloader.php");
                     </tr>
                     <tr>
                         <td> <i class="glyphicon glyphicon-file" style="font-size:20px;"></i> </td>
-                        <td> </td>
+                        <td> <a target="_blank" class="btn btn-default" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>
                     </tr>
                     </tbody>
                 </table>
