@@ -60,7 +60,7 @@ class KostenDAO extends BasicDAO{
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
 
-        return $stmt->fetch();
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Kosten")[0];
     }
 
     /**
