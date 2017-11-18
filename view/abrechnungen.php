@@ -44,7 +44,7 @@ require_once("config/Autoloader.php");
                     <tbody>
                     <tr>
                         <td>Heizkosten</td>
-                        <td><?php echo $KostenDAO->getTotalHeizkosten(1)?></td>
+                        <td><?php echo $KostenDAO->getTotalHeizkosten($mietertabelle->getId())?></td>
                     </tr>
                     <tr>
                         <td>Nebenkosten </td>
