@@ -42,7 +42,7 @@ class PDF extends FPDF
         // Header
         $w = array(40, 35, 60, 40);
         for($i=0;$i<count($header);$i++)
-            $this->Cell($w[$i],7,$header[$i],1,0,'L',true);
+            $this->Cell($w[$i],15,$header[$i],1,0,'L',true);
         $this->Ln();
         // Color and font restoration
         $this->SetFillColor(217,217,217);
