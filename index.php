@@ -205,7 +205,7 @@ Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
 
     $kosten = new Kosten();
     $kosten->setBetrag($rechnung->getBetrag());
-    $kosten->setRechnungen_fk($rechnung->getId());
+    $kosten->setRechnungen_fk(1);
     $kostenDAO = new KostenDAO();
     $kostenDAO->create($kosten);
 
