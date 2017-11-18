@@ -33,7 +33,7 @@ class RechnungenDAO extends BasicDAO {
 
         $currentRechnung = $this->pdoInstance->lastInsertId();
         $mieterDAO = new MieterDAO();
-        global $mieter;
+        $mieter = $mieterDAO->readAll();
         $betrag = $rechnungen->getBetrag();
         foreach($mieter as $mietertabelle){
             $kosten = new Kosten();
