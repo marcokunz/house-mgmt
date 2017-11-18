@@ -77,12 +77,6 @@ class RechnungenDAO extends BasicDAO {
     public function delete(Rechnungen $rechnungen) {
 
         //Dazugehörige Nebenkosten löschen
-        $stmt1 = $this->pdoInstance->prepare('
-            DELETE FROM kosten
-            WHERE id = 1
-        ');
-        //$stmt->bindValue(':id', $rechnungen->getId());
-        $stmt1->execute();
 
         //Rechnung löschen
         $stmt = $this->pdoInstance->prepare('
@@ -92,6 +86,12 @@ class RechnungenDAO extends BasicDAO {
         $stmt->bindValue(':id', $rechnungen->getId());
         $stmt->execute();
 
+        $stmt1 = $this->pdoInstance->prepare('
+            DELETE FROM kosten
+            WHERE id = 1
+        ');
+        //$stmt->bindValue(':id', $rechnungen->getId());
+        $stmt1->execute();
 
     }
 
