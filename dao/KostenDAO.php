@@ -23,11 +23,13 @@ class KostenDAO extends BasicDAO{
      */
     public function create(Kosten $kosten) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO kosten (betrag, rechnungen_fk)
-            VALUES (:betrag , :rechnungen_fk)');
+            INSERT INTO kosten (betrag, rechnungen_fk, mieter_fk)
+            VALUES (:betrag , :rechnungen_fk, :mieter_fk)');
         //  $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':betrag', $kosten->getBetrag());
         $stmt->bindValue(':rechnungen_fk', $kosten->getRechnungen_fk());
+        $stmt->bindValue(':mieter_fk', $kosten->getMieter_fk());
+
         $stmt->execute();
         //return $this->read($this->pdoInstance->lastInsertId());
     }

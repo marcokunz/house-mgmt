@@ -17,6 +17,12 @@ class Kosten {
     private $rechnungen_fk;
 
     /**
+     * @AssociationType Mieter
+     * @AssociationMultiplicity 1
+     */
+    private $mieter_fk;
+
+    /**
      * @return mixed
      */
     public function getBetrag()
@@ -46,6 +52,22 @@ class Kosten {
     public function setRechnungen_fk($rechnungen)
     {
         $this->rechnungen_fk = $rechnungen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMieter_fk()
+    {
+        return $this->mieter_fk;
+    }
+
+    /**
+     * @param mixed $rechnungen
+     */
+    public function setMieter_fk($mieter)
+    {
+        $this->mieter_fk = $mieter;
     }
 
 }
