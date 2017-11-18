@@ -56,11 +56,11 @@ class KostenDAO extends BasicDAO{
         $mieter = $mieterDAO->readAll();
 
         $stmt = $this->pdoInstance->prepare('
-            SELECT sum(betrag) FROM kosten WHERE mieter_fk = :id;');
+            SELECT sum(betrag) FROM kosten WHERE mieter_fk = :id LIMIT 1;');
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
 
-        return $stmt->fetch(PDO::FETCH_NUM)[0];
+        return $stmt->fetch();
     }
 
     /**
