@@ -33,16 +33,7 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Quadratmeter </span></div>
-                <select class="form-control" name="typ">
-                    <option value="100" <?php if ($myVar==100) echo'selected="selected"';?>>100</option>
-                    <option value="130" <?php if ($myVar==130) echo'selected="selected"';?>>130</option>
-                    <option value="80" <?php if ($myVar==80) echo'selected="selected"';?>>80</option>
-                    <option value="50" <?php if ($myVar==50) echo'selected="selected"';?>>50</option>
-                    <option value="110" <?php if ($myVar==110) echo'selected="selected"';?>>110</option>
-                    <option value="250" <?php if ($myVar==250) echo'selected="selected"';?>>250</option>
-                    <option value="75" <?php if ($myVar==75) echo'selected="selected"';?>>75</option>
-                    <option value="85" <?php if ($myVar==85) echo'selected="selected"';?>>85</option>
-                </select>
+                <input class="form-control" type="text" name="quadratmeter" value="<?php echo !empty($mietertabelle["quadratmeter"]) ? $mietertabelle["quadratmeter"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
