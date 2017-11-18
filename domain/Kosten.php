@@ -19,7 +19,7 @@ class Kosten {
      * @AssociationType Rechnungen
      * @AssociationMultiplicity 1
      */
-    private $rechnungen;
+    private $rechnungen_fk;
 
 
     /**
@@ -57,17 +57,17 @@ class Kosten {
     /**
      * @return mixed
      */
-    public function getRechnungen()
+    public function getRechnungen_fk()
     {
-        return $this->rechnungen;
+        return $this->rechnungen_fk;
     }
 
     /**
      * @param mixed $rechnungen
      */
-    public function setRechnungen($rechnungen)
+    public function setRechnungen_fk($rechnungen)
     {
-        $this->rechnungen = $rechnungen;
+        $this->rechnungen_fk = $rechnungen;
     }
 
 }

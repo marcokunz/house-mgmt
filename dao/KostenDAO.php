@@ -21,15 +21,14 @@ class KostenDAO extends BasicDAO{
      * @ParamType kosten Kosten
      * @ReturnType Kosten
      */
-    public function create(Mieter $mieter) {
+    public function create(Kosten $kosten) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO mietertabelle (vorname, nachname, adresse, mietzins)
-            VALUES (:vorname, :nachname , :adresse, :mietzins)');
+            INSERT INTO kosten (id, betrag, rechnungen_fk)
+            VALUES (:id, :betrag , :rechnungen_fk)');
         //  $stmt->bindValue(':id', $mieter->getId());
-        $stmt->bindValue(':vorname', $mieter->getVorname());
-        $stmt->bindValue(':nachname', $mieter->getNachname());
-        $stmt->bindValue(':adresse', $mieter->getAdresse());
-        $stmt->bindValue(':mietzins', $mieter->getMietzins());
+        $stmt->bindValue(':id', $kosten->getId());
+        $stmt->bindValue(':betrag', $kosten->getBetrag());
+        $stmt->bindValue(':rechnungen_fk', $kosten->getRechnungen_fk());
         $stmt->execute();
         //return $this->read($this->pdoInstance->lastInsertId());
     }

@@ -218,6 +218,13 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
         ');
     $stmt->bindValue(':id', $id);
     $stmt->execute();
+
+    $stmt = $pdoInstance->prepare('
+            DELETE FROM kosten
+            WHERE rechnungen_fk = :id
+        ');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
     Router::redirect("/rechnungen");
 });
 
