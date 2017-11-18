@@ -58,12 +58,15 @@ class PDF extends FPDF
 }
 
 $pdf = new PDF();
+//Titel
+$pdf->Cell(40, 10, "Dein Mieterspiegel.");
 // Column headings
 $header = array('Vornamen', 'Name','Adresse', 'Mietzins');
 // Data loading
 $data = $pdf->LoadData();
 $pdf->SetFont('Arial','',14);
 $pdf->AddPage();
+
 $pdf->FancyTable($header,$data);
 $pdf->Output();
 ?>
