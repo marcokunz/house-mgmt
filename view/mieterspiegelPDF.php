@@ -14,7 +14,7 @@ class PDF extends FPDF
         // Arial bold 15
         $this->SetFont('Helvetica','',30);
         // Move to the right
-        $this->Cell(80);
+        $this->Cell(50);
         // Title
         $this->Cell(10,10,'Dein',0,0,'C');
         $this->SetFont('Helvetica','B',30);
