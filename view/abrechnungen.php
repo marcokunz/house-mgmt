@@ -49,7 +49,7 @@ require_once("config/Autoloader.php");
                         <td>Cell 4</td>
                     </tr>
                     <tr>
-                        <td> <i class="glyphicon glyphicon-file" style="font-size:20px;"></i> </td>
+                        <td> <i class="a fa-file-pdf-o" style="font-size:20px;"></i> </td>
                         <td> </td>
                     </tr>
                     </tbody>
