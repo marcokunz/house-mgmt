@@ -220,6 +220,7 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
         ');
     $stmt->bindValue(':id', $id);
     $stmt->execute();
+    Router::redirect("/rechnungen");
 });
 
 Router::route_auth("GET", "/rechnungen/edit", $authFunction, function () {
