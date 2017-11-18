@@ -10,16 +10,16 @@ class Kosten {
     /**
      * @AttributeType String
      */
-    protected $_typ;
+    protected $typ;
     /**
      * @AttributeType int
      */
-    protected $_betrag;
+    protected $betrag;
     /**
      * @AssociationType Rechnungen
      * @AssociationMultiplicity 1
      */
-    private $_rechnungen;
+    private $rechnungen;
 
 
     /**
@@ -27,7 +27,7 @@ class Kosten {
      */
     public function getTyp()
     {
-        return $this->_typ;
+        return $this->typ;
     }
 
     /**
@@ -35,7 +35,7 @@ class Kosten {
      */
     public function setTyp($typ)
     {
-        $this->_typ = $typ;
+        $this->typ = $typ;
     }
 
     /**
@@ -43,7 +43,7 @@ class Kosten {
      */
     public function getBetrag()
     {
-        return $this->_betrag;
+        return $this->betrag;
     }
 
     /**
@@ -51,7 +51,7 @@ class Kosten {
      */
     public function setBetrag($betrag)
     {
-        $this->_betrag = $betrag;
+        $this->betrag = $betrag;
     }
 
     /**
@@ -59,7 +59,7 @@ class Kosten {
      */
     public function getRechnungen()
     {
-        return $this->_rechnungen;
+        return $this->rechnungen;
     }
 
     /**
@@ -67,7 +67,7 @@ class Kosten {
      */
     public function setRechnungen($rechnungen)
     {
-        $this->_rechnungen = $rechnungen;
+        $this->rechnungen = $rechnungen;
     }
 
 }

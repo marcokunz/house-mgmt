@@ -81,6 +81,14 @@ class RechnungenDAO extends BasicDAO {
         ');
         $stmt->bindValue(':id', $rechnungen->getId());
         $stmt->execute();
+
+        //Delete from Kosten
+        $stmt = $this->pdoInstance->prepare('
+            DELETE FROM kosten
+            WHERE rechnungen_fk = :id
+        ');
+        $stmt->bindValue(':id', $rechnungen->getId());
+        $stmt->execute();
     }
 
 
