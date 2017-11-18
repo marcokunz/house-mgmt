@@ -33,7 +33,7 @@ class RechnungenDAO extends BasicDAO {
         //$currentRechnung = $this->pdoInstance->lastInsertId();
 
 
-        /*$kosten = new Kosten();
+        $kosten = new Kosten();
         $kosten->setBetrag($rechnungen->getBetrag());
         $kosten->setRechnungen_fk($this->pdoInstance->lastInsertId());
         $kosten->setMieter_fk(3);
