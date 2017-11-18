@@ -13,7 +13,7 @@ class PDF extends FPDF
     {
         // Arial bold 15
         $this->SetFont('Arial','',30);
-        $this->SetTextColor(255);
+        //$this->SetTextColor(255);
         // Move to the right
         $this->Cell(80);
         // Title
