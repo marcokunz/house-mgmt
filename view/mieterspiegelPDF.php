@@ -34,9 +34,9 @@ class PDF extends FPDF
     function FancyTable($header, $data)
     {
         // Colors, line width and bold font
-        $this->SetFillColor(255);
+        $this->SetFillColor();
         $this->SetTextColor(255);
-        $this->SetDrawColor(255);
+        $this->SetDrawColor();
         $this->SetLineWidth(.3);
         $this->SetFont('Helvetica','B');
         // Header
