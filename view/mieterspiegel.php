@@ -7,6 +7,19 @@ require('fpdf/fpdf.php');
 
 class PDF extends FPDF
 {
+
+    // Page header
+    function Header()
+    {
+        // Arial bold 15
+        $this->SetFont('Arial','B',15);
+        // Move to the right
+        $this->Cell(80);
+        // Title
+        $this->Cell(30,10,'Dein Mieterspiegel.',1,0,'C');
+        // Line break
+        $this->Ln(20);
+    }
 // Load data
     function LoadData()
     {
@@ -64,7 +77,6 @@ $header = array('Vornamen', 'Name','Adresse', 'Mietzins');
 $data = $pdf->LoadData();
 $pdf->SetFont('Arial','',14);
 $pdf->AddPage();
-$pdf->Cell(40, 10, "Dein Mieterspiegel.");
 $pdf->Ln();
 $pdf->FancyTable($header,$data);
 $pdf->Output();
