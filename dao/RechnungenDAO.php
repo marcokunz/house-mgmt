@@ -6,6 +6,7 @@ use domain\Mieter;
 use domain\Rechnungen;
 use domain\Kosten;
 use database\Database;
+use dao\MieterDAO;
 
 /**
  * @access public
@@ -30,13 +31,12 @@ class RechnungenDAO extends BasicDAO {
         $stmt->bindValue(':datum', $rechnungen->getDatum());
         $stmt->execute();
 
-        //$currentRechnung = $this->pdoInstance->lastInsertId();
-
-
+        $mieterDAO = new MieterDAO();
+        $currentRechnung = $this->pdoInstance->lastInsertId();
         $kosten = new Kosten();
         $kosten->setBetrag($rechnungen->getBetrag());
-        $kosten->setRechnungen_fk($this->pdoInstance->lastInsertId());
-        $kosten->setMieter_fk(3);
+        $kosten->setRechnungen_fk($currentRechnung);
+        $kosten->setMieter_fk($mieterDAO->read(1));
         $kostenDAO = new KostenDAO();
         $kostenDAO->create($kosten);
         //return $this->read($this->pdoInstance->lastInsertId());*/
