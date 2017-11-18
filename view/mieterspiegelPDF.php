@@ -16,7 +16,7 @@ class PDF extends FPDF
         // Move to the right
         $this->Cell(80);
         // Title
-        $this->Cell(30,10,'Dein',0,0,'C');
+        $this->Cell(10,10,'Dein',0,0,'C');
         $this->SetFont('Helvetica','B',30);
         $this->Cell(50,10,'Mieterspiegel.',0,0,'C');
         // Line break
@@ -38,7 +38,7 @@ class PDF extends FPDF
         $this->SetTextColor(255);
         $this->SetDrawColor(0,0,255);
         $this->SetLineWidth(.3);
-        $this->SetFont('','B');
+        $this->SetFont('Helvetica','B');
         // Header
         $w = array(40, 35, 60, 40);
         for($i=0;$i<count($header);$i++)
@@ -47,7 +47,7 @@ class PDF extends FPDF
         // Color and font restoration
         $this->SetFillColor(224,235,255);
         $this->SetTextColor(0);
-        $this->SetFont('');
+        $this->SetFont('Helvetica');
         // Data
         $fill = false;
         $total = 0;
