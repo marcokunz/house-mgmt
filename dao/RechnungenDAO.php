@@ -98,6 +98,9 @@ class RechnungenDAO extends BasicDAO {
         $stmt->bindValue(':id', $rechnungen->getId());
         $stmt->execute();
 
+        //Kosten müssen gelöscht werden, sonst gibt's einen DB-Fehler
+
+
     }
 
 
