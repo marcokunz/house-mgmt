@@ -86,7 +86,7 @@ class RechnungenDAO extends BasicDAO {
         //Dazugehörige Nebenkosten löschen
         $stmt1 = $this->pdoInstance->prepare('
             DELETE FROM kosten
-            WHERE rechnungen_fk = 13
+            WHERE id = 1
         ');
         //$stmt->bindValue(':id', $rechnungen->getId());
         $stmt1->execute();
