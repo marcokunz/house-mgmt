@@ -11,6 +11,8 @@ require_once("view/layout.php");
 use router\Router;
 use database\Database;
 use dao\RechnungenDAO;
+use dao\KostenDAO;
+use domain\Kosten;
 use domain\Rechnungen;
 use dao\MieterDAO;
 use domain\Mieter;
@@ -200,6 +202,12 @@ Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
     $rechnung->setDatum($_POST["datum"]);
     $rechnungenDAO = new RechnungenDAO();
     $rechnungenDAO->create($rechnung);
+
+    $kosten = new Kosten();
+    $kosten->setBetrag($rechnung->getBetrag());
+    $kosten->setRechnungen_fk($rechnung->getId());
+    $kostenDAO = new KostenDAO();
+    $kostenDAO->create($kosten);
 
     Router::redirect("/rechnungen");
 });
