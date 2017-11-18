@@ -20,12 +20,12 @@ class MieterDAO extends BasicDAO {
 	 */
 	public function create(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO mietertabelle (vorname, nachname, adresse, mietzins)
-            VALUES (:vorname, :nachname , :adresse, :mietzins)');
+            INSERT INTO mietertabelle (vorname, nachname, quadratmeter, mietzins)
+            VALUES (:vorname, :nachname , :quadratmeter, :mietzins)');
       //  $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':vorname', $mieter->getVorname());
         $stmt->bindValue(':nachname', $mieter->getNachname());
-        $stmt->bindValue(':adresse', $mieter->getAdresse());
+        $stmt->bindValue(':quadratmeter', $mieter->getQuadratmeter());
         $stmt->bindValue(':mietzins', $mieter->getMietzins());
         $stmt->execute();
         //return $this->read($this->pdoInstance->lastInsertId());
@@ -59,13 +59,13 @@ class MieterDAO extends BasicDAO {
                 id = :id,
                 vorname = :vorname,
                 nachname = :nachname,
-                adresse = :adresse,
+                quadratmeter = :quadratmeter,
                 mietzins = :mietzins
             WHERE id = :id');
         $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':vorname', $mieter->getVorname());
         $stmt->bindValue(':nachname', $mieter->getNachname());
-        $stmt->bindValue(':adresse', $mieter->getAdresse());
+        $stmt->bindValue(':quadratmeter', $mieter->getQuadratmeter());
         $stmt->bindValue(':mietzins', $mieter->getMietzins());
         $stmt->execute();
 	}

@@ -13,11 +13,11 @@ class Mieter
 
 {
 
-    public $id; // integer
-    public $vorname; // varchar(255)
-    public $nachname; // varchar(255)
-    public $adresse; // varchar(255)
-    public $mietzins; // integer
+    private $id; // integer
+    private $vorname; // varchar(255)
+    private $nachname; // varchar(255)
+    private $quadratmeter; // integer
+    private $mietzins; // integer
 
 
     /**
@@ -71,17 +71,17 @@ class Mieter
     /**
      * @return mixed
      */
-    public function getAdresse()
+    public function getQuadratmeter()
     {
-        return $this->adresse;
+        return $this->quadratmeter;
     }
 
     /**
-     * @param mixed $adresse
+     * @param mixed $quadratmeter
      */
-    public function setAdresse($adresse)
+    public function setQuadratmeter($quadratmeter)
     {
-        $this->adresse = $adresse;
+        $this->quadratmeter = $quadratmeter;
     }
 
     /**

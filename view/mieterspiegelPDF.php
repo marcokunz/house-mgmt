@@ -55,7 +55,7 @@ class PDF extends FPDF
         {
             $this->Cell($w[0],6,iconv('UTF-8', 'windows-1252',$row->getVorname()),'LR',0,'L',$fill);
             $this->Cell($w[1],6,iconv('UTF-8', 'windows-1252',$row->getNachname()),'LR',0,'L',$fill);
-            $this->Cell($w[2],6,iconv('UTF-8', 'windows-1252',$row->getAdresse()),'LR',0,'L',$fill);
+            $this->Cell($w[2],6,iconv('UTF-8', 'windows-1252',$row->getQuadratmeter()),'LR',0,'L',$fill);
             $this->Cell($w[3],6,iconv('UTF-8', 'windows-1252',number_format($row->getMietzins())),'LR',0,'R',$fill);
             $total += $row->getMietzins();
             $this->Ln();
@@ -74,7 +74,7 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 // Column headings
-$header = array('Vornamen', 'Name','Adresse', 'Mietzins');
+$header = array('Vornamen', 'Name','Quadratmeter', 'Mietzins');
 // Data loading
 $data = $pdf->LoadData();
 $pdf->SetFont('Arial','',14);

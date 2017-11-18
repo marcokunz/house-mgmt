@@ -52,7 +52,7 @@ require_once("config/Autoloader.php");
                     <tr>
                         <th>Vorname </th>
                         <th>Nachname </th>
-                        <th>Adresse </th>
+                        <th>Quadratmeter</th>
                         <th>Mietzins </th>
                     </tr>
                     </thead>
@@ -65,7 +65,7 @@ require_once("config/Autoloader.php");
                         <tr>
                             <td><?php echo $mietertabelle->getVorname();?></td>
                             <td><?php echo $mietertabelle->getNachname();?> </td>
-                            <td><?php echo $mietertabelle->getAdresse();?> </td>
+                            <td><?php echo $mietertabelle->getQuadratmeter();?> </td>
                             <td><?php echo $mietertabelle->getMietzins();?> </td>
                         </tr>
                     <?php endforeach; ?>
