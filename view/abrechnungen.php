@@ -7,6 +7,7 @@
  */
 use view\View;
 use dao\MieterDAO;
+use dao\KostenDAO;
 use domain\Mieter;
 require_once("config/Autoloader.php");
 
@@ -18,9 +19,10 @@ require_once("config/Autoloader.php");
         <?php
     global $mieter;
         $counter = 0;
-    foreach($mieter as $mietertabelle): ?>
+        $KostenDAO = new KostenDAO();
+    foreach($mieter as $mietertabelle):
 
-        <?php
+
 
         if($counter%3==0):
             ?>
@@ -42,7 +44,7 @@ require_once("config/Autoloader.php");
                     <tbody>
                     <tr>
                         <td>Heizkosten</td>
-                        <td>Cell 2</td>
+                        <td>$KostenDAO->getTotalHeizkosten($mietertabelle->getId())</td>
                     </tr>
                     <tr>
                         <td>Nebenkosten </td>

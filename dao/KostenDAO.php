@@ -10,7 +10,7 @@ namespace dao;
 
 use database\Database;
 use domain\Kosten;
-
+use dao\MieterDAO;
 
 class KostenDAO extends BasicDAO{
 
@@ -45,6 +45,17 @@ class KostenDAO extends BasicDAO{
     public function read($mieterId) {
         $stmt = $this->pdoInstance->prepare('
             SELECT * FROM mietertabelle WHERE id = :id;');
+        $stmt->bindValue(':id', $mieterId);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter")[0];
+    }
+    public function getTotalHeizkosten($mieterId) {
+        $totalbetrag = 0;
+        $mieterDAO = new MieterDAO();
+        $mieter = $mieterDAO->readAll();
+
+        $stmt = $this->pdoInstance->prepare('
+            SELECT sum(betrag) FROM kosten WHERE mieter_fk = :id;');
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter")[0];
