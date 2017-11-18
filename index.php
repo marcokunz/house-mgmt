@@ -127,7 +127,7 @@ Router::route_auth("GET", "/mieterspiegel", $authFunction, function () {
     $mieterDAO = new MieterDAO();
     global $mieter;
     $mieter = $mieterDAO-> readAll();
-    require_once('view/mieterspiegel.php');
+    require_once('view/mieterspiegelPDF.php');
 });
 
 Router::route_auth("GET", "/mieter/create", $authFunction, function () {

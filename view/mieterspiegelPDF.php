@@ -21,7 +21,7 @@ class PDF extends FPDF
         // Line break
         $this->Ln(20);
     }
-// Load data
+// Daten übergeben
     function LoadData()
     {
         global $mieter;
@@ -81,6 +81,4 @@ $pdf->AddPage();
 $pdf->Ln();
 $pdf->FancyTable($header,$data);
 $pdf->Output();
-?>
-
 ?>
