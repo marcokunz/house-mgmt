@@ -36,16 +36,16 @@ class PDF extends FPDF
         // Colors, line width and bold font
         $this->SetFillColor(0);
         $this->SetTextColor(255);
-        $this->SetDrawColor(0);
+        $this->SetDrawColor(255);
         $this->SetLineWidth(.3);
         $this->SetFont('Helvetica','B');
         // Header
         $w = array(40, 35, 60, 40);
         for($i=0;$i<count($header);$i++)
-            $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
+            $this->Cell($w[$i],7,$header[$i],1,0,'L',true);
         $this->Ln();
         // Color and font restoration
-        $this->SetFillColor(224,235,255);
+        $this->SetFillColor(217,217,217);
         $this->SetTextColor(0);
         $this->SetFont('Helvetica');
         // Data
