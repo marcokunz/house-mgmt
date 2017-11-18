@@ -203,11 +203,11 @@ Router::route_auth("POST", "/rechnungen/create", $authFunction, function () {
     $rechnungenDAO = new RechnungenDAO();
     $rechnungenDAO->create($rechnung);
 
-    $kosten = new Kosten();
+    /*$kosten = new Kosten();
     $kosten->setBetrag($rechnung->getBetrag());
     $kosten->setRechnungen_fk(1);
     $kostenDAO = new KostenDAO();
-    $kostenDAO->create($kosten);
+    $kostenDAO->create($kosten);*/
 
     Router::redirect("/rechnungen");
 });
