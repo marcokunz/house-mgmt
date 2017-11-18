@@ -6,11 +6,6 @@ namespace domain;
  */
 class Kosten {
 
-
-    /**
-     * @AttributeType String
-     */
-    protected $typ;
     /**
      * @AttributeType int
      */
@@ -20,23 +15,6 @@ class Kosten {
      * @AssociationMultiplicity 1
      */
     private $rechnungen_fk;
-
-
-    /**
-     * @return mixed
-     */
-    public function getTyp()
-    {
-        return $this->typ;
-    }
-
-    /**
-     * @param mixed $typ
-     */
-    public function setTyp($typ)
-    {
-        $this->typ = $typ;
-    }
 
     /**
      * @return mixed

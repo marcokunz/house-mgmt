@@ -31,7 +31,6 @@ class RechnungenDAO extends BasicDAO {
         //return $this->read($this->pdoInstance->lastInsertId());
 
         $kosten = new Kosten();
-        $kosten->setTyp($rechnungen->getTyp());
         $kosten->setBetrag($rechnungen->getBetrag());
         $kosten->setRechnungen_fk($rechnungen->getId());
         $kostenDAO = new KostenDAO();
