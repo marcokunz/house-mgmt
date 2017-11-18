@@ -35,7 +35,7 @@ class RechnungenDAO extends BasicDAO {
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
         $totalgroesse = 0;
-        $rechnungsbetrag = $rechnungen->getBetrag();
+        $rechnungsbetrag = 1000;
         foreach($mieter as $mietertabelle){
             $totalgroesse += $mietertabelle->getQuadratmeter();
         }
