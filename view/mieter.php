@@ -49,6 +49,7 @@ require_once("config/Autoloader.php");
     </div>
     <div class="btn-group" role="group">
         <a class="btn btn-default" role="button" href="mieter/create"> <i class="fa fa-plus-square-o"></i>  Mieter erfassen</a>
+        <a target="_blank" class="btn btn-default" role="button" href="/mieterspiegel"> <i class="fa fa-file-pdf-o"></i> Mieterspiegel</a>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
         <div class="modal-dialog modal-sm" role="document">
