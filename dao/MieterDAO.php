@@ -77,8 +77,16 @@ class MieterDAO extends BasicDAO {
 	 * @ParamType  Mieter
 	 */
 	public function delete(Mieter $mieter) {
+	    /*
 	    $kostendao = new KostenDAO();
-	    $kostendao->delete($mieter);
+	    $kostendao->delete($mieter);*/
+
+        $stmt = $this->pdoInstance->prepare('
+            DELETE FROM kosten
+            WHERE kosten.mieter_fk = 18;
+        ');
+        $stmt->bindValue(':id', $mieter->getId());
+        $stmt->execute();
 
         $stmt = $this->pdoInstance->prepare('
             DELETE FROM mietertabelle
