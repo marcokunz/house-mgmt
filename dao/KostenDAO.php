@@ -50,17 +50,13 @@ class KostenDAO extends BasicDAO{
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter")[0];
     }
     public function getTotalKosten($mieterId, $kostenart) {
-
-        $totalbetrag = 0;
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
-
         $stmt = $this->pdoInstance->prepare('
             SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND rechnungen.typ = :kostenart ;');
         $stmt->bindValue(':id', $mieterId);
         $stmt->bindValue(':kostenart', $kostenart);
         $stmt->execute();
-
         return $stmt->fetch()[0];
     }
 
