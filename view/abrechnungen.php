@@ -44,11 +44,11 @@ require_once("config/Autoloader.php");
                     <tbody>
                     <tr>
                         <td>Heizkosten</td>
-                        <td><?php echo $KostenDAO->getTotalHeizkosten($mietertabelle->getId())?></td>
+                        <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten")?></td>
                     </tr>
                     <tr>
                         <td>Nebenkosten </td>
-                        <td>Cell 4</td>
+                        <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
                     </tr>
                     <tr>
                         <td> <a target="_blank" class="btn btn-default" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>
