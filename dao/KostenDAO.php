@@ -12,6 +12,7 @@ use database\Database;
 use domain\Kosten;
 use dao\MieterDAO;
 use domain\Mieter;
+use dao\BasicDAO;
 
 class KostenDAO extends BasicDAO{
 

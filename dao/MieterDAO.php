@@ -5,6 +5,7 @@ namespace dao;
 use domain\Mieter;
 use database\Database;
 use dao\KostenDAO;
+use domain\Kosten;
 
 /**
  * @access public
@@ -84,7 +85,7 @@ class MieterDAO extends BasicDAO {
         $stmt1 = $this->pdoInstance->prepare('
             DELETE FROM kosten WHERE mieter_fk = :id;
         ');
-        $stmt1->bindParam(':id', $mieter->getId(), PDO::PARAM_INT);
+        $stmt1->bindParam(':id', $mieter->getId());
         $stmt1->execute();
 
         $stmt = $this->pdoInstance->prepare('
