@@ -11,6 +11,7 @@ namespace dao;
 use database\Database;
 use domain\Kosten;
 use dao\MieterDAO;
+use domain\Mieter;
 
 class KostenDAO extends BasicDAO{
 
