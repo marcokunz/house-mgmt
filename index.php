@@ -152,12 +152,11 @@ Router::route_auth("POST", "/mieter/create", $authFunction, function () {
 Router::route_auth("GET", "/mieter/delete", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            DELETE FROM mietertabelle
-            WHERE id = :id
-        ');
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
+    $mieterDAO = new MieterDAO();
+    $mieter = new Mieter();
+    $mieter = $mieterDAO->read($id);
+    $mieterDAO->delete($mieter);
+
     Router::redirect("/mieter");
 });
 
