@@ -82,8 +82,7 @@ class MieterDAO extends BasicDAO {
 	    $kostendao->delete($mieter);*/
 
         $stmt1 = $this->pdoInstance->prepare('
-            DELETE FROM kosten
-            WHERE id = :id
+            DELETE FROM kosten WHERE mieter_fk = 17;
         ');
         $stmt1->bindValue(':id', 61);
         $stmt1->execute();
