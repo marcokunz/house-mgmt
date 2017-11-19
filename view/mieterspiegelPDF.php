@@ -49,7 +49,7 @@ class PDF extends FPDF
         $this->SetTextColor(0);
         $this->SetFont('Helvetica');
         // Data
-        $fill = false;
+        $fill = true;
         $total = 0;
         foreach($data as $row)
         {
