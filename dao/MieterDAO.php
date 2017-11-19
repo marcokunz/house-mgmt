@@ -4,6 +4,7 @@ namespace dao;
 
 use domain\Mieter;
 use database\Database;
+use dao\KostenDAO;
 
 /**
  * @access public
@@ -76,6 +77,8 @@ class MieterDAO extends BasicDAO {
 	 * @ParamType  Mieter
 	 */
 	public function delete(Mieter $mieter) {
+	    $kostendao = new KostenDAO();
+	    $kostendao->delete($mieter);
         $stmt = $this->pdoInstance->prepare('
             DELETE FROM mietertabelle
             WHERE id = :id
