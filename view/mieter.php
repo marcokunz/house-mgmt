@@ -38,8 +38,8 @@ require_once("config/Autoloader.php");
                     <td><?php echo $mietertabelle->getMietzins();?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <a class="btn btn-default" role="button" href="mieter/edit?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-edit"></i></a>
-                            <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mietertabelle->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
+                            <a class="btn btn-warning" role="button" href="mieter/edit?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-edit"></i></a>
+                            <button class="btn btn-danger" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mietertabelle->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
                         </div>
                     </td>
                 </tr>
@@ -48,8 +48,8 @@ require_once("config/Autoloader.php");
         </table>
     </div>
     <div class="btn-group" role="group">
-        <a class="btn btn-default" role="button" href="mieter/create"> <i class="fa fa-plus-square-o"></i>  Mieter erfassen</a>
-        <a target="_blank" class="btn btn-default" role="button" href="/mieterspiegel"> <i class="fa fa-file-pdf-o"></i> Mieterspiegel</a>
+        <a class="btn btn-primary" role="button" href="mieter/create"> <i class="fa fa-plus-square-o"></i>  Mieter erfassen</a>
+        <a target="_blank" class="btn btn-info" role="button" href="/mieterspiegel"> <i class="fa fa-file-pdf-o"></i> Mieterspiegel</a>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
         <div class="modal-dialog modal-sm" role="document">

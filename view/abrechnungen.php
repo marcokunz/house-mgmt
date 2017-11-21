@@ -51,7 +51,7 @@ require_once("config/Autoloader.php");
                         <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
                     </tr>
                     <tr>
-                        <td> <a target="_blank" class="btn btn-default" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>
+                        <td> <a target="_blank" class="btn btn-success" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>
                         <td> </td>
                     </tr>
                     </tbody>
