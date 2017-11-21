@@ -30,13 +30,13 @@ global $rechnungen;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Betrag </span></div>
-                <input class="form-control" type="text" name="betrag" value="<?php echo isset($rechnungen) ? ($rechnungen->getBetrag()) : ''; ?>">
+                <input class="form-control" required type="text" name="betrag" value="<?php echo isset($rechnungen) ? ($rechnungen->getBetrag()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Datum </span></div>
-                <input class="form-control" type="text" name="datum" value="<?php echo isset($rechnungen) ? ($rechnungen->getDatum()) : ''; ?>">
+                <input class="form-control" required type="text" name="datum" value="<?php echo isset($rechnungen) ? ($rechnungen->getDatum()) : ''; ?>">
             </div>
         </div>
         <div class="btn-group" role="group">

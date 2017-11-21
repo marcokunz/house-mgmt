@@ -21,25 +21,25 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Vorname </span></div>
-                <input class="form-control" type="text" name="vorname" value="<?php echo !empty($mietertabelle["vorname"]) ? $mietertabelle["vorname"] : ''; ?>">
+                <input class="form-control" required type="text" name="vorname" value="<?php echo !empty($mietertabelle["vorname"]) ? $mietertabelle["vorname"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Nachname </span></div>
-                <input class="form-control" type="text" name="nachname" value="<?php echo !empty($mietertabelle["nachname"]) ? $mietertabelle["nachname"] : ''; ?>">
+                <input class="form-control" required type="text" name="nachname" value="<?php echo !empty($mietertabelle["nachname"]) ? $mietertabelle["nachname"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Quadratmeter </span></div>
-                <input class="form-control" type="text" name="quadratmeter" value="<?php echo !empty($mietertabelle["quadratmeter"]) ? $mietertabelle["quadratmeter"] : ''; ?>">
+                <input class="form-control" required type="text" name="quadratmeter" value="<?php echo !empty($mietertabelle["quadratmeter"]) ? $mietertabelle["quadratmeter"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mietzins </span></div>
-                <input class="form-control" type="text" name="mietzins" value="<?php echo !empty($mietertabelle["mietzins"]) ? $mietertabelle["mietzins"] : ''; ?>">
+                <input class="form-control" required type="text" name="mietzins" value="<?php echo !empty($mietertabelle["mietzins"]) ? $mietertabelle["mietzins"] : ''; ?>">
             </div>
         </div>
         <div class="btn-group" role="group">
