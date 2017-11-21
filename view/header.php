@@ -26,6 +26,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/mieter">Mieter</a></li>
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/rechnungen">Rechnungen</a></li>
+                    <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/einnahmen">Einnahmen</a></li>
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/abrechnungen">Abrechnungen</a></li>
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/">Dashboard</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Profil<span class="caret"></span></a>

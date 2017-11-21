@@ -4,18 +4,36 @@ namespace domain;
  * @access public
  * @author marcokunz
  */
-class Einnahme {
+class Einnahme
+{
 
-    protected $_datum; //@AttributeType Date
-    protected $_betrag;// @AttributeType BigDecimal
-    private $_mieter;
+    protected $id;
+    protected $datum; //@AttributeType Date
+    protected $betrag;// @AttributeType BigDecimal
+    private $mieter_fk;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return mixed
      */
     public function getDatum()
     {
-        return $this->_datum;
+        return $this->datum;
     }
 
     /**
@@ -23,7 +41,7 @@ class Einnahme {
      */
     public function setDatum($datum)
     {
-        $this->_datum = $datum;
+        $this->datum = $datum;
     }
 
     /**
@@ -31,7 +49,7 @@ class Einnahme {
      */
     public function getBetrag()
     {
-        return $this->_betrag;
+        return $this->betrag;
     }
 
     /**
@@ -39,23 +57,23 @@ class Einnahme {
      */
     public function setBetrag($betrag)
     {
-        $this->_betrag = $betrag;
+        $this->betrag = $betrag;
     }
 
     /**
      * @return mixed
      */
-    public function getMieter()
+    public function getMieterFk()
     {
-        return $this->_mieter;
+        return $this->mieter_fk;
     }
 
     /**
-     * @param mixed $mieter
+     * @param mixed $mieter_fk
      */
-    public function setMieter($mieter)
+    public function setMieterFk($mieter_fk)
     {
-        $this->_mieter = $mieter;
+        $this->mieter_fk = $mieter_fk;
     }
 
 }
