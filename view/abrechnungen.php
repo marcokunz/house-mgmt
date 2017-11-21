@@ -26,13 +26,13 @@ require_once("config/Autoloader.php");
 
         if($counter%3==0):
             ?>
-    <div class="row" style="margin:0px;padding:25px;">
+    <div class="row" style="margin:0px;padding:20px;">
 
 
     <?php endif; ?>
 
         <div class="col-md-4" style="background-color: #F1F1F1; border-color: white; border-width: thick; border-style: solid; border-radius: 10px">
-            <h4 class="text-left"><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></h4>
+            <h4 class="text-left"><strong><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></strong></h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -51,7 +51,7 @@ require_once("config/Autoloader.php");
                         <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
                     </tr>
                     <tr>
-                        <td> <a target="_blank" class="btn btn-primary" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>
+                        <td> <a target="_blank" class="btn btn-primary btn-block" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i>abrechnen</a></td>
                         <td> </td>
                     </tr>
                     </tbody>
