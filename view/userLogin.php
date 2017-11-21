@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
 </head>
 
-<body style="background-color:rgba(140,140,140,0);">
+<body style="background-color:#609dd0;">
 <div class="login-clean" style="background-color:#609dd0;">
     <form method="post" style="background-color:#fbfbfb;color:rgba(120,159,205,0.2);">
         <h2 class="sr-only">Login Form</h2>
