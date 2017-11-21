@@ -31,10 +31,10 @@ require_once("config/Autoloader.php");
 
     <?php endif; ?>
 
-        <div class="col-md-4" style="background-color: transparent;border-color: lightgrey; border-width: thin; border-style: solid; border-radius: 10px">
+        <div class="col-md-4" style="background-color: transparent; padding: 10px; border-color: lightgrey; border-width: thin; border-style: solid; border-radius: 10px">
             <h4 class="text-left"><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></h4>
             <div class="table-responsive">
-                <table class="table" style="padding: 10px">
+                <table class="table">
                     <thead>
                     <tr>
                         <th>Typ </th>
