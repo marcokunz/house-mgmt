@@ -30,7 +30,7 @@
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/">Dashboard</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Profil<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/agent/edit">Profil editieren</a></li>
+                            <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/register">Profil editieren</a></li>
                             <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/mieterspiegel">Mieterspiegel</a></li>
                             <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/logout">Logout </a></li>
                         </ul>

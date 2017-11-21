@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary btn-block" type="submit" style="background-color:#1f2021;">Log In</button>
-        </div><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/register"" class="forgot">Register </a></form>
+        </div><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/register" class="forgot">Register </a></form>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
