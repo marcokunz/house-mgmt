@@ -130,6 +130,12 @@
   color:inherit;
 }
 
+.navbar-inverse{
+  background-color:#1f2021;
+  border-color: transparent;
+  
+}
+
 .navigation-clean.navbar-inverse {
   background-color:#1f2021;
   color:#fff;
