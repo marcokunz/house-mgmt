@@ -30,6 +30,12 @@ global $einnahme;
                 <input class="form-control" required type="date" name="datum" value="<?php echo !empty($rechnungen["datum"]) ? $rechnungen["datum"] : ''; ?>">
             </div>
         </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon"><span>Mieter </span></div>
+                <input class="form-control" required type="date" name="datum" value="<?php echo !empty($rechnungen["datum"]) ? $rechnungen["datum"] : ''; ?>">
+            </div>
+        </div>
         <div class="btn-group" role="group">
             <button class="btn btn-success" type="submit"> <i class="fa fa-save"></i></button>
         </div>
