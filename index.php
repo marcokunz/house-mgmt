@@ -111,11 +111,11 @@ Router::route_auth("GET", "/", $authFunction, function () {
     layoutSetContent("dashboard.php");
 });
 
-//Einnahmen
+/*//Einnahmen
 
 Router::route_auth("GET", "/einnahmen", function () {
     require_once("view/einnahmen.php");
-});
+});*/
 
 // Mieter
 
