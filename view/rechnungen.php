@@ -40,8 +40,8 @@ require_once("config/Autoloader.php");
                     <td><?php echo $rechnungen->getBetrag(); ?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <a class="btn btn-default" role="button" href="rechnungen/edit?id=<?php echo $rechnungen->getId(); ?>"> <i class="fa fa-edit"></i></a>
-                            <button class="btn btn-default" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="rechnungen/delete?id=<?php echo $rechnungen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
+                            <a class="btn btn-warning" role="button" href="rechnungen/edit?id=<?php echo $rechnungen->getId(); ?>"> <i class="fa fa-edit"></i></a>
+                            <button class="btn btn-danger" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="rechnungen/delete?id=<?php echo $rechnungen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
                         </div>
                     </td>
                 </tr>
@@ -52,7 +52,7 @@ require_once("config/Autoloader.php");
         </table>
     </div>
     <div class="btn-group" role="group">
-        <a class="btn btn-default" role="button" href="rechnungen/create"> <i class="fa fa-plus-square-o"></i>  Rechnung erfassen</a>
+        <a class="btn btn-primary" role="button" href="rechnungen/create"> <i class="fa fa-plus-square-o"></i>  Rechnung erfassen</a>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
         <div class="modal-dialog modal-sm" role="document">
