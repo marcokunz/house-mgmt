@@ -122,6 +122,16 @@ Router::route("GET", "/einnahmen", function () {
     layoutSetContent("view/einnahmen.php");
 });
 
+Router::route_auth("GET", "/einnahmen/create", $authFunction, function () {
+    layoutSetContent("einnahmenCreate.php");
+});
+
+Router::route_auth("POST", "/einnahmen/create", $authFunction, function () {
+
+
+    Router::redirect("/mieter");
+});
+
 // Mieter
 
 Router::route_auth("GET", "/mieter", $authFunction, function () {

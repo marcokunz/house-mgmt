@@ -5,12 +5,12 @@
  * Date: 13.09.2017
  * Time: 17:06
  */
-global $rechnungen;
+global $einnahme;
 
 ?>
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center"><strong>Rechnung</strong> erfassen. </h2></div>
+        <h2 class="text-center"><strong>Mieteingang</strong> erfassen. </h2></div>
     <form action="create" method="post">
         <div class="form-group" style="display: none">
             <div class="input-group">

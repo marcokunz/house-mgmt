@@ -16,7 +16,7 @@ require_once("config/Autoloader.php");
 
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center">Unsere <strong>Mieteinnahmen</strong>.</h2></div>
+        <h2 class="text-center"><strong>Mieteinnahmen</strong> erfassen.</h2></div>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
@@ -49,7 +49,7 @@ require_once("config/Autoloader.php");
         </table>
     </div>
     <div class="btn-group" role="group">
-        <a class="btn btn-primary" role="button" href="mieter/create"> <i class="fa fa-plus-square-o"></i>  Zahlung erfassen</a>
+        <a class="btn btn-primary" role="button" href="einnahmen/create"> <i class="fa fa-plus-square-o"></i>  Zahlung erfassen</a>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
         <div class="modal-dialog modal-sm" role="document">
