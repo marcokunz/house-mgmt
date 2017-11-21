@@ -21,11 +21,13 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-<div class="container" style="display:flex;flex-direction:column;justify-content:center;">
-    <div class="page-header">
-        <h2 class="text-center"><strong>HOUSE-MGMT</strong></h2></div>
-    <form action="<?php echo $GLOBALS["ROOT_URL"]; ?>/login" method="post">
+<body style="background-color:rgba(140,140,140,0);">
+<div class="login-clean" style="background-color:#609dd0;">
+    <form method="post" style="background-color:#fbfbfb;color:rgba(120,159,205,0.2);">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-home" style="color:#149c82;"></i>
+            <p style="font-size:19px;color:#1f2021;margin:-2px;margin-left:0px;margin-bottom:0px;margin-right:0px;margin-top:-25px;">HOUSE-MGMT </p>
+        </div>
         <div class="form-group">
             <input class="form-control" type="email" name="email" placeholder="Email">
         </div>
@@ -33,12 +35,13 @@
             <input class="form-control" type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
-            <button class="btn btn-primary" type="submit">Log In</button>
-        </div><a class="text-primary already" href="<?php echo $GLOBALS["ROOT_URL"]; ?>/register">Register here.</a></form>
+            <button class="btn btn-primary btn-block" type="submit" style="background-color:#1f2021;">Log In</button>
+        </div><a href="#" class="forgot">Register </a></form>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 </body>
 
 </html>
