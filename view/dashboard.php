@@ -13,14 +13,14 @@ use domain\Mieter;
 use domain\Rechnungen;
 require_once("config/Autoloader.php");
 ?>
-
+<!DOCTYPE html>
 
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Übersicht</strong>.</h2></div>
     <div class="header"><h3 class="text-left">Rechnungen</h3></div>
     <div class="table-responsive">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th>Datum</th>
@@ -47,7 +47,7 @@ require_once("config/Autoloader.php");
     </div>
         <div class="header"><h3 class="text-left">Mieter</h3></div>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th>Vorname </th>
