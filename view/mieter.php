@@ -11,13 +11,13 @@ use dao\MieterDAO;
 use domain\Mieter;
 require_once("config/Autoloader.php");
 ?>
-
+<!DOCTYPE html>
 
 <div class="container">
     <div class="page-header">
         <h2 class="text-center">Unsere <strong>Mieter</strong>.</h2></div>
-    <div class="table-responsive table-hover">
-        <table class="table">
+    <div class="table-responsive">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th>Vorname </th>
