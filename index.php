@@ -16,6 +16,8 @@ use domain\Kosten;
 use domain\Rechnungen;
 use dao\MieterDAO;
 use domain\Mieter;
+use dao\EinnahmeDAO;
+use domain\Einnahme;
 
 session_start();
 
@@ -114,6 +116,9 @@ Router::route_auth("GET", "/", $authFunction, function () {
 //Einnahmen
 
 Router::route("GET", "/einnahmen", function () {
+    $einnahmeDAO = new EinnahmeDAO();
+    global $einnahme;
+    $einnahme = $einnahmeDAO->readAll();
     layoutSetContent("view/einnahmen.php");
 });
 

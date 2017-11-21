@@ -24,15 +24,14 @@ class EinnahmeDAO extends BasicDAO {
      * @ParamType mieter Mieter
      * @ReturnType Mieter
      */
-    public function create(Mieter $einnahme) {
+    public function create(Einnahme $einnahme) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO mietertabelle (vorname, nachname, quadratmeter, mietzins)
-            VALUES (:vorname, :nachname , :quadratmeter, :mietzins)');
+            INSERT INTO einnahmen (datum, betrag, mieter_fk)
+            VALUES (:datum, :betrag , :mieter_fk)');
         //  $stmt->bindValue(':id', $mieter->getId());
-        $stmt->bindValue(':vorname', $einnahme->getVorname());
-        $stmt->bindValue(':nachname', $einnahme->getNachname());
-        $stmt->bindValue(':quadratmeter', $einnahme->getQuadratmeter());
-        $stmt->bindValue(':mietzins', $einnahme->getMietzins());
+        $stmt->bindValue(':datum', $einnahme->getDatum());
+        $stmt->bindValue(':betrag', $einnahme->getBetrag());
+        $stmt->bindValue(':mieter_fk', $einnahme->getMieterFk());
         $stmt->execute();
         //return $this->read($this->pdoInstance->lastInsertId());
     }
@@ -97,9 +96,9 @@ class EinnahmeDAO extends BasicDAO {
     public function readAll(){
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
-            SELECT * FROM mietertabelle');
+            SELECT * FROM einnahmen');
         $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter");
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Einnahme");
         //return $stmt->fetchAll(\PDO::FETCH_COLUMN, "2");
     }
 
