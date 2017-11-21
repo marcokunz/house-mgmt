@@ -26,13 +26,13 @@
     <div class="page-header">
         <h2 class="text-center"><strong>HOUSE-MGMT</strong></h2></div>
     <form action="<?php echo $GLOBALS["ROOT_URL"]; ?>/login" method="post">
-        <div class="form-group">
+        <div class="form-group col-xs-4">
             <input class="form-control" type="email" name="email" placeholder="Email">
         </div>
-        <div class="form-group">
+        <div class="form-group col-xs-4">
             <input class="form-control" type="password" name="password" placeholder="Password">
         </div>
-        <div class="form-group">
+        <div class="form-group col-xs-4">
             <button class="btn btn-primary btn-block" type="submit">Log In</button>
         </div><a class="text-primary already" href="<?php echo $GLOBALS["ROOT_URL"]; ?>/register">Register here.</a></form>
 </div>
