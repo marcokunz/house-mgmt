@@ -17,7 +17,7 @@
 
 <body>
 <div>
-    <nav class="navbar navbar-default navbar-fixed-top navigation-clean">
+    <nav class="navbar navbar-default navbar-fixed-top navigation-clean.navbar-inverse">
         <div class="container">
             <div class="navbar-header"><a class="navbar-brand navbar-link" href="<?php echo $GLOBALS["ROOT_URL"]; ?>">House-MGMT </a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
