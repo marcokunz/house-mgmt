@@ -16,7 +16,7 @@ require_once("config/Autoloader.php");
 
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center"><strong>Mieteinnahmen</strong> erfassen.</h2></div>
+        <h2 class="text-center">erfasste<strong>Mieteinnahmen</strong>.</h2></div>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
