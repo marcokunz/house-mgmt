@@ -133,6 +133,8 @@
 .navigation-clean.navbar-inverse {
   background-color:#1f2021;
   color:#fff;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 .navigation-clean.navbar-inverse .navbar-nav > .active > a, .navigation-clean.navbar-inverse .navbar-nav > .active > a:focus, .navigation-clean.navbar-inverse .navbar-nav > .active > a:hover {
