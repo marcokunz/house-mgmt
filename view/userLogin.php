@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
 </head>
 
 <body style="background-color:rgba(140,140,140,0);">
