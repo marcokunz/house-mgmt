@@ -11,13 +11,13 @@ use dao\RechnungenDAO;
 use domain\Rechnungen;
 require_once("config/Autoloader.php");
 ?>
-
+<!DOCTYPE html>
 
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Rechnungen</strong>.</h2></div>
     <div class="table-responsive">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th>Datum</th>
