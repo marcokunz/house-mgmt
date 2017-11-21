@@ -34,6 +34,7 @@ require_once("config/Autoloader.php");
             foreach($einnahme as $einnahmen): ?>
                 <tr>
                     <td><?php echo $einnahmen->getId();?> </td>
+                    <td><?php echo $einnahmen->getId();?> </td>
                     <td><?php echo $einnahmen->getDatum();?> </td>
                     <td><?php echo $einnahmen->getBetrag();?> </td>
                     <td>
