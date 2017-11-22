@@ -37,8 +37,8 @@ require_once("config/Autoloader.php");
                     <td><?php echo $einnahmen->getBetrag();?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <a class="btn btn-warning" role="button" href="mieter/edit?id=<?php echo $einnahmen->getId(); ?>"> <i class="fa fa-edit"></i></a>
-                            <button class="btn btn-danger" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $einnahmen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
+                            <a class="btn btn-warning" role="button" href="einnahmen/edit?id=<?php echo $einnahmen->getId(); ?>"> <i class="fa fa-edit"></i></a>
+                            <button class="btn btn-danger" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="einnahmen/delete?id=<?php echo $einnahmen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
                         </div>
                     </td>
                 </tr>
@@ -54,9 +54,9 @@ require_once("config/Autoloader.php");
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title"><strong>Mieter</strong> löschen.</h4></div>
+                    <h4 class="modal-title"><strong>Mieteingang</strong> löschen.</h4></div>
                 <div class="modal-body">
-                    <p>Wollen Sie den Mieter löschen?</p>
+                    <p>Wollen Sie den Mieteingang löschen?</p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" type="button" data-dismiss="modal">Cancel </button><a class="btn btn-primary" role="button" href="#">Delete </a></div>
