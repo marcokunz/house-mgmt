@@ -43,12 +43,12 @@ class EinnahmeDAO extends BasicDAO {
      * @ParamType mieterId int
      * @ReturnType Mieter
      */
-    public function read($mieterId) {
+    public function read($einnahmenId) {
         $stmt = $this->pdoInstance->prepare('
-            SELECT * FROM mietertabelle WHERE id = :id;');
-        $stmt->bindValue(':id', $mieterId);
+            SELECT * FROM einnahmen WHERE id = :id;');
+        $stmt->bindValue(':id', $einnahmenId);
         $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter")[0];
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Einnahme")[0];
     }
 
     /**
