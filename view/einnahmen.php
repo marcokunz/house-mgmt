@@ -21,8 +21,7 @@ require_once("config/Autoloader.php");
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>Vorname </th>
-                <th>Nachname </th>
+                <th>Mieter ID </th>
                 <th>Datum</th>
                 <th>Betrag </th>
             </tr>
@@ -33,8 +32,7 @@ require_once("config/Autoloader.php");
             global $einnahme;
             foreach($einnahme as $einnahmen): ?>
                 <tr>
-                    <td><?php echo $einnahmen->getId();?> </td>
-                    <td><?php echo $einnahmen->getId();?> </td>
+                    <td><?php echo $einnahmen->getMieterFk();?> </td>
                     <td><?php echo $einnahmen->getDatum();?> </td>
                     <td><?php echo $einnahmen->getBetrag();?> </td>
                     <td>

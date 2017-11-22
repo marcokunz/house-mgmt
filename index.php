@@ -127,9 +127,14 @@ Router::route_auth("GET", "/einnahmen/create", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/einnahmen/create", $authFunction, function () {
+    $einnahme = new Einnahme();
+    $einnahme->setMieterFk($_POST["mieterfk"]);
+    $einnahme->setBetrag($_POST["betrag"]);
+    $einnahme->setDatum($_POST["datum"]);
+    $einnahmenDao = new EinnahmeDAO();
+    $einnahmenDao->create($einnahme);
 
-
-    Router::redirect("/mieter");
+    Router::redirect("/einnahmen");
 });
 
 // Mieter
