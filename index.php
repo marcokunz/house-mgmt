@@ -137,6 +137,28 @@ Router::route_auth("POST", "/einnahmen/create", $authFunction, function () {
     Router::redirect("/einnahmen");
 });
 
+Router::route_auth("GET", "/einnahmen/edit", $authFunction, function () {
+    $id = $_GET["id"];
+    $einnahmenDAO = new EinnahmeDAO();
+    global $einnahmen;
+    $einnahmen = $einnahmenDAO->read($id);
+    layoutSetContent("einnahmenEdit.php");
+});
+
+Router::route_auth("POST", "/einnahmen/edit", $authFunction, function () {
+    $einnahme = new Einnahme();
+    $einnahme->setId($_POST["id"]);
+    $einnahme->setBetrag($_POST["betrag"]);
+    $einnahme->setDatum($_POST["datum"]);
+    $einnahme->setMieterFk($_POST["mieter"]);
+    $einnahmeDAO = new EinnahmeDAO();
+    $einnahmeDAO->update($einnahme);
+
+    Router::redirect("/einnahmen");
+});
+
+
+
 // Mieter
 
 Router::route_auth("GET", "/mieter", $authFunction, function () {

@@ -5,7 +5,7 @@
  * Date: 13.09.2017
  * Time: 17:06
  */
-global $rechnungen;
+global $einnahmen;
 
 ?>
 <div class="container">
@@ -15,28 +15,25 @@ global $rechnungen;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>ID </span></div>
-                <input class="form-control" type="text" name="id"  readonly ="" value="<?php echo isset($rechnungen) ? ($rechnungen->getId()) : ''; ?>">
+                <input class="form-control" type="text" name="id"  readonly ="" value="<?php echo isset($einnahmen) ? ($einnahmen->getId()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
-                <div class="input-group-addon"><span>Typ </span></div>
-                <select class="form-control" name="typ">
-                    <option value="Heizkosten" <?php if ($myVar=="Heizkosten") echo'selected="selected"';?>>Heizkosten</option>
-                    <option value="Nebenkosten" <?php if ($myVar=="Nebenkosten") echo'selected="selected"';?>>Nebenkosten</option>
-                </select>
+                <div class="input-group-addon"><span>Mieter</span></div>
+                <input class="form-control" required type="text" name="betrag" value="<?php echo isset($einnahmen) ? ($einnahmen->getMieterFk()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Betrag </span></div>
-                <input class="form-control" required type="text" name="betrag" value="<?php echo isset($rechnungen) ? ($rechnungen->getBetrag()) : ''; ?>">
+                <input class="form-control" required type="text" name="betrag" value="<?php echo isset($einnahmen) ? ($einnahmen->getBetrag()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Datum </span></div>
-                <input class="form-control" required type="text" name="datum" value="<?php echo isset($rechnungen) ? ($rechnungen->getDatum()) : ''; ?>">
+                <input class="form-control" required type="date" name="datum" value="<?php echo isset($einnahmen) ? ($einnahmen->getDatum()) : ''; ?>">
             </div>
         </div>
         <div class="btn-group" role="group">

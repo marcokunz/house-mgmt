@@ -58,20 +58,18 @@ class EinnahmeDAO extends BasicDAO {
      * @ParamType  Mieter
      * @ReturnType Mieter
      */
-    public function update(Mieter $mieter) {
+    public function update(Einnahme $einnahme) {
         $stmt = $this->pdoInstance->prepare('
-             UPDATE mietertabelle SET 
+             UPDATE einnahmen SET 
                 id = :id,
-                vorname = :vorname,
-                nachname = :nachname,
-                quadratmeter = :quadratmeter,
-                mietzins = :mietzins
+                datum = :datum,
+                betrag = :betrag,
+                mieter_fk = :mieter_fk,
             WHERE id = :id');
-        $stmt->bindValue(':id', $mieter->getId());
-        $stmt->bindValue(':vorname', $mieter->getVorname());
-        $stmt->bindValue(':nachname', $mieter->getNachname());
-        $stmt->bindValue(':quadratmeter', $mieter->getQuadratmeter());
-        $stmt->bindValue(':mietzins', $mieter->getMietzins());
+        $stmt->bindValue(':id', $einnahme->getId());
+        $stmt->bindValue(':datum', $einnahme->getDatum());
+        $stmt->bindValue(':betrag', $einnahme->getBetrag());
+        $stmt->bindValue(':mieter_fk', $einnahme->getMieterFk());
         $stmt->execute();
     }
 
