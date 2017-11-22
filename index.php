@@ -157,6 +157,17 @@ Router::route_auth("POST", "/einnahmen/edit", $authFunction, function () {
     Router::redirect("/einnahmen");
 });
 
+Router::route_auth("GET", "/einnahmen/delete", $authFunction, function () {
+    $id = $_GET["id"];
+    $pdoInstance = Database::connect();
+    $einnahmenDAO = new EinnahmeDAO();
+    $einnahme = new Einnahme();
+    $einnahme = $einnahmenDAO->read($id);
+    $einnahmenDAO->delete($einnahme);
+
+    Router::redirect("/einnahmen");
+});
+
 
 
 // Mieter

@@ -78,15 +78,15 @@ class EinnahmeDAO extends BasicDAO {
      * @param Mieter
      * @ParamType  Mieter
      */
-    public function delete(Mieter $mieter) {
-        $kostendao = new KostenDAO();
-        $kostendao->delete($mieter);
+    public function delete(Einnahme $einnahme) {
+        $einnahmenDAO = new EinnahmeDAO();
+        $einnahmenDAO->delete($einnahme);
 
         $stmt = $this->pdoInstance->prepare('
-            DELETE FROM mietertabelle
+            DELETE FROM einnahmen
             WHERE id = :id
         ');
-        $stmt->bindValue(':id', $mieter->getId());
+        $stmt->bindValue(':id', $einnahme->getId());
         $stmt->execute();
 
     }
