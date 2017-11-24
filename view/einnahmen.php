@@ -9,6 +9,8 @@
 use view\View;
 use dao\EinnahmeDAO;
 use domain\Einnahme;
+use dao\MieterDAO;
+use domain\Mieter;
 
 require_once("config/Autoloader.php");
 ?>
@@ -21,7 +23,7 @@ require_once("config/Autoloader.php");
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>Mieter ID </th>
+                <th>Mieter</th>
                 <th>Datum</th>
                 <th>Betrag </th>
             </tr>
@@ -32,7 +34,12 @@ require_once("config/Autoloader.php");
             global $einnahme;
             foreach($einnahme as $einnahmen): ?>
                 <tr>
-                    <td><?php echo $einnahmen->getMieterFk();?> </td>
+                    <td><?php
+                        $mieterDAO = new MieterDAO();
+                        $mieter = new Mieter();
+                        $mieter = $mieterDAO->read($einnahmen->getMieterFk());
+                        echo $mieter->getVorname()." ".$mieter->getNachname();
+                        ;?> </td>
                     <td><?php echo $einnahmen->getDatum();?> </td>
                     <td><?php echo $einnahmen->getBetrag();?> </td>
                     <td>
