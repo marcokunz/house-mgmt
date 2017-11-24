@@ -275,12 +275,14 @@ Router::route_auth("GET", "/rechnungen/create", $authFunction, function () {
 Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
     $id = $_GET["id"];
     $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            DELETE FROM rechnungen
-            WHERE id = :id
-        ');
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
+    $rechnungenDAO = new RechnungenDAO();
+    $rechnungen = new Rechnungen();
+    $rechnungen = $rechnungenDAO->read($id);
+    $kostenDAO = new KostenDAO();
+    $kostenDAO->deleteRechnung($rechnungen->getId());
+    $rechnungenDAO->delete($rechnungen);
+
+
     Router::redirect("/rechnungen");
 });
 

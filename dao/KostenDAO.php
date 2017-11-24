@@ -98,19 +98,19 @@ class KostenDAO extends BasicDAO{
     }
 
     public function delete(Mieter $mieter) {
-        $stmt1 = $this->pdoInstance->prepare('
+        $stmt = $this->pdoInstance->prepare('
             DELETE FROM kosten where mieter_fk = :id;
         ');
-        $stmt1->bindParam(':id', $mieter->getId());
-        $stmt1->execute();
+        $stmt->bindParam(':id', $mieter->getId());
+        $stmt->execute();
     }
 
     public function deleteRechnung(Rechnung $rechnung) {
-        $stmt1 = $this->pdoInstance->prepare('
+        $stmt = $this->pdoInstance->prepare('
             DELETE FROM kosten where rechnungen_fk = :id;
         ');
-        $stmt1->bindParam(':id', $rechnung->getId());
-        $stmt1->execute();
+        $stmt->bindParam(':id', $rechnung->getId());
+        $stmt->execute();
     }
 
 

@@ -98,9 +98,6 @@ class RechnungenDAO extends BasicDAO {
      */
     public function delete(Rechnungen $rechnungen) {
 
-        //Dazugehörige Nebenkosten löschen
-        $kostenDAO = new KostenDAO();
-        $kostenDAO->deleteRechnung($rechnungen->getId());
 
         //Rechnung löschen
         $stmt = $this->pdoInstance->prepare('
