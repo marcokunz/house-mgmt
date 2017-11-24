@@ -157,7 +157,7 @@ Router::route_auth("POST", "/einnahmen/edit", $authFunction, function () {
     $einnahme->setId($_POST["id"]);
     $einnahme->setBetrag($_POST["betrag"]);
     $einnahme->setDatum($_POST["datum"]);
-    $einnahme->setMieterFk($_POST["mieter"]);
+    $einnahme->setMieterFk($_POST["mieterfk"]);
     $einnahmeDAO = new EinnahmeDAO();
     $einnahmeDAO->update($einnahme);
 
