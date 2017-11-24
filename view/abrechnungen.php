@@ -49,15 +49,15 @@ require_once("config/Autoloader.php");
                     <tbody>
                     <tr>
                         <td>Heizkosten</td>
-                        <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten")?></td>
+                        <td><?php echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten")?></td>
                     </tr>
                     <tr>
                         <td>Nebenkosten </td>
-                        <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
+                        <td><?php echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
                     </tr>
                     <tr>
                         <td>Mieteingänge </td>
-                        <td><?php echo $einnahmeDAO->getTotalEinnahmen($mietertabelle->getId())?></td>
+                        <td><?php echo "CHF ".$einnahmeDAO->getTotalEinnahmen($mietertabelle->getId())?></td>
                     </tr>
                     <tr>
                         <td> <a target="_blank" class="btn btn-primary btn-sm" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>

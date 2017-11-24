@@ -41,7 +41,7 @@ require_once("config/Autoloader.php");
                         echo $mieter->getVorname()." ".$mieter->getNachname();
                         ?> </td>
                     <td><?php echo $einnahmen->getDatum();?> </td>
-                    <td><?php echo $einnahmen->getBetrag();?> </td>
+                    <td><?php echo "CHF ".$einnahmen->getBetrag();?> </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-warning" role="button" href="einnahmen/edit?id=<?php echo $einnahmen->getId(); ?>"> <i class="fa fa-edit"></i></a>

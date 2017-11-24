@@ -65,8 +65,8 @@ require_once("config/Autoloader.php");
                         <tr>
                             <td><?php echo $mietertabelle->getVorname();?></td>
                             <td><?php echo $mietertabelle->getNachname();?> </td>
-                            <td><?php echo $mietertabelle->getQuadratmeter();?> </td>
-                            <td><?php echo $mietertabelle->getMietzins();?> </td>
+                            <td><?php echo $mietertabelle->getQuadratmeter()." m&#xB2";?> </td>
+                            <td><?php echo "CHF ".$mietertabelle->getMietzins();?> </td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
