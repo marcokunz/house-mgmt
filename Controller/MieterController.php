@@ -9,8 +9,7 @@
 namespace controller;
 
 use domain\Mieter;
-use validator\MieterValidator;
-use service\WECRMServiceImpl;
+use dao\MieterDAO;
 use view\View;
 use view\LayoutRendering;
 
