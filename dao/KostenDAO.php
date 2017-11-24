@@ -56,7 +56,7 @@ class KostenDAO extends BasicDAO{
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
         $stmt = $this->pdoInstance->prepare('
-           SELECT sum(kosten.betrag) FROM kosten where mieter_fk = :id and typ = :$kostenart');
+           SELECT sum(kosten.betrag) FROM kosten where mieter_fk = :id');
         $stmt->bindValue(':id', $mieterId);
         $stmt->bindValue(':kostenart', $kostenart);
         $stmt->execute();
