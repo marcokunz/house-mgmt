@@ -15,7 +15,7 @@ use view\LayoutRendering;
 
 class MieterController
 {
-    public static function create(){
+    public function create(){
         $mieter = new Mieter();
         //$mieter->setId($_POST["id"]);
         $mieter->setVorname($_POST["vorname"]);

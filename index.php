@@ -194,7 +194,14 @@ Router::route_auth("GET", "/mieter/create", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/create", $authFunction, function () {
-    MieterController::create();
+    $mieter = new Mieter();
+    //$mieter->setId($_POST["id"]);
+    $mieter->setVorname($_POST["vorname"]);
+    $mieter->setNachname($_POST["nachname"]);
+    $mieter->setQuadratmeter($_POST["quadratmeter"]);
+    $mieter->setMietzins($_POST["mietzins"]);
+    $mieterDAO = new MieterDAO();
+    $mieterDAO->create($mieter);
     Router::redirect("/mieter");
 });
 
