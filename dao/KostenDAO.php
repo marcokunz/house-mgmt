@@ -25,12 +25,11 @@ class KostenDAO extends BasicDAO{
      */
     public function create(Kosten $kosten) {
         $stmt = $this->pdoInstance->prepare('
-            INSERT INTO kosten (betrag, rechnungen_fk, mieter_fk, typ)
-            VALUES (:betrag, :rechnungen_fk, :mieter_fk, :typ)');
+            INSERT INTO kosten (betrag, rechnungen_fk, mieter_fk)
+            VALUES (:betrag , :rechnungen_fk, :mieter_fk)');
         //  $stmt->bindValue(':id', $mieter->getId());
         $stmt->bindValue(':betrag', $kosten->getBetrag());
         $stmt->bindValue(':rechnungen_fk', $kosten->getRechnungen_fk());
-        $stmt->bindValue(':typ', $kosten->getTyp());
         //$stmt->bindValue(':mieter_fk', 1);
         $stmt->bindValue(':mieter_fk', $kosten->getMieter_fk());
 
@@ -56,7 +55,7 @@ class KostenDAO extends BasicDAO{
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
         $stmt = $this->pdoInstance->prepare('
-           SELECT sum(kosten.betrag) FROM kosten where mieter_fk = :id');
+            SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND rechnungen.typ = :kostenart ;');
         $stmt->bindValue(':id', $mieterId);
         $stmt->bindValue(':kostenart', $kostenart);
         $stmt->execute();
