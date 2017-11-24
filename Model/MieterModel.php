@@ -9,4 +9,10 @@
 class MieterModel
 {
 
+    public function createMieter(){
+        $mieter = new Mieter();
+        $mieterDAO = new MieterDAO();
+        $mieterDAO->create($mieter);
+    }
+
 }
