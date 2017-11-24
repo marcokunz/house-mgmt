@@ -25,7 +25,17 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/mieter">Mieter</a></li>
-                    <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/rechnungen">Rechnungen</a></li>
+
+                    <?php
+                    if (1==0){
+                        echo" 
+                        <li role=\"presentation\"><a href=".$GLOBALS["ROOT_URL"]."/rechnungen\">Rechnungen</a></li>"
+
+
+
+                        ;
+                    }
+                    ?>
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/einnahmen">Einnahmen</a></li>
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/abrechnungen">Abrechnungen</a></li>
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/">Dashboard</a></li>
