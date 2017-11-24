@@ -146,6 +146,9 @@ Router::route_auth("GET", "/einnahmen/edit", $authFunction, function () {
     $einnahmenDAO = new EinnahmeDAO();
     global $einnahmen;
     $einnahmen = $einnahmenDAO->read($id);
+    $mieterDAO = new MieterDAO();
+    global $mieter;
+    $mieter = $mieterDAO-> readAll();
     layoutSetContent("einnahmenEdit.php");
 });
 

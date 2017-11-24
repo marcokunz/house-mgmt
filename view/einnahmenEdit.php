@@ -6,6 +6,7 @@
  * Time: 17:06
  */
 global $einnahmen;
+use domain\Mieter;
 
 ?>
 <div class="container">
@@ -21,7 +22,13 @@ global $einnahmen;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mieter</span></div>
-                <input class="form-control" required type="text" name="betrag" value="<?php echo isset($einnahmen) ? ($einnahmen->getMieterFk()) : ''; ?>">
+                <select class="form-control" name="mieterfk">
+                    <?php
+                    global $mieter;
+                    foreach($mieter as $mietertabelle): ?>
+                        <option value="<?php echo $mietertabelle->getId();?>" <?php if ($myVar=="$mietertabelle->getId();") echo'selected="selected"';?>><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname();?></option>
+                    <?php endforeach;?>
+                </select>
             </div>
         </div>
         <div class="form-group">
