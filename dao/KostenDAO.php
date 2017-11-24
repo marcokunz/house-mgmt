@@ -71,20 +71,13 @@ class KostenDAO extends BasicDAO{
      * @ParamType  Mieter
      * @ReturnType Mieter
      */
-    public function update(Mieter $mieter) {
+    public function update(Kosten $kosten) {
         $stmt = $this->pdoInstance->prepare('
-             UPDATE mietertabelle SET 
-                id = :id,
-                vorname = :vorname,
-                nachname = :nachname,
-                adresse = :adresse,
-                mietzins = :mietzins
-            WHERE id = :id');
-        $stmt->bindValue(':id', $mieter->getId());
-        $stmt->bindValue(':vorname', $mieter->getVorname());
-        $stmt->bindValue(':nachname', $mieter->getNachname());
-        $stmt->bindValue(':adresse', $mieter->getAdresse());
-        $stmt->bindValue(':mietzins', $mieter->getMietzins());
+             UPDATE kosten SET 
+                betrag = :betrag
+            WHERE rechnungen_fk = :rechnungen_fk AND mieter_fk = :mieter_fk');
+        $stmt->bindValue(':rechnungen_fk', $kosten->getRechnungen_fk());
+        $stmt->bindValue(':mieter_fk', $kosten->getMieter_fk());
         $stmt->execute();
     }
 
