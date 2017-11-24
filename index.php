@@ -279,7 +279,7 @@ Router::route_auth("GET", "/rechnungen/delete", $authFunction, function () {
     $rechnungen = new Rechnungen();
     $rechnungen = $rechnungenDAO->read($id);
     $kostenDAO = new KostenDAO();
-    $kostenDAO->deleteRechnung($rechnungen->getId());
+    $kostenDAO->deleteRechnung($rechnungen);
     $rechnungenDAO->delete($rechnungen);
 
 
