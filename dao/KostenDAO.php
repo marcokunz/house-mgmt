@@ -98,7 +98,14 @@ class KostenDAO extends BasicDAO{
         //return $stmt->fetchAll(\PDO::FETCH_COLUMN, "2");
     }
 
-
+    public function delete(Mieter $mieter) {
+        $stmt = $this->pdoInstance->prepare('
+            DELETE FROM kosten where mieter_fk = :id;
+        ');
+        $stmt->bindParam(':id', $mieter->getId());
+        $stmt->execute();
+    }
+    
     public function deleteRechnung(Rechnungen $rechnung) {
         $stmt = $this->pdoInstance->prepare('
             DELETE FROM kosten where rechnungen_fk = :id;
