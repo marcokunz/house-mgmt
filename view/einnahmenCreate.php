@@ -22,7 +22,7 @@ use domain\Mieter;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Betrag </span></div>
-                <input class="form-control" step="0.05" required type="number" name="betrag" value="<?php echo !empty($einnahmen["betrag"]) ? $einnahmen["betrag"] : ''; ?>">
+                <input class="form-control" required type="number" name="betrag" value="<?php echo !empty($einnahmen["betrag"]) ? $einnahmen["betrag"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
