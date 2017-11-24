@@ -79,8 +79,6 @@ class EinnahmeDAO extends BasicDAO {
      * @ParamType  Mieter
      */
     public function delete(Einnahme $einnahme) {
-        $einnahmenDAO = new EinnahmeDAO();
-        $einnahmenDAO->delete($einnahme);
 
         $stmt = $this->pdoInstance->prepare('
             DELETE FROM einnahmen
