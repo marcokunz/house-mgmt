@@ -18,6 +18,7 @@ use dao\MieterDAO;
 use domain\Mieter;
 use dao\EinnahmeDAO;
 use domain\Einnahme;
+use controller\MieterController;
 
 session_start();
 
@@ -193,15 +194,7 @@ Router::route_auth("GET", "/mieter/create", $authFunction, function () {
 });
 
 Router::route_auth("POST", "/mieter/create", $authFunction, function () {
-    $mieter = new Mieter();
-    //$mieter->setId($_POST["id"]);
-    $mieter->setVorname($_POST["vorname"]);
-    $mieter->setNachname($_POST["nachname"]);
-    $mieter->setQuadratmeter($_POST["quadratmeter"]);
-    $mieter->setMietzins($_POST["mietzins"]);
-    $mieterDAO = new MieterDAO();
-    $mieterDAO->create($mieter);
-
+    MieterController::create();
     Router::redirect("/mieter");
 });
 

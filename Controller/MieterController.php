@@ -17,8 +17,14 @@ use view\LayoutRendering;
 class MieterController
 {
     public static function create(){
-        $contentView = new View("mieterEdit.php");
-        LayoutRendering::basicLayout($contentView);
+        $mieter = new Mieter();
+        //$mieter->setId($_POST["id"]);
+        $mieter->setVorname($_POST["vorname"]);
+        $mieter->setNachname($_POST["nachname"]);
+        $mieter->setQuadratmeter($_POST["quadratmeter"]);
+        $mieter->setMietzins($_POST["mietzins"]);
+        $mieterDAO = new MieterDAO();
+        $mieterDAO->create($mieter);
     }
 
     public static function readAll(){
