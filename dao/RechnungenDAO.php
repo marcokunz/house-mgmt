@@ -75,7 +75,8 @@ class RechnungenDAO extends BasicDAO {
      * @ParamType  Rechnungen
      * @ReturnType Rechnungen
      */
-    public function update(Rechnungen $rechnungen) {
+    public function update(Rechnungen $rechnungen)
+    {
         $stmt = $this->pdoInstance->prepare('
              UPDATE rechnungen SET 
                 id = :id,
@@ -88,17 +89,19 @@ class RechnungenDAO extends BasicDAO {
         $stmt->bindValue(':betrag', $rechnungen->getBetrag());
         $stmt->bindValue(':datum', $rechnungen->getDatum());
         $stmt->execute();
+
+        $currentRechnung = $this->pdoInstance->lastInsertId();
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
         $totalgroesse = 0;
         $rechnungsbetrag = $rechnungen->getBetrag();
-        foreach($mieter as $mietertabelle){
+        foreach ($mieter as $mietertabelle) {
             $totalgroesse += $mietertabelle->getQuadratmeter();
         }
-        foreach($mieter as $mietertabelle){
+        foreach ($mieter as $mietertabelle) {
             $kosten = new Kosten();
             //Betrag berechnen
-            $betrag = intval($rechnungsbetrag/$totalgroesse*$mietertabelle->getQuadratmeter());
+            $betrag = intval($rechnungsbetrag / $totalgroesse * $mietertabelle->getQuadratmeter());
             //$betrag = 100;
             $kosten->setBetrag($betrag);
             $kosten->setRechnungen_fk($currentRechnung);
@@ -106,6 +109,7 @@ class RechnungenDAO extends BasicDAO {
             $kostenDAO = new KostenDAO();
             $kostenDAO->update($kosten);
 
+        }
     }
 
     /**
