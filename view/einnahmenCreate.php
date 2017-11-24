@@ -45,7 +45,7 @@ use domain\Mieter;
         </div>
         <div class="btn-group" role="group">
             <button class="btn btn-success" type="submit"> <i class="fa fa-save"></i></button>
-            <button class="btn btn-danger" href="einnahmen" <i class="fa fa-beer"></i></button>
+            <button class="btn btn-danger" type="button "href="einnahmen" <i class="fa fa-beer"></i></button>
         </div>
     </form>
 </div>
