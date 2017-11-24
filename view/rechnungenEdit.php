@@ -41,6 +41,7 @@ global $rechnungen;
         </div>
         <div class="btn-group" role="group">
             <button class="btn btn-default" type="submit"> <i class="fa fa-save"></i></button>
+            <button class="btn btn-danger" onclick="history.back()" type="submit"> <i class="fa-beer"></i></button>
         </div>
     </form>
 </div>
