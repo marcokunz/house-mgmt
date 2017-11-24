@@ -35,7 +35,7 @@ use domain\Mieter;
             <div class="input-group">
                 <div class="input-group-addon"><span>Mieter </span></div>
                 <select class="form-control" required name="mieterfk">
-                <option>Bitte Mieter auswählen</option>
+                <option value="">Bitte Mieter auswählen</option>
                  <?php
                     global $mieter;
                     foreach($mieter as $mietertabelle): ?>
