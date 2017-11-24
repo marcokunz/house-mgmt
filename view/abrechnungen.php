@@ -9,6 +9,9 @@ use view\View;
 use dao\MieterDAO;
 use dao\KostenDAO;
 use domain\Mieter;
+use domain\Einnahme;
+use dao\EinnahmeDAO;
+
 require_once("config/Autoloader.php");
 
 ?>
@@ -18,6 +21,7 @@ require_once("config/Autoloader.php");
 
         <?php
     global $mieter;
+    global $einnahme;
         $counter = 0;
         $KostenDAO = new KostenDAO();
     foreach($mieter as $mietertabelle):
@@ -48,6 +52,10 @@ require_once("config/Autoloader.php");
                     </tr>
                     <tr>
                         <td>Nebenkosten </td>
+                        <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
+                    </tr>
+                    <tr>
+                        <td>Mietzins </td>
                         <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
                     </tr>
                     <tr>

@@ -315,6 +315,11 @@ Router::route_auth("GET", "/abrechnungen", $authFunction, function () {
     $rechnungenDAO = new RechnungenDAO();
     global $rechnungen;
     $rechnungen = $rechnungenDAO-> readAll();
+
+    $einnahmeDAO = new EinnahmeDAO();
+    global $einnahme;
+    $einnahme = $einnahmeDAO->readAll();
+
     layoutSetContent("view/abrechnungen.php");
 });
 
