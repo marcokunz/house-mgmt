@@ -6,6 +6,7 @@
  * Time: 17:06
  */
 global $einnahmen;
+use domain\Mieter;
 
 ?>
 <div class="container">
@@ -37,8 +38,8 @@ global $einnahmen;
                  <?php
                     global $mieter;
                     foreach($mieter as $mietertabelle): ?>
-                        <option value="<?php echo $mietertabelle->getId(); if($myVar=="$mietertabelle->getId()") echo 'selected="selected"'; ?>> <?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname();?></option>
-                    
+                    <option value="<?php echo $mietertabelle->getId();?>" <?php if ($myVar=="$mietertabelle->getId();") echo'selected="selected"';?>><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname();?></option>
+                    <?php endforeach;?>
                 </select>
             </div>
         </div>
