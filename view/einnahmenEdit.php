@@ -44,7 +44,7 @@ use domain\Mieter;
             </div>
         </div>
         <div class="btn-group" role="group">
-            <button class="btn btn-default" type="submit"> <i class="fa fa-save"></i></button>
+            <button class="btn btn-success" type="submit"> <i class="fa fa-save"></i></button>
         </div>
     </form>
 </div>
