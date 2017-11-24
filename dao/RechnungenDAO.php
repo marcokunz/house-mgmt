@@ -46,6 +46,7 @@ class RechnungenDAO extends BasicDAO {
             //$betrag = 100;
             $kosten->setBetrag($betrag);
             $kosten->setRechnungen_fk($currentRechnung);
+            $kosten->setTyp($rechnungen->getTyp());
             $kosten->setMieter_fk($mietertabelle->getId());
             $kostenDAO = new KostenDAO();
             $kostenDAO->create($kosten);

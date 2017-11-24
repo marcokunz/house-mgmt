@@ -70,5 +70,22 @@ class Kosten {
         $this->mieter_fk = $mieter;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTyp()
+    {
+        return $this->typ;
+    }
+
+    /**
+     * @param mixed $rechnungen
+     */
+    public function setTyp($typ)
+    {
+        $this->typ = $typ;
+    }
+
+
 }
 ?>
