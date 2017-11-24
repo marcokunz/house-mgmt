@@ -39,7 +39,7 @@ require_once("config/Autoloader.php");
                         $mieter = new Mieter();
                         $mieter = $mieterDAO->read($einnahmen->getMieterFk());
                         echo $mieter->getVorname()." ".$mieter->getNachname();
-                        ;?> </td>
+                        ?> </td>
                     <td><?php echo $einnahmen->getDatum();?> </td>
                     <td><?php echo $einnahmen->getBetrag();?> </td>
                     <td>
