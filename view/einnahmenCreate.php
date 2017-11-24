@@ -34,7 +34,7 @@ use domain\Mieter;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mieter </span></div>
-                <select class="form-control" name="mieterfk">
+                <select class="form-control" required name="mieterfk">
                  <?php
                     global $mieter;
                     foreach($mieter as $mietertabelle): ?>
