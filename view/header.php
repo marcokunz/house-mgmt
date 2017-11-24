@@ -1,3 +1,18 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: andreas.martin
+ * Date: 13.09.2017
+ * Time: 16:59
+ */
+
+use view\View;
+use dao\EinnahmeDAO;
+use domain\Einnahme;
+use dao\MieterDAO;
+use domain\Mieter;
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -27,17 +42,16 @@
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/mieter">Mieter</a></li>
 
                     <?php
-                    if (1==0){
+                    $mieterDAO = new MieterDAO();
+                    $check = $mieterDAO->readAll();
+
+                    if (!empty($check)){
                         echo" 
-                        <li role=\"presentation\"><a href=".$GLOBALS["ROOT_URL"]."/rechnungen\">Rechnungen</a></li>"
-
-
-
-                        ;
+                        <li role=\"presentation\"><a href=".$GLOBALS["ROOT_URL"]."/rechnungen\">Rechnungen</a></li> 
+                        <li role=\"presentation\"><a href=".$GLOBALS["ROOT_URL"]."/einnahmen\">Einnahmen</a></li>
+                        <li role=\"presentation\"><a href=".$GLOBALS["ROOT_URL"]."/abrechnungen\">Abrechnungen</a></li>";
                     }
                     ?>
-                    <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/einnahmen">Einnahmen</a></li>
-                    <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/abrechnungen">Abrechnungen</a></li>
                     <li role="presentation"><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/">Dashboard</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Profil<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
