@@ -55,8 +55,8 @@ require_once("config/Autoloader.php");
                         <td><?php echo $KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
                     </tr>
                     <tr>
-                        <td>Mietzins </td>
-                        <td><?php echo $einnahme->getTotalEinnahmen($mietertabelle->getId(), "Mieteingänge")?></td>
+                        <td>Mieteingänge </td>
+                        <td><?php echo $einnahme->getTotalEinnahmen($mietertabelle->getId())?></td>
                     </tr>
                     <tr>
                         <td> <a target="_blank" class="btn btn-primary btn-sm" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>
