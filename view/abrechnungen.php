@@ -24,6 +24,7 @@ require_once("config/Autoloader.php");
     global $einnahme;
         $counter = 0;
         $KostenDAO = new KostenDAO();
+        $einnahmeDAO = new EinnahmeDAO();
     foreach($mieter as $mietertabelle):
 
 
@@ -56,7 +57,7 @@ require_once("config/Autoloader.php");
                     </tr>
                     <tr>
                         <td>Mieteingänge </td>
-
+                        <td><?php echo $einnahmeDAO->getTotalEinnahmen($mietertabelle->getId())?></td>
                     </tr>
                     <tr>
                         <td> <a target="_blank" class="btn btn-primary btn-sm" role="button" href="customer/pdf"> <i class="fa fa-file-pdf-o"></i></a></td>
