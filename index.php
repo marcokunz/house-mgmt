@@ -312,9 +312,9 @@ Router::route_auth("GET", "/abrechnungen", $authFunction, function () {
     global $mieter;
     $mieter = $mieterDAO-> readAll();
 
-    $rechnungenDAO = new RechnungenDAO();
+    /*$rechnungenDAO = new RechnungenDAO();
     global $rechnungen;
-    $rechnungen = $rechnungenDAO-> readAll();
+    $rechnungen = $rechnungenDAO-> readAll();*/
 
     $einnahmeDAO = new EinnahmeDAO();
     global $einnahme;
