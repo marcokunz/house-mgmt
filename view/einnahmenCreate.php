@@ -33,7 +33,13 @@ global $einnahmen;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mieter </span></div>
-                <input class="form-control" required type="text" name="mieterfk" value="<?php echo !empty($einnahmen["mieter_fk"]) ? $einnahmen["mieter_fk"] : ''; ?>">
+                <select class="form-control" name="mieterfk">
+                 <?php
+                    global $mieter;
+                    foreach($mieter as $mietertabelle): ?>
+                        <option value="<?php echo $mietertabelle->getId(); if($myVar=="$mietertabelle->getId()") echo 'selected="selected"'; ?>> <?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname();?></option>
+                    
+                </select>
             </div>
         </div>
         <div class="btn-group" role="group">

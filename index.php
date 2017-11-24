@@ -124,6 +124,9 @@ Router::route("GET", "/einnahmen", function () {
 });
 
 Router::route_auth("GET", "/einnahmen/create", $authFunction, function () {
+    $mieterDAO = new MieterDAO();
+    global $mieter;
+    $mieter = $mieterDAO-> readAll();
     layoutSetContent("einnahmenCreate.php");
 });
 
