@@ -55,7 +55,7 @@ class EinnahmeDAO extends BasicDAO {
 
     public function getTotalEinnahmen($mieterId) {
         $stmt = $this->pdoInstance->prepare('
-            SELECT sum(einnahmen.betrag) FROM einnahmen where id = :id');
+            SELECT sum(einnahmen.betrag) FROM einnahmen where mieter_fk = :id');
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
         return $stmt->fetch()[0];
