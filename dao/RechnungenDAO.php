@@ -88,24 +88,7 @@ class RechnungenDAO extends BasicDAO {
         $stmt->bindValue(':betrag', $rechnungen->getBetrag());
         $stmt->bindValue(':datum', $rechnungen->getDatum());
         $stmt->execute();
-        $mieterDAO = new MieterDAO();
-        $mieter = $mieterDAO->readAll();
-        $totalgroesse = 0;
-        $rechnungsbetrag = $rechnungen->getBetrag();
-        foreach($mieter as $mietertabelle){
-            $totalgroesse += $mietertabelle->getQuadratmeter();
-        }
-        foreach($mieter as $mietertabelle){
-            $kosten = new Kosten();
-            //Betrag berechnen
-            $betrag = intval($rechnungsbetrag/$totalgroesse*$mietertabelle->getQuadratmeter());
-            //$betrag = 100;
-            $kosten->setBetrag($betrag);
-            $kosten->setRechnungen_fk($currentRechnung);
-            $kosten->setMieter_fk($mietertabelle->getId());
-            $kostenDAO = new KostenDAO();
-            $kostenDAO->update($kosten);
-
+        //return $this->read($rechnungen->getId());
     }
 
     /**
