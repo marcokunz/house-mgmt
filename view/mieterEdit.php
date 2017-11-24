@@ -39,7 +39,7 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mietzins </span></div>
-                <input class="form-control" type="text" name="mietzins" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getMietzins()): ''; ?>">
+                <input class="form-control" type="number" name="mietzins" value="<?php echo isset($mietertabelle) ? ($mietertabelle->getMietzins()): ''; ?>">
             </div>
         </div>
         <div class="btn-group" role="group">

@@ -34,7 +34,7 @@ use domain\Mieter;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Betrag </span></div>
-                <input class="form-control" required type="text" name="betrag" value="<?php echo isset($einnahmen) ? ($einnahmen->getBetrag()) : ''; ?>">
+                <input class="form-control" required type="number" name="betrag" value="<?php echo isset($einnahmen) ? ($einnahmen->getBetrag()) : ''; ?>">
             </div>
         </div>
         <div class="form-group">
