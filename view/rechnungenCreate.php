@@ -22,6 +22,7 @@ global $rechnungen;
             <div class="input-group">
                 <div class="input-group-addon"><span>Typ </span></div>
                 <select class="form-control" name="typ">
+                    <option value="">Bitte Rechnungstyp auswählen</option>
                     <option value="Heizkosten">Heizkosten</option>
                     <option value="Nebenkosten">Nebenkosten</option>
                 </select>
