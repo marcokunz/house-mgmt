@@ -76,6 +76,7 @@ class KostenDAO extends BasicDAO{
              UPDATE kosten SET 
                 betrag = :betrag
             WHERE rechnungen_fk = :rechnungen_fk AND mieter_fk = :mieter_fk');
+        $stmt->bindValue(':betrag', $kosten->getBetrag());
         $stmt->bindValue(':rechnungen_fk', $kosten->getRechnungen_fk());
         $stmt->bindValue(':mieter_fk', $kosten->getMieter_fk());
         $stmt->execute();
