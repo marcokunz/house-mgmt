@@ -89,7 +89,7 @@ class RechnungenDAO extends BasicDAO {
         $stmt->bindValue(':betrag', $rechnungen->getBetrag());
         $stmt->bindValue(':datum', $rechnungen->getDatum());
         $stmt->execute();
-
+/*
         $currentRechnung = $this->pdoInstance->lastInsertId();
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
@@ -109,7 +109,7 @@ class RechnungenDAO extends BasicDAO {
             $kostenDAO = new KostenDAO();
             $kostenDAO->update($kosten);
 
-        }
+        }*/
     }
 
     /**
