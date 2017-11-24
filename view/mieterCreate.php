@@ -33,7 +33,7 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Quadratmeter </span></div>
-                <input class="form-control" required type="text" name="quadratmeter" value="<?php echo !empty($mietertabelle["quadratmeter"]) ? $mietertabelle["quadratmeter"] : ''; ?>">
+                <input class="form-control" required type="number" name="quadratmeter" value="<?php echo !empty($mietertabelle["quadratmeter"]) ? $mietertabelle["quadratmeter"] : ''; ?>">
             </div>
         </div>
         <div class="form-group">
