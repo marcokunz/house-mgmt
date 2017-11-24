@@ -28,7 +28,6 @@ use domain\Mieter;
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 
 </head>
 
