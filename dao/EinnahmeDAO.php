@@ -64,7 +64,7 @@ class EinnahmeDAO extends BasicDAO {
                 id = :id,
                 datum = :datum,
                 betrag = :betrag,
-                mieter_fk = :mieter_fk,
+                mieter_fk = :mieter_fk
             WHERE id = :id');
         $stmt->bindValue(':id', $einnahme->getId());
         $stmt->bindValue(':datum', $einnahme->getDatum());
