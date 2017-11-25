@@ -83,10 +83,6 @@ require_once("config/Autoloader.php");
                             ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td> <a target="_blank" class="btn btn-primary btn-sm" role="button" href="/kostenabrechnung?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-file-pdf-o"></i></a></td>
-                        <td> </td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
