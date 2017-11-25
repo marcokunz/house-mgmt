@@ -86,7 +86,7 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 // Column headings
-$header = array('Name', 'Heizkosten','Nebenkosten', 'Mieteing&auml&nge');
+$header = array('Name', 'Heizkosten','Nebenkosten', 'Mieteingang');
 // Data loading
 $data = $pdf->LoadData();
 $data1 =  $pdf->LoadData2();
