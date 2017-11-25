@@ -3,7 +3,7 @@
 function ($zahl)
 {
 
-    return number_format($zahl, 2, ".", "\'");
+    return number_format($zahl, 2, ".", "'");
     /**
      * Created by PhpStorm.
      * User: scuib
