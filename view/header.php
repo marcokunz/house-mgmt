@@ -20,7 +20,7 @@ use domain\Mieter;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Management</title>
-    <!--
+
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -29,7 +29,6 @@ use domain\Mieter;
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
-    -->
     <!--//favicon-->
     <link rel="apple-touch-icon" sizes="180x180 " href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
