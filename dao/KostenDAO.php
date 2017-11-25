@@ -66,11 +66,7 @@ class KostenDAO extends BasicDAO{
             rechnungen.typ = "Reparaturkosten" OR 
             rechnungen.typ = "Wasserkosten" OR 
             rechnungen.typ = "Stromkosten" OR 
-            rechnungen.typ = "Hauswartrechnungen" OR 
-            
-            
-            ;');
-
+            rechnungen.typ = "Hauswartrechnungen" ;');
         }
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
