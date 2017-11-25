@@ -48,7 +48,8 @@ require_once("config/Autoloader.php");
         </table>
     </div>
     </div>
-        <div class="header"><h3 class="text-left">Mieter <a class="btn btn-default btn-sm" href="mieter"> <i class="fa fa-share-square-o"></i></a></h3></div>
+    <div class="overViewTable">
+    <div class="header"><h3 class="text-left">Mieter <a class="btn btn-default btn-sm" href="mieter"> <i class="fa fa-share-square-o"></i></a></h3></div>
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -75,6 +76,8 @@ require_once("config/Autoloader.php");
                     </tbody>
                 </table>
             </div>
+    </div>
+    <div class="overViewTable">
     <div class="header"><h3 class="text-left">Einnahmen <a class="btn btn-default btn-sm" href="einnahmen"> <i class="fa fa-share-square-o"></i></a></h3></div>
     <div class="table-responsive">
         <table class="table table-hover">
@@ -106,6 +109,7 @@ require_once("config/Autoloader.php");
             <?php endforeach; ?>
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 
