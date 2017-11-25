@@ -18,9 +18,9 @@ class PDF extends FPDF
         // Move to the right
         $this->Cell(50);
         // Title
-        $this->Cell(10,10,'Deine',0,0,'C');
+        $this->Cell(100,10,'Abrechnung',0,0,'C');
         $this->SetFont('Helvetica','B',30);
-        $this->Cell(100,10,'Abrechnungen.',0,0,'C');
+        $this->Cell(100,10,$mieter->getNachname(),0,0,'C');
         // Line break
         $this->Ln(20);
     }
@@ -83,7 +83,7 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 // Column headings
-$header = array('Name', 'Heizkosten','Nebenkosten', 'Mieteingänge');
+$header = array('Name', 'Heizkosten','Nebenkosten', 'Mieteing&auml&nge');
 // Data loading
 $data = $pdf->LoadData();
 $data1 =  $pdf->LoadData2();
