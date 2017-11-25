@@ -28,7 +28,7 @@ use domain\Mieter;
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" href="http://solide-investieren.de/faviconbild.png"/>
 </head>
 
 <body>
