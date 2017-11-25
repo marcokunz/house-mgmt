@@ -39,8 +39,8 @@ class PDF extends FPDF
         $this->Cell(50);
         // Title
         $this->Cell(100,10,'Abrechnung',0,0,'C');
-        $this->SetFont('Helvetica','B',30);
-        $this->Cell(100,10,$mieter->getNachname(),0,0,'C');
+        $this->SetFont('Helvetica','B',20);
+        $this->Cell(200,10,iconv('UTF-8', 'windows-1252', $data->getVorname()." ".$data->getNachname()),0,0,'C');
         // Line break
         $this->Ln(20);
     }
