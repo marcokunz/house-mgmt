@@ -80,6 +80,8 @@ class MieterDAO extends BasicDAO {
 	public function delete(Mieter $mieter) {
 	    $kostendao = new KostenDAO();
 	    $kostendao->delete($mieter);
+	    $einnahmedao = new EinnahmeDAO();
+	    $einnahmedao->deleteMieter($mieter);
 
         $stmt = $this->pdoInstance->prepare('
             DELETE FROM mietertabelle

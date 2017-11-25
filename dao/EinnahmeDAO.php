@@ -99,6 +99,17 @@ class EinnahmeDAO extends BasicDAO {
 
     }
 
+    public function deleteMieter(Mieter $mieter) {
+
+        $stmt = $this->pdoInstance->prepare('
+            DELETE FROM einnahmen
+            WHERE mieter_fk = :id
+        ');
+        $stmt->bindValue(':id', $mieter->getId());
+        $stmt->execute();
+
+    }
+
     public function readAll(){
         $pdoInstance = Database::connect();
         $stmt = $pdoInstance->prepare('
