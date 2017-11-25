@@ -30,16 +30,29 @@ global $mietertabelle;
                 <input class="form-control" required type="text" name="nachname" value="<?php echo !empty($mietertabelle["nachname"]) ? $mietertabelle["nachname"] : ''; ?>">
             </div>
         </div>
+
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Quadratmeter </span></div>
                 <input class="form-control" required type="number" name="quadratmeter" value="<?php echo !empty($mietertabelle["quadratmeter"]) ? $mietertabelle["quadratmeter"] : ''; ?>">
             </div>
         </div>
+        <!--
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Mietzins </span></div>
                 <input class="form-control" required type="number" name="mietzins" value="<?php echo !empty($mietertabelle["mietzins"]) ? $mietertabelle["mietzins"] : ''; ?>">
+            </div>
+        </div>
+        -->
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon"><span>Mietzins </span></div>
+                <select class="form-control" required name="Mietzins">
+                    <option value="">Bitte Wohnungstyp auswählen</option>
+                    <option value="100">100 m2</option>
+                    <option value="200">200 m2</option>
+                </select>
             </div>
         </div>
         <div class="btn-group" role="group">
