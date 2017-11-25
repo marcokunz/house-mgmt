@@ -69,7 +69,6 @@ class PDF extends FPDF
             $KostenDAO = new KostenDAO();
             $EinnahmeDAO = new EinnahmeDAO();
 
-            foreach ($data as $data) {
                 $this->Cell($w[0], 6, iconv('UTF-8', 'windows-1252', $data->getVorname()." ".$data->getNachname()), 'LR', 0, 'L', $fill);
                 $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', $KostenDAO->getTotalKosten($data->getId(), "Heizkosten")), 'LR', 0, 'L', $fill);
                 $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', $KostenDAO->getTotalKosten($data->getId(), "Nebenkosten")), 'LR', 0, 'L', $fill);
@@ -77,7 +76,7 @@ class PDF extends FPDF
 
                 $this->Ln();
                 $fill = !$fill;
-            }
+
         // Closing line
     }
 }

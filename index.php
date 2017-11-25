@@ -333,7 +333,7 @@ Router::route_auth("GET", "/kostenabrechnung", $authFunction, function () {
     global $mieter;
     global $einnahme;
     global $kosten;
-    $mieter = $mieterDAO-> readAll();
+    $mieter = $mieterDAO-> read($_GET["id"]);
     $einnahme = $einnahmenDAO->readAll();
     $kosten = $kostenDAO->readAll();
 
