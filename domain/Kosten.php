@@ -7,7 +7,7 @@ namespace domain;
 class Kosten {
 
     /**
-     * @AttributeType int
+     * @AttributeType float
      */
     protected $betrag;
     /**
