@@ -15,6 +15,7 @@ use dao\EinnahmeDAO;
 require_once("config/Autoloader.php");
 
 ?>
+<body>
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Abrechnungen</strong> erstellen.</h2></div>
@@ -36,7 +37,7 @@ require_once("config/Autoloader.php");
 
     <?php endif; ?>
 
-        <div class="col-md-4 abrechnungen" onclick="location.href='/kostenabrechnung?id=<?php echo $mietertabelle->getId(); ?>';">
+        <div class="col-md-4 abrechnungen" data-toggle="tooltip" title="Abrechnung erstellen" onclick="location.href='/kostenabrechnung?id=<?php echo $mietertabelle->getId(); ?>';">
             <h4 class="text-left"><strong><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></strong></h4>
             <div class="table-responsive">
                 <table class="table">
@@ -96,3 +97,11 @@ require_once("config/Autoloader.php");
         <?php $counter++;?>
     <?php endforeach; ?>
 </div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+
+</body>
