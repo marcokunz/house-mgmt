@@ -38,7 +38,7 @@ require_once("config/Autoloader.php");
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
                     <td><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
-                    <td>
+                    <td align="right">
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-warning" role="button" href="rechnungen/edit?id=<?php echo $rechnungen->getId(); ?>"> <i class="fa fa-edit"></i></a>
                             <button class="btn btn-danger" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="rechnungen/delete?id=<?php echo $rechnungen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
