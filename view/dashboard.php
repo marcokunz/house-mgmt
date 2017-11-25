@@ -31,7 +31,7 @@ require_once("config/Autoloader.php");
             <tr>
                 <th>Datum</th>
                 <th>Typ</th>
-                <th align="right">Betrag</th>
+                <th style="text-align:left">Betrag</th>
 
             </tr>
             </thead>
@@ -59,7 +59,7 @@ require_once("config/Autoloader.php");
                         <th>Vorname </th>
                         <th>Nachname </th>
                         <th>Quadratmeter</th>
-                        <th align="right">Mietzins </th>
+                        <th style="text-align:left">Mietzins </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -87,7 +87,7 @@ require_once("config/Autoloader.php");
             <tr>
                 <th>Mieter</th>
                 <th>Datum</th>
-                <th align="right">Betrag</th>
+                <th style="text-align:left">Betrag</th>
 
             </tr>
             </thead>
