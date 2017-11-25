@@ -101,7 +101,7 @@ class RechnungenDAO extends BasicDAO {
         foreach ($mieter as $mietertabelle) {
             $kosten = new Kosten();
             //Betrag berechnen
-            $betrag = ($rechnungsbetrag / 2);
+            $betrag = (strval($rechnungsbetrag) / 2);
             //$betrag = 100;
             $kosten->setBetrag($betrag);
             $kosten->setRechnungen_fk($currentRechnung);
