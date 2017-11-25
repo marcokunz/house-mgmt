@@ -41,7 +41,7 @@ global $mietertabelle;
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span>Quadratmeter </span></div>
-                <select class="form-control" required name="Quadratmeter">
+                <select class="form-control" required name="quadratmeter">
                     <option value="">Bitte Quadratmeter eingeben</option>
                     <option value="100">100 m2</option>
                     <option value="200">200 m2</option>
