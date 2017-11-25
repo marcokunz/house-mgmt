@@ -108,9 +108,15 @@ Router::route_auth("GET", "/", $authFunction, function () {
     $mieterDAO = new MieterDAO();
     global $mieter;
     $mieter = $mieterDAO-> readAll();
+
     $rechnungenDAO = new RechnungenDAO();
     global $rechnung;
     $rechnung = $rechnungenDAO-> readAll();
+
+    $einnahmenDAO = new EinnahmeDAO();
+    global $einnahme;
+    $einnahme = $einnahmenDAO->readAll();
+
     layoutSetContent("dashboard.php");
 });
 

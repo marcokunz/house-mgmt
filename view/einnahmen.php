@@ -42,7 +42,7 @@ require_once("config/Autoloader.php");
                         ?> </td>
                     <td><?php echo $einnahmen->getDatum();?> </td>
                     <td><?php echo "CHF ".$einnahmen->getBetrag();?> </td>
-                    <td>
+                    <td align="right">
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-warning" role="button" href="einnahmen/edit?id=<?php echo $einnahmen->getId(); ?>"> <i class="fa fa-edit"></i></a>
                             <button class="btn btn-danger" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="einnahmen/delete?id=<?php echo $einnahmen->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>

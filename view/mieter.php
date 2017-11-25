@@ -36,7 +36,7 @@ require_once("config/Autoloader.php");
                     <td><?php echo $mietertabelle->getNachname();?> </td>
                     <td><?php echo $mietertabelle->getQuadratmeter()." m&#xB2";?> </td>
                     <td><?php echo "CHF ".$mietertabelle->getMietzins();?> </td>
-                    <td>
+                    <td align="right">
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-warning" role="button" href="mieter/edit?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-edit"></i></a>
                             <button class="btn btn-danger" type="button" data-target="#confirm-modal" data-toggle="modal" data-href="mieter/delete?id=<?php echo $mietertabelle->getId(); ?>"> <i class="glyphicon glyphicon-trash"></i></button>
