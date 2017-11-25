@@ -20,7 +20,8 @@ require_once("config/Autoloader.php");
 
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center"><strong>Übersicht</strong>.</h2><button class="btn btn-default" href="rechnungen" type="submit"> <i class="fa fa-info-circle"></i></button>
+        <h2 display="inline-block" class="text-center"><strong>Übersicht</strong>.</h2>
+        <button class="btn btn-default" href="rechnungen" type="submit"> <i class="fa fa-info-circle"></i></button>
     </div>
     <div class="header"><h3 class="text-left">Rechnungen</h3></div>
     <div class="table-responsive">
