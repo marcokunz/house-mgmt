@@ -326,7 +326,7 @@ Router::route_auth("GET", "/abrechnungen", $authFunction, function () {
 });
 
 
-Router::route_auth("GET", "/kostenabrechnungen", $authFunction, function () {
+Router::route_auth("GET", "/kostenabrechnung", $authFunction, function () {
     $mieterDAO = new MieterDAO();
     $einnahmenDAO = new EinnahmeDAO();
     $kostenDAO = new KostenDAO();
