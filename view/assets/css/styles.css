@@ -25,14 +25,18 @@
 
 }
 
-
-
 .abrechnungen{
   background-color: #F1F1F1;
   border-color: white;
   border-width: thick;
   border-style: solid;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.abrechnungen:hover{
+  background-color: #dfdfdf;
+
 }
 
 

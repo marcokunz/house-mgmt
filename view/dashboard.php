@@ -50,7 +50,7 @@ require_once("config/Autoloader.php");
         </table>
     </div>
     </div>
-    <div class="overViewTable" onclick="location.href='mieter';">
+    <div class="overViewTable" onclick="location.href='mieter';" data-toggle="tooltip" title="zu den Mietern">
     <div class="header"><h3 class="text-left">Mieter</h3></div>
             <div class="table-responsive">
                 <table class="table">
@@ -79,7 +79,7 @@ require_once("config/Autoloader.php");
                 </table>
             </div>
     </div>
-    <div class="overViewTable" onclick="location.href='einnahmen';">
+    <div class="overViewTable" onclick="location.href='einnahmen';" data-toggle="tooltip" title="zu den Einnahmen">
     <div class="header"><h3 class="text-left">Einnahmen</h3></div>
     <div class="table-responsive">
         <table class="table">
