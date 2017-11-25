@@ -36,7 +36,7 @@ require_once("config/Autoloader.php");
 
     <?php endif; ?>
 
-        <div class="col-md-4" style="background-color: #F1F1F1; border-color: white; border-width: thick; border-style: solid; border-radius: 10px">
+        <div class="col-md-4" class="overViewTable">
             <h4 class="text-left"><strong><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></strong></h4>
             <div class="table-responsive">
                 <table class="table">
