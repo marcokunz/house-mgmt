@@ -21,7 +21,7 @@ require_once("config/Autoloader.php");
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Übersicht</strong>.</h2></div>
-    <div class="header"><h3 class="text-left">Rechnungen <a class="btn btn-default btn-sm" href="rechnungen"> <i class="fa fa-info-circle"></i></a></h3></div>
+    <div class="header"><h3 class="text-left">Rechnungen <a class="btn btn-default btn-sm" href="rechnungen"> <i class="fa fa-share-square-o"></i></a></h3></div>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
@@ -36,9 +36,7 @@ require_once("config/Autoloader.php");
             <?php
 
             global $rechnung;
-            foreach($rechnung as $rechnungen):
-                ?>
-
+            foreach($rechnung as $rechnungen):?>
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
@@ -48,7 +46,7 @@ require_once("config/Autoloader.php");
             </tbody>
         </table>
     </div>
-        <div class="header"><h3 class="text-left">Mieter <a class="btn btn-default btn-sm" href="mieter"> <i class="fa fa-info-circle"></i></a></h3></div>
+        <div class="header"><h3 class="text-left">Mieter <a class="btn btn-default btn-sm" href="mieter"> <i class="fa fa-share-square-o"></i></a></h3></div>
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -75,7 +73,7 @@ require_once("config/Autoloader.php");
                     </tbody>
                 </table>
             </div>
-    <div class="header"><h3 class="text-left">Einnahmen <a class="btn btn-default btn-sm" href="einnahmen"> <i class="fa fa-info-circle"></i></a></h3></div>
+    <div class="header"><h3 class="text-left">Einnahmen <a class="btn btn-default btn-sm" href="einnahmen"> <i class="fa fa-share-square-o"></i></a></h3></div>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
