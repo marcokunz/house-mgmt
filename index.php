@@ -122,7 +122,7 @@ Router::route_auth("GET", "/", $authFunction, function () {
 
 //Einnahmen
 
-Router::route("GET", "/einnahmen", function () {
+Router::route_auth("GET", "/einnahmen",$authFunction, function () {
     $einnahmeDAO = new EinnahmeDAO();
     global $einnahme;
     $einnahme = $einnahmeDAO->readAll();
