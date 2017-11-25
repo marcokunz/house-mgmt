@@ -21,9 +21,10 @@ require_once("config/Autoloader.php");
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Übersicht</strong>.</h2></div>
+    <div class="overViewTable">
     <div class="header"><h3 class="text-left">Rechnungen <a class="btn btn-default btn-sm" href="rechnungen"> <i class="fa fa-share-square-o"></i></a></h3></div>
     <div class="table-responsive">
-        <table class="table table-hover">
+        <table class="table">
             <thead>
             <tr>
                 <th>Datum</th>
@@ -45,6 +46,7 @@ require_once("config/Autoloader.php");
             <?php endforeach; ?>
             </tbody>
         </table>
+    </div>
     </div>
         <div class="header"><h3 class="text-left">Mieter <a class="btn btn-default btn-sm" href="mieter"> <i class="fa fa-share-square-o"></i></a></h3></div>
             <div class="table-responsive">
