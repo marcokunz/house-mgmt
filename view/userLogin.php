@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/navigation.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
 </head>
 
 <body style="background-color:#609dd0;">
