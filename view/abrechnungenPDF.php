@@ -10,6 +10,24 @@ require('fpdf/fpdf.php');
 class PDF extends FPDF
 {
 
+
+
+    // Page header
+    function Header($data)
+    {
+        // Arial bold 15
+        $this->SetFont('Helvetica','',30);
+        // Move to the right
+        $this->Cell(50);
+        // Title
+        $this->Cell(100,10,'Abrechnung',0,0,'C');
+        $this->SetFont('Helvetica','B',20);
+        $this->Cell(200,10,'Kosten',0,0,'C');
+        // Line break
+        $this->Ln(20);
+    }
+
+
     // Daten übergeben
     function LoadData()
     {
@@ -29,23 +47,6 @@ class PDF extends FPDF
         return $kosten;
 
     }
-
-    // Page header
-    function Header($data)
-    {
-        // Arial bold 15
-        $this->SetFont('Helvetica','',30);
-        // Move to the right
-        $this->Cell(50);
-        // Title
-        $this->Cell(100,10,'Abrechnung',0,0,'C');
-        $this->SetFont('Helvetica','B',20);
-        $this->Cell(200,10,'Kosten',0,0,'C');
-        // Line break
-        $this->Ln(20);
-    }
-
-
 
 // Colored table
     function FancyTable($header, $data, $data1, $data2)
@@ -82,13 +83,14 @@ class PDF extends FPDF
         // Closing line
     }
 }
-$data = $pdf->LoadData();
-$data1 =  $pdf->LoadData2();
-$data2 = $pdf->LoadData3();
+
 $pdf = new PDF();
 // Column headings
 $header = array('Name', 'Heizkosten','Nebenkosten', 'Mieteing&auml&nge');
 // Data loading
+$data = $pdf->LoadData();
+$data1 =  $pdf->LoadData2();
+$data2 = $pdf->LoadData3();
 $pdf->SetFont('Arial','',14);
 $pdf->AddPage();
 $pdf->Ln();
