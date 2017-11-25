@@ -12,7 +12,7 @@ global $rechnungen;
     <div class="page-header">
         <h2 class="text-center"><strong>Rechnung</strong> editieren. </h2></div>
     <form action="edit" method="post">
-        <div class="form-group">
+        <div class="form-group" style="display: none">
             <div class="input-group">
                 <div class="input-group-addon"><span>ID </span></div>
                 <input class="form-control" type="text" name="id"  readonly ="" value="<?php echo isset($rechnungen) ? ($rechnungen->getId()) : ''; ?>">
