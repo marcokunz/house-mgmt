@@ -9,12 +9,15 @@
 }
 
 .overViewTable{
-   background-color: #F1F1F1;
-   border-color: white;
-   border-width: thick;
-   border-style: solid;
-   border-radius: 10px;
-   cursor: pointer;
+  background-color: #F1F1F1;
+  border-color: white;
+  border-width: thick;
+  border-style: solid;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 20px;
+  padding-top: 0px;
+
  }
 
 .overViewTable:hover{
