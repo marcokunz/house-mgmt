@@ -31,7 +31,7 @@ class PDF extends FPDF
     }
 
     // Page header
-    function Header()
+    function Header($data)
     {
         // Arial bold 15
         $this->SetFont('Helvetica','',30);
