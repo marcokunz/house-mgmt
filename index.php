@@ -326,6 +326,21 @@ Router::route_auth("GET", "/abrechnungen", $authFunction, function () {
 });
 
 
+Router::route_auth("GET", "/kostenabrechnungen", $authFunction, function () {
+    $mieterDAO = new MieterDAO();
+    $einnahmenDAO = new EinnahmeDAO();
+    $kostenDAO = new KostenDAO();
+    global $mieter;
+    global $einnahme;
+    global $kosten;
+    $mieter = $mieterDAO-> readAll();
+    $einnahme = $einnahmenDAO->readAll();
+    $kosten = $kostenDAO->readAll();
+
+    require_once('view/mieterspiegelPDF.php');
+});
+
+
 
 
 
