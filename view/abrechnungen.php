@@ -36,7 +36,7 @@ require_once("config/Autoloader.php");
 
     <?php endif; ?>
 
-        <div class="col-md-4 overViewTable">
+        <div class="col-md-4 abrechnungen">
             <h4 class="text-left"><strong><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></strong></h4>
             <div class="table-responsive">
                 <table class="table">
