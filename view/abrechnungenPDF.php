@@ -20,7 +20,7 @@ class PDF extends FPDF
         // Title
         $this->Cell(10,10,'Dein',0,0,'C');
         $this->SetFont('Helvetica','B',30);
-        $this->Cell(85,10,'Abrechnungen.',0,0,'C');
+        $this->Cell(100,10,'Abrechnungen.',0,0,'C');
         // Line break
         $this->Ln(20);
     }
@@ -70,7 +70,7 @@ class PDF extends FPDF
             $EinnahmeDAO = new EinnahmeDAO();
 
             foreach ($data as $data) {
-                $this->Cell($w[0], 6, iconv('UTF-8', 'windows-1252', $data->getVorname() . $data->getNachname()), 'LR', 0, 'L', $fill);
+                $this->Cell($w[0], 6, iconv('UTF-8', 'windows-1252', $data->getVorname()." ".$data->getNachname()), 'LR', 0, 'L', $fill);
                 $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', $KostenDAO->getTotalKosten($data->getId(), "Heizkosten")), 'LR', 0, 'L', $fill);
                 $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', $KostenDAO->getTotalKosten($data->getId(), "Nebenkosten")), 'LR', 0, 'L', $fill);
                 $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', $EinnahmeDAO->getTotalEinnahmen($data->getId())), 'LR', 0, 'R', $fill);
