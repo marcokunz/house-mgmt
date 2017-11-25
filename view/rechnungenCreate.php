@@ -24,7 +24,10 @@ global $rechnungen;
                 <select class="form-control" required name="typ">
                     <option value="">Bitte Rechnungstyp auswählen</option>
                     <option value="Heizkosten">Heizkosten</option>
-                    <option value="Nebenkosten">Nebenkosten</option>
+                    <option value="Reparaturkosten">Reparaturkosten</option>
+                    <option value="Wasserkosten">Wasserkosten</option>
+                    <option value="Stromkosten">Stromkosten</option>
+                    <option value="Hauswartrechnungen">Hauswartrechnungen</option>
                 </select>
             </div>
         </div>

@@ -23,7 +23,10 @@ global $rechnungen;
                 <div class="input-group-addon"><span>Typ </span></div>
                 <select class="form-control" name="typ">
                     <option value="Heizkosten" <?php if ($rechnungen->getTyp()=="Heizkosten") echo'selected="selected"';?>>Heizkosten</option>
-                    <option value="Nebenkosten" <?php if ($rechnungen->getTyp()=="Nebenkosten") echo'selected="selected"';?>>Nebenkosten</option>
+                    <option value="Reparaturkosten" <?php if ($rechnungen->getTyp()=="Reparaturkosten") echo'selected="selected"';?>>Reparaturkosten</option>
+                    <option value="Wasserkosten" <?php if ($rechnungen->getTyp()=="Wasserkosten") echo'selected="selected"';?>>Wasserkosten</option>
+                    <option value="Stromkosten" <?php if ($rechnungen->getTyp()=="Stromkosten") echo'selected="selected"';?>>Stromkosten</option>
+                    <option value="Hauswartrechnungen" <?php if ($rechnungen->getTyp()=="Hauswartrechnungen") echo'selected="selected"';?>>Hauswartrechnungen</option>
                 </select>
             </div>
         </div>
