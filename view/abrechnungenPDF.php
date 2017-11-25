@@ -40,7 +40,7 @@ class PDF extends FPDF
         // Title
         $this->Cell(100,10,'Abrechnung',0,0,'C');
         $this->SetFont('Helvetica','B',20);
-        $this->Cell(200,10,iconv('UTF-8', 'windows-1252', $data->getNachname()),0,0,'C');
+        $this->Cell(200,10,'Kosten',0,0,'C');
         // Line break
         $this->Ln(20);
     }
