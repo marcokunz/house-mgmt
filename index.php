@@ -78,7 +78,9 @@ Router::route("POST", "/login", function () {
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
         $user = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-        if (password_verify($_POST["password"], $user["password"])) {
+        $epasswort = $_POST["password"];
+        $upasswort = $user["password"];
+        if (password_verify($epasswort, $upasswort)) {
             $_SESSION["userLogin"]["name"] = $user["name"];
             $_SESSION["userLogin"]["email"] = $email;
             $_SESSION["userLogin"]["id"] = $user["id"];
