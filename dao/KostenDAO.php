@@ -57,8 +57,8 @@ class KostenDAO extends BasicDAO{
         $mieter = $mieterDAO->readAll();
         $stmt = $this->pdoInstance->prepare('
             SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND rechnungen.typ = :kostenart ;');
-        if($kostenart != "Heizkosten"){
-            $kostenart ="Nebenkosten";
+        if($kostenart !== "Heizkosten"){
+            $kostenart = "Nebenkosten";
         }
         $stmt->bindValue(':id', $mieterId);
         $stmt->bindValue(':kostenart', $kostenart);
