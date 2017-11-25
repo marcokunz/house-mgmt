@@ -49,7 +49,14 @@ require_once("config/Autoloader.php");
                     <tbody>
                     <tr>
                         <td>Heizkosten</td>
-                        <td><?php echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten")?></td>
+                        <td><?php
+                            if($KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten")==null){
+                                echo "CHF 0";
+                            }
+                            else{
+                            echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten");
+                            }?>
+                        </td>
                     </tr>
                     <tr>
                         <td>Nebenkosten </td>
