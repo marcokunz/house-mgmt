@@ -11,6 +11,9 @@ use dao\RechnungenDAO;
 use dao\MieterDAO;
 use domain\Mieter;
 use domain\Rechnungen;
+use domain\Einnahme;
+use dao\EinnahmeDAO;
+
 require_once("config/Autoloader.php");
 ?>
 <!DOCTYPE html>
@@ -91,7 +94,12 @@ require_once("config/Autoloader.php");
                 ?>
 
                 <tr>
-                    <td><?php echo $einnahmen->getMieterFk(); ?></td>
+                    <td><?php
+                        $mieterDAO = new MieterDAO();
+                        $mieter = new Mieter();
+                        $mieter = $mieterDAO->read($einnahmen->getMieterFk());
+                        echo $mieter->getVorname()." ".$mieter->getNachname();
+                        ?> </td>
                     <td><?php echo $einnahmen->getDatum(); ?></td>
                     <td><?php echo "CHF ".$einnahmen->getBetrag(); ?></td>
                 </tr>
