@@ -21,7 +21,7 @@ require_once("config/Autoloader.php");
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Übersicht</strong>.</h2></div>
-    <div class="overViewTable" onclick="location.href='rechnungen';">
+    <div class="overViewTable" onclick="location.href='rechnungen';" data-toggle="tooltip" title="zum Rechnungstab">
     <div class="header"><h3 class="text-left">Rechnungen</h3></div>
     <div class="table-responsive">
         <table class="table">
@@ -112,6 +112,11 @@ require_once("config/Autoloader.php");
     </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 
 
 
