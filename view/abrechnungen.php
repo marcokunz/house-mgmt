@@ -37,7 +37,7 @@ require_once("config/Autoloader.php");
 
     <?php endif; ?>
 
-        <div class="col-md-4 abrechnungen" data-toggle="tooltip" target="_blank" title="Abrechnung erstellen" onclick="location.href='/kostenabrechnung?id=<?php echo $mietertabelle->getId(); ?>';">
+        <div class="col-md-4 abrechnungen" data-toggle="tooltip" title="Abrechnung erstellen" onclick="location.href='/kostenabrechnung?id=<?php echo $mietertabelle->getId(); ?>';">
             <h4 class="text-left"><strong><?php echo $mietertabelle->getVorname()." ".$mietertabelle->getNachname() ;?></strong></h4>
             <div class="table-responsive">
                 <table class="table">
