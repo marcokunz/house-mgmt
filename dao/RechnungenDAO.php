@@ -103,7 +103,7 @@ class RechnungenDAO extends BasicDAO {
             //Betrag berechnen
             $betrag = ($rechnungsbetrag / $totalgroesse * $mietertabelle->getQuadratmeter());
             //$betrag = 100;
-            $kosten->setBetrag(doubleval($betrag));
+            $kosten->setBetrag($betrag);
             $kosten->setRechnungen_fk($currentRechnung);
             $kosten->setMieter_fk($mietertabelle->getId());
             $kostenDAO = new KostenDAO();
