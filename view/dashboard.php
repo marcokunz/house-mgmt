@@ -91,7 +91,7 @@ require_once("config/Autoloader.php");
                 ?>
 
                 <tr>
-                    <td><?php echo $einnahmen->getMieter(); ?></td>
+                    <td><?php echo $einnahmen->getMieterFk(); ?></td>
                     <td><?php echo $einnahmen->getDatum(); ?></td>
                     <td><?php echo "CHF ".$einnahmen->getBetrag(); ?></td>
                 </tr>
