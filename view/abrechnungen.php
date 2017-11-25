@@ -55,16 +55,33 @@ require_once("config/Autoloader.php");
                             }
                             else{
                             echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten");
-                            }?>
+                            }
+                            ?>
                         </td>
                     </tr>
                     <tr>
                         <td>Nebenkosten </td>
-                        <td><?php echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")?></td>
+                        <td><?php
+                            if($KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten")==null){
+                                echo "CHF 0";
+                            }
+                            else{
+                                echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten");
+                            }
+                            ?>
+                        </td>
                     </tr>
                     <tr>
                         <td>Mieteingänge </td>
-                        <td><?php echo "CHF ".$einnahmeDAO->getTotalEinnahmen($mietertabelle->getId())?></td>
+                        <td><?php
+                            if($einnahmeDAO->getTotalEinnahmen($mietertabelle->getId())==null){
+                                echo "CHF 0";
+                            }
+                            else {
+                                echo "CHF " . $einnahmeDAO->getTotalEinnahmen($mietertabelle->getId());
+                            }
+                            ?>
+                        </td>
                     </tr>
                     <tr>
                         <td> <a target="_blank" class="btn btn-primary btn-sm" role="button" href="/kostenabrechnung?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-file-pdf-o"></i></a></td>
