@@ -10,7 +10,6 @@ use view\View;
 use dao\MieterDAO;
 use domain\Mieter;
 require_once("config/Autoloader.php");
-require_once("formatieren.php");
 ?>
 <!DOCTYPE html>
 
