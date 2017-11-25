@@ -43,7 +43,7 @@ require_once("config/Autoloader.php");
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
                     <td><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
                 </tr>
-            <?php endforeach; ?>
+            <?php endforeach;?>
             </tbody>
         </table>
     </div>
