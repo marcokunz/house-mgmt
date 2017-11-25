@@ -43,18 +43,18 @@ global $mietertabelle;
                 <div class="input-group-addon"><span>Quadratmeter </span></div>
                 <select class="form-control" required name="quadratmeter">
                     <option value="">Bitte Quadratmeter eingeben</option>
-                    <option value="45">45 <?php " m&#xB2";?> - Wohnung 1.1</option>
-                    <option value="51">51 <?php " m&#xB2";?> - Wohnung 1.2</option>
-                    <option value="56">56 <?php " m&#xB2";?> - Wohnung 1.3</option>
-                    <option value="63">63 <?php " m&#xB2";?> - Wohnung 2.1</option>
-                    <option value="70">70 <?php " m&#xB2";?> - Wohnung 2.2</option>
-                    <option value="77">77 <?php " m&#xB2";?> - Wohnung 2.3</option>
-                    <option value="95">95 <?php " m&#xB2";?> - Wohnung 2.4</option>
-                    <option value="101">101 <?php " m&#xB2";?> - Wohnung 3.1</option>
-                    <option value="115">115 <?php " m&#xB2";?> - Wohnung 4.1</option>
-                    <option value="120">120 <?php " m&#xB2";?> - Wohnung 5.1</option>
-                    <option value="122">122 <?php " m&#xB2";?> - Wohnung 6.1</option>
-                    <option value="130">130 <?php " m&#xB2";?> - Wohnung 7.1</option>
+                    <option value="45">45 m<sup>2</sup> - Wohnung 1.1</option>
+                    <option value="51">51 m<sup>2</sup> - Wohnung 1.2</option>
+                    <option value="56">56 m<sup>2</sup> - Wohnung 1.3</option>
+                    <option value="63">63 m<sup>2</sup> - Wohnung 2.1</option>
+                    <option value="70">70 m<sup>2</sup> - Wohnung 2.2</option>
+                    <option value="77">77 m<sup>2</sup> - Wohnung 2.3</option>
+                    <option value="95">95 m<sup>2</sup> - Wohnung 2.4</option>
+                    <option value="101">101 m<sup>2</sup> - Wohnung 3.1</option>
+                    <option value="115">115 m<sup>2</sup> - Wohnung 4.1</option>
+                    <option value="120">120 m<sup>2</sup> - Wohnung 5.1</option>
+                    <option value="122">122 m<sup>2</sup> - Wohnung 6.1</option>
+                    <option value="130">130 m<sup>2</sup> - Wohnung 7.1</option>
                 </select>
             </div>
         </div>
