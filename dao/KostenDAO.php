@@ -62,11 +62,15 @@ class KostenDAO extends BasicDAO{
         }
         else{
             $stmt = $this->pdoInstance->prepare('
-            SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND 
+            SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND (
             rechnungen.typ = "Reparaturkosten" OR 
             rechnungen.typ = "Wasserkosten" OR 
             rechnungen.typ = "Stromkosten" OR 
-            rechnungen.typ = "Hauswartrechnungen" ;');
+            rechnungen.typ = "Hauswartrechnungen") ;');
+            $stmt->bindValue(':Reparaturkosten', "Reparaturkosten");
+            $stmt->bindValue(':Wasserkosten', "Wasserkosten");
+            $stmt->bindValue(':Stromkosten', "Stromkosten");
+            $stmt->bindValue(':Hauswartrechnungen', "Hauswartrechnungen");
         }
         $stmt->bindValue(':id', $mieterId);
         $stmt->execute();
