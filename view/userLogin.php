@@ -30,10 +30,10 @@
             <p style="font-size:19px;color:#1f2021;margin:-2px;margin-left:0px;margin-bottom:0px;margin-right:0px;margin-top:-25px;">HOUSE-MGMT </p>
         </div>
         <div class="form-group">
-            <input class="form-control" type="email" name="email" placeholder="Email">
+            <input required class="form-control" type="email" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Password">
+            <input required class="form-control" type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
             <button class="btn btn-primary btn-block" type="submit" style="background-color:#1f2021;">Log In</button>

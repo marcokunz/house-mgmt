@@ -55,10 +55,24 @@ class KostenDAO extends BasicDAO{
     public function getTotalKosten($mieterId, $kostenart) {
         $mieterDAO = new MieterDAO();
         $mieter = $mieterDAO->readAll();
-        $stmt = $this->pdoInstance->prepare('
+        if($kostenart=="Heizkosten") {
+            $stmt = $this->pdoInstance->prepare('
             SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND rechnungen.typ = :kostenart ;');
+            $stmt->bindValue(':kostenart', $kostenart);
+        }
+        else{
+            $stmt = $this->pdoInstance->prepare('
+            SELECT sum(kosten.betrag) FROM kosten JOIN rechnungen ON kosten.rechnungen_fk = rechnungen.id WHERE kosten.mieter_fk = :id AND (
+            rechnungen.typ = :Reparaturkosten OR 
+            rechnungen.typ = :Wasserkosten OR 
+            rechnungen.typ = :Stromkosten OR 
+            rechnungen.typ = :Hauswartrechnungen) ;');
+            $stmt->bindValue(':Reparaturkosten', "Reparaturkosten");
+            $stmt->bindValue(':Wasserkosten', "Wasserkosten");
+            $stmt->bindValue(':Stromkosten', "Stromkosten");
+            $stmt->bindValue(':Hauswartrechnungen', "Hauswartrechnungen");
+        }
         $stmt->bindValue(':id', $mieterId);
-        $stmt->bindValue(':kostenart', $kostenart);
         $stmt->execute();
         return $stmt->fetch()[0];
     }
