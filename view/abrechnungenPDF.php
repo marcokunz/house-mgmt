@@ -18,7 +18,7 @@ class PDF extends FPDF
         // Move to the right
         $this->Cell(50);
         // Title
-        $this->Cell(10,10,'Dein',0,0,'C');
+        $this->Cell(10,10,'Deine',0,0,'C');
         $this->SetFont('Helvetica','B',30);
         $this->Cell(100,10,'Abrechnungen.',0,0,'C');
         // Line break
