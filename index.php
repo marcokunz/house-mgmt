@@ -337,7 +337,7 @@ Router::route_auth("GET", "/kostenabrechnung", $authFunction, function () {
     $einnahme = $einnahmenDAO->readAll();
     $kosten = $kostenDAO->readAll();
 
-    require_once('view/mieterspiegelPDF.php');
+    require_once('view/abrechnungenPDF.php');
 });
 
 
