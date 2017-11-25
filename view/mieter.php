@@ -36,7 +36,7 @@ require_once("formatieren.php");
                     <td><?php echo $mietertabelle->getVorname();?></td>
                     <td><?php echo $mietertabelle->getNachname();?> </td>
                     <td><?php echo $mietertabelle->getQuadratmeter()." m&#xB2";?> </td>
-                    <td><?php echo "CHF ".formatieren($mietertabelle->getMietzins());?> </td>
+                    <td><?php echo "CHF ".number_format($mietertabelle->getMietzins(),2,",","/'");?> </td>
                     <td align="right">
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-warning" role="button" href="mieter/edit?id=<?php echo $mietertabelle->getId(); ?>"> <i class="fa fa-edit"></i></a>
