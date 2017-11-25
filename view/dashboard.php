@@ -20,7 +20,9 @@ require_once("config/Autoloader.php");
 
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center"><strong>Übersicht</strong>.</h2></div>
+        <h2 class="text-center"><strong>Übersicht</strong>.</h2>
+        <button class="btn btn-default" href="rechnungen" type="submit"> <i class="fa fa-info-circle"></i></button>
+    </div>
     <div class="header"><h3 class="text-left">Rechnungen</h3></div>
     <div class="table-responsive">
         <table class="table table-hover">
@@ -45,14 +47,6 @@ require_once("config/Autoloader.php");
                     <td><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
                 </tr>
             <?php endforeach; ?>
-                <tr>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button class="btn btn-default" href="rechnungen" type="submit"> <i class="fa fa-info-circle"></i></button>
-                        </div>
-                    </td>
-
-                </tr>
             </tbody>
         </table>
     </div>
