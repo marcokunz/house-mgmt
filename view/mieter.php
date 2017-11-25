@@ -33,7 +33,7 @@ require_once("formatieren.php");
             global $mieter;
             foreach($mieter as $mietertabelle): ?>
                 <tr>
-                    <td><?php echo ($mietertabelle->getVorname();?></td>
+                    <td><?php echo $mietertabelle->getVorname();?></td>
                     <td><?php echo $mietertabelle->getNachname();?> </td>
                     <td><?php echo $mietertabelle->getQuadratmeter()." m&#xB2";?> </td>
                     <td><?php echo "CHF ".formatieren($mietertabelle->getMietzins());?> </td>
