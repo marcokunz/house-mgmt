@@ -92,6 +92,6 @@ $data2 = $pdf->LoadData3();
 $pdf->SetFont('Arial','',14);
 $pdf->AddPage();
 $pdf->Ln();
-$pdf->FancyTable($header,$data);
+$pdf->FancyTable($header,$data, $data1, $data2);
 $pdf->Output();
 ?>
