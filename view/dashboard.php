@@ -21,7 +21,7 @@ require_once("config/Autoloader.php");
 <div class="container">
     <div class="page-header">
         <h2 class="text-center"><strong>Übersicht</strong>.</h2></div>
-    <div class="header"><h3 class="text-left">Rechnungen <button class="btn btn-default" href="rechnungen"> <i class="fa fa-info-circle"></i></button></div>
+    <div class="header"><h3 class="text-left">Rechnungen <a class="btn btn-default btn-sm" href="rechnungen"> <i class="fa fa-info-circle"></i></a></div>
     </h3>
     <div class="table-responsive">
         <table class="table table-hover">
