@@ -17,6 +17,13 @@
    cursor: pointer;
  }
 
+.overViewTable:hover{
+  background-color: #dfdfdf;
+
+}
+
+
+
 .abrechnungen{
   background-color: #F1F1F1;
   border-color: white;
@@ -24,4 +31,8 @@
   border-style: solid;
   border-radius: 10px;
 }
+
+
+
+
 
