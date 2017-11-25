@@ -45,6 +45,14 @@ require_once("config/Autoloader.php");
                     <td><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
                 </tr>
             <?php endforeach; ?>
+                <tr>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-default" href="rechnungen" type="submit"> <i class="fa fa-info-circle"></i></button>
+                        </div>
+                    </td>
+
+                </tr>
             </tbody>
         </table>
     </div>
