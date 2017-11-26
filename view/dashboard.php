@@ -31,7 +31,7 @@ require_once("config/Autoloader.php");
             <tr>
                 <th>Datum</th>
                 <th>Typ</th>
-                <th style="text-align:left">Betrag</th>
+                <th class="alignTableRight">Betrag</th>
 
             </tr>
             </thead>
@@ -43,7 +43,7 @@ require_once("config/Autoloader.php");
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
-                    <td align="right"><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
+                    <td class="alignTableRight"><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
                 </tr>
             <?php endforeach;?>
             </tbody>
@@ -59,7 +59,7 @@ require_once("config/Autoloader.php");
                         <th>Vorname </th>
                         <th>Nachname </th>
                         <th>Quadratmeter</th>
-                        <th style="text-align:left">Mietzins </th>
+                        <th class="alignTableRight">Mietzins </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -72,7 +72,7 @@ require_once("config/Autoloader.php");
                             <td><?php echo $mietertabelle->getVorname();?></td>
                             <td><?php echo $mietertabelle->getNachname();?> </td>
                             <td><?php echo $mietertabelle->getQuadratmeter()." m&#xB2";?> </td>
-                            <td align="right"><?php echo "CHF ".number_format($mietertabelle->getMietzins(),2, ".", "'");?> </td>
+                            <td class="alignTableRight"><?php echo "CHF ".number_format($mietertabelle->getMietzins(),2, ".", "'");?> </td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
@@ -87,7 +87,7 @@ require_once("config/Autoloader.php");
             <tr>
                 <th>Mieter</th>
                 <th>Datum</th>
-                <th style="text-align:left">Betrag</th>
+                <th class="alignTableRight">Betrag</th>
 
             </tr>
             </thead>
@@ -106,7 +106,7 @@ require_once("config/Autoloader.php");
                         echo $mieter->getVorname()." ".$mieter->getNachname();
                         ?> </td>
                     <td><?php echo $einnahmen->getDatum(); ?></td>
-                    <td align="right"><?php echo "CHF ".$einnahmen->getBetrag(); ?></td>
+                    <td class="alignTableRight"><?php echo "CHF ".$einnahmen->getBetrag(); ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
