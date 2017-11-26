@@ -10,6 +10,7 @@ use view\View;
 use dao\RechnungenDAO;
 use domain\Rechnungen;
 require_once("config/Autoloader.php");
+include "formatierung.php";
 ?>
 <!DOCTYPE html>
 
