@@ -13,6 +13,7 @@ use dao\MieterDAO;
 use domain\Mieter;
 
 require_once("config/Autoloader.php");
+include "formatierung.php";
 ?>
 <!DOCTYPE html>
 

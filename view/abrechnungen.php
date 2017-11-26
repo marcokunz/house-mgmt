@@ -56,7 +56,7 @@ include "formatierung.php";
                                 echo "CHF 0";
                             }
                             else{
-                            echo zahl_format($KostenDAO->getTotalKosten($mietertabelle->getId()), "Heizkosten");
+                            echo zahl_format($KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten"));
                             }
                             ?>
                         </td>
@@ -68,7 +68,7 @@ include "formatierung.php";
                                 echo "CHF 0";
                             }
                             else{
-                                echo zahl_format($KostenDAO->getTotalKosten($mietertabelle->getId()), "Nebenkosten");
+                                echo zahl_format($KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten"));
                             }
                             ?>
                         </td>
