@@ -32,12 +32,12 @@
 
 </head>
 
-<body style="background-color:#609dd0;">
-<div class="login-clean" style="background-color:#609dd0;">
-    <form method="post" style="background-color:#fbfbfb;color:rgba(120,159,205,0.2);">
+<body class="login-clean">
+<div class="login-clean">
+    <form method="post">
         <h2 class="sr-only">Login Form</h2>
-        <div class="illustration"><i class="glyphicon glyphicon-home" style="color:#149c82;"></i>
-            <p style="font-size:19px;color:#1f2021;margin:-2px;margin-left:0px;margin-bottom:0px;margin-right:0px;margin-top:-25px;">HOUSE-MGMT </p>
+        <div class="illustration"><i class="glyphicon glyphicon-home houseLogin"></i>
+            <p class="titleLogin">HOUSE-MGMT </p>
         </div>
         <div class="form-group">
             <input required class="form-control" type="email" name="email" placeholder="Email">
@@ -46,7 +46,7 @@
             <input required class="form-control" type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit" style="background-color:#1f2021;">Log In</button>
+            <button class="btn btn-primary btn-block" type="submit">Log In</button>
         </div><a href="<?php echo $GLOBALS["ROOT_URL"]; ?>/register" class="forgot">Register </a></form>
 </div>
 <script src="assets/js/jquery.min.js"></script>

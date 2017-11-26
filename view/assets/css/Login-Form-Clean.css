@@ -1,7 +1,22 @@
 .login-clean {
-  background:#f1f7fc;
+  background:#149c82;
   padding:80px 0;
 }
+
+.houseLogin{
+    color: #2c3e50;
+}
+
+.titleLogin{
+    font-size:19px;
+    color:#2c3e50;
+    margin:-2px;
+    margin-left:0px;
+    margin-bottom:0px;
+    margin-right:0px;
+    margin-top:-25px;
+}
+
 
 .login-clean form {
   max-width:320px;
@@ -10,7 +25,7 @@
   padding:40px;
   border-radius:4px;
   color:#606c50;
-  box-shadow:1px 1px 5px rgba(0,0,0,0.1);
+  //box-shadow:1px 1px 5px rgba(0,0,0,0.1);
 }
 
 .login-clean .illustration {
@@ -23,11 +38,11 @@
 .login-clean form .form-control {
   background:#f7f9fc;
   border:none;
-  border-bottom:1px solid #dfe7f1;
-  border-radius:0;
+  border-bottom:none;
+  border-radius:4px;
   box-shadow:none;
   outline:none;
-  color:black;
+  color:#2c3e50;
   text-indent:8px;
   height:42px;
 }
@@ -38,7 +53,7 @@
   border-radius:4px;
   padding:11px;
   box-shadow:none;
-  margin-top:26px;
+  margin-top:30px;
   text-shadow:none;
   outline:none !important;
 }
@@ -55,8 +70,8 @@
   display:block;
   text-align:center;
   font-size:12px;
-  color:#6f7a85;
-  opacity:0.5;
+  color:#2c3e50;
+  opacity:0.7;
   text-decoration:none;
 }
 
