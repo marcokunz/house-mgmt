@@ -8,7 +8,7 @@
 }
 
 .titleLogin{
-    font-size:19px;
+    font-size:45px;
     color:#2c3e50;
     margin:-2px;
     margin-left:0px;
@@ -19,7 +19,7 @@
 
 
 .login-clean form {
-  max-width:320px;
+  max-width:400px;
   width:90%;
   margin:0 auto;
   padding:40px;
@@ -36,9 +36,9 @@
 }
 
 .login-clean form .form-control {
-  background:#f7f9fc;
-  border:none;
-  border-bottom:none;
+  background:white;
+  border-style: solid;
+  border-color: white;
   border-radius:4px;
   box-shadow:none;
   outline:none;
@@ -46,6 +46,7 @@
   text-indent:8px;
   height:42px;
 }
+
 
 .login-clean form .btn-primary {
   background:#f4476b;
@@ -79,6 +80,7 @@
   opacity:1;
   text-decoration:none;
 }
+
 
 
 

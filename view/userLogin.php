@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="assets/css/navigation.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-
+    <link rel="stylesheet" href="assets/css/animate.css">
 </head>
 
 <body class="login-clean">
@@ -53,6 +53,9 @@
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+
+</body>
 </body>
 
 </html>
