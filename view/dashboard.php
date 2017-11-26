@@ -44,11 +44,8 @@ include formatierung.php;
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
-<<<<<<< HEAD
                     <td align="right"><?php echo zahl_format($rechnungen->getBetrag()); ?> </td>
-=======
                     <td class="alignTableRight"><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
->>>>>>> c85ccc60c26fe1a907eaa7f62fb4315d9a84addb
                 </tr>
             <?php endforeach;?>
             </tbody>
