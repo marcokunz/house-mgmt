@@ -15,7 +15,7 @@ use domain\Einnahme;
 use dao\EinnahmeDAO;
 
 require_once("config/Autoloader.php");
-include formatierung.php;
+include "formatierung.php";
 ?>
 <!DOCTYPE html>
 
