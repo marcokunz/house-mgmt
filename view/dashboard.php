@@ -45,7 +45,7 @@ include formatierung.php;
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
                     <td align="right"><?php echo zahl_format($rechnungen->getBetrag()); ?> </td>
-                    <td class="alignTableRight"><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
+                    <td class="alignTableRight"><?php echo zahl_format($rechnungen->getBetrag()); ?> </td>
                 </tr>
             <?php endforeach;?>
             </tbody>
@@ -74,11 +74,9 @@ include formatierung.php;
                             <td><?php echo $mietertabelle->getVorname();?></td>
                             <td><?php echo $mietertabelle->getNachname();?> </td>
                             <td><?php echo $mietertabelle->getQuadratmeter()." m&#xB2";?> </td>
-<<<<<<< HEAD
-                            <td align="right"><?php echo zahl_format($mietertabelle->getMietzins());?> </td>
-=======
-                            <td class="alignTableRight"><?php echo "CHF ".number_format($mietertabelle->getMietzins(),2, ".", "'");?> </td>
->>>>>>> c85ccc60c26fe1a907eaa7f62fb4315d9a84addb
+
+                            <td class="alignTableRight"><?php echo zahl_format($mietertabelle->getMietzins());?> </td>
+
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
@@ -112,11 +110,8 @@ include formatierung.php;
                         echo $mieter->getVorname()." ".$mieter->getNachname();
                         ?> </td>
                     <td><?php echo $einnahmen->getDatum(); ?></td>
-<<<<<<< HEAD
-                    <td align="right"><?php echo zahl_format($einnahmen->getBetrag()); ?></td>
-=======
-                    <td class="alignTableRight"><?php echo "CHF ".$einnahmen->getBetrag(); ?></td>
->>>>>>> c85ccc60c26fe1a907eaa7f62fb4315d9a84addb
+
+                    <td class="alignTableRight"><?php echo zahl_format($einnahmen->getBetrag()); ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
