@@ -44,7 +44,6 @@ include "formatierung.php";
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
-                    <td align="right"><?php echo zahl_format($rechnungen->getBetrag()); ?> </td>
                     <td class="alignTableRight"><?php echo zahl_format($rechnungen->getBetrag()); ?> </td>
                 </tr>
             <?php endforeach;?>
