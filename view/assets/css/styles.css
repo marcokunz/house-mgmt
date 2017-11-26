@@ -32,10 +32,13 @@
   border-style: solid;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s ease 0s;
+  width: 100%;
 }
 
 .abrechnungen:hover{
   background-color: #dfdfdf;
+  transform: scale(1.1);
 
 }
 
