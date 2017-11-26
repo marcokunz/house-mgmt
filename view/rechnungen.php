@@ -37,7 +37,7 @@ require_once("config/Autoloader.php");
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
-                    <td><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
+                    <td><?php echo zahl_format($rechnungen->getBetrag()); ?> </td>
                     <td align="right">
                         <div class="btn-group btn-group-sm" role="group">
                             <a class="btn btn-warning" role="button" href="rechnungen/edit?id=<?php echo $rechnungen->getId(); ?>"> <i class="fa fa-edit"></i></a>
