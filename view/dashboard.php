@@ -15,6 +15,7 @@ use domain\Einnahme;
 use dao\EinnahmeDAO;
 
 require_once("config/Autoloader.php");
+include formatierung.php;
 ?>
 <!DOCTYPE html>
 
@@ -43,7 +44,7 @@ require_once("config/Autoloader.php");
                 <tr>
                     <td><?php echo $rechnungen->getDatum(); ?></td>
                     <td><?php echo $rechnungen->getTyp(); ?> </td>
-                    <td align="right"><?php echo "CHF ".$rechnungen->getBetrag(); ?> </td>
+                    <td align="right"><?php echo zahl_format($rechnungen->getBetrag()); ?> </td>
                 </tr>
             <?php endforeach;?>
             </tbody>
@@ -72,7 +73,7 @@ require_once("config/Autoloader.php");
                             <td><?php echo $mietertabelle->getVorname();?></td>
                             <td><?php echo $mietertabelle->getNachname();?> </td>
                             <td><?php echo $mietertabelle->getQuadratmeter()." m&#xB2";?> </td>
-                            <td align="right"><?php echo "CHF ".number_format($mietertabelle->getMietzins(),2, ".", "'");?> </td>
+                            <td align="right"><?php echo zahl_format($mietertabelle->getMietzins());?> </td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
@@ -106,7 +107,7 @@ require_once("config/Autoloader.php");
                         echo $mieter->getVorname()." ".$mieter->getNachname();
                         ?> </td>
                     <td><?php echo $einnahmen->getDatum(); ?></td>
-                    <td align="right"><?php echo "CHF ".$einnahmen->getBetrag(); ?></td>
+                    <td align="right"><?php echo zahl_format($einnahmen->getBetrag()); ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
