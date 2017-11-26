@@ -13,6 +13,7 @@ use domain\Einnahme;
 use dao\EinnahmeDAO;
 
 require_once("config/Autoloader.php");
+include "formatierung.php";
 
 ?>
 <body>
@@ -55,7 +56,7 @@ require_once("config/Autoloader.php");
                                 echo "CHF 0";
                             }
                             else{
-                            echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Heizkosten");
+                            echo zahl_format($KostenDAO->getTotalKosten($mietertabelle->getId()), "Heizkosten");
                             }
                             ?>
                         </td>
@@ -67,7 +68,7 @@ require_once("config/Autoloader.php");
                                 echo "CHF 0";
                             }
                             else{
-                                echo "CHF ".$KostenDAO->getTotalKosten($mietertabelle->getId(), "Nebenkosten");
+                                echo zahl_format($KostenDAO->getTotalKosten($mietertabelle->getId()), "Nebenkosten");
                             }
                             ?>
                         </td>
@@ -79,7 +80,7 @@ require_once("config/Autoloader.php");
                                 echo "CHF 0";
                             }
                             else {
-                                echo "CHF " . $einnahmeDAO->getTotalEinnahmen($mietertabelle->getId());
+                                echo zahl_format($einnahmeDAO->getTotalEinnahmen($mietertabelle->getId()));
                             }
                             ?>
                         </td>
