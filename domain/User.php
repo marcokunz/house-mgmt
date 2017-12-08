@@ -9,19 +9,19 @@ class User {
     /**
      * @AttributeType int
      */
-    protected $_id;
+    protected $id;
     /**
      * @AttributeType String
      */
-    protected $_name;
+    protected $name;
     /**
      * @AttributeType String
      */
-    protected $_password;
+    protected $password;
     /**
      * @AttributeType String
      */
-    protected $_email;
+    protected $email;
 
 
     /**
@@ -29,7 +29,7 @@ class User {
      */
     public function getId()
     {
-        return $this->_id;
+        return $this->id;
     }
 
     /**
@@ -37,7 +37,7 @@ class User {
      */
     public function setId($id)
     {
-        $this->_id = $id;
+        $this->id = $id;
     }
 
     /**
@@ -45,7 +45,7 @@ class User {
      */
     public function getName()
     {
-        return $this->_name;
+        return $this->name;
     }
 
     /**
@@ -53,7 +53,7 @@ class User {
      */
     public function setName($name)
     {
-        $this->_name = $name;
+        $this->name = $name;
     }
 
     /**
@@ -61,7 +61,7 @@ class User {
      */
     public function getPassword()
     {
-        return $this->_password;
+        return $this->password;
     }
 
     /**
@@ -69,7 +69,7 @@ class User {
      */
     public function setPassword($password)
     {
-        $this->_password = $password;
+        $this->password = $password;
     }
 
     /**
@@ -77,7 +77,7 @@ class User {
      */
     public function getEmail()
     {
-        return $this->_email;
+        return $this->email;
     }
 
     /**
@@ -85,7 +85,7 @@ class User {
      */
     public function setEmail($email)
     {
-        $this->_email = $email;
+        $this->email = $email;
     }
 
 }

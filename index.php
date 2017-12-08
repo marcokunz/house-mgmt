@@ -14,7 +14,8 @@ use dao\MieterDAO;
 use domain\Mieter;
 use dao\EinnahmeDAO;
 use domain\Einnahme;
-use controller\MieterController;
+use dao\UserDAO;
+use domain\User;
 
 session_start();
 
@@ -48,20 +49,12 @@ Router::route("GET", "/register", function () {
 
 
 Router::route("POST", "/register", function () {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-        INSERT INTO "User" (name, email, password)
-          SELECT :name,:email,:password
-          WHERE NOT EXISTS (
-            SELECT email FROM "User" WHERE email = :emailExist
-        );');
-    $stmt->bindValue(':name', $name);
-    $stmt->bindValue(':email', $email);
-    $stmt->bindValue(':emailExist', $email);
-    $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
-    $stmt->execute();
+    $user = new User();
+    $user->setName($_POST["name"]);
+    $user->setEmail($_POST["email"]);
+    $user->setPassword($_POST["password"]);
+    $userDAO = new userDAO();
+    $userDAO->create($user);
     Router::redirect("/logout");
 });
 
