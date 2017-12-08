@@ -1,8 +1,4 @@
 <?php
-/**
- * @access public
- * @author andreas.martin
- */
 
 namespace dao;
 

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: andreas.martin
- * Date: 22.09.2017
- * Time: 14:56
- */
+
 
 namespace config;
 
