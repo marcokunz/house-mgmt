@@ -40,14 +40,14 @@ class UserDAO extends BasicDAO {
 
     public function readAll(User $user){
         $stmt = $this->pdoInstance->prepare('
-            SELECT * FROM "User" WHERE email = :email');
+            SELECT * FROM "User" WHERE email = :email;');
         $stmt->bindValue(':email', $user->getEmail());
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
             $userDB = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
             $epasswort = $user->getPassword();
             $upasswort = $userDB["password"];
-            /*if (password_verify($epasswort, $upasswort)) {*/
+            if (password_verify($epasswort, $upasswort)) {
                 $_SESSION["userLogin"]["name"] = $userDB["name"];
                 $_SESSION["userLogin"]["email"] = $user->getEmail();
                 $_SESSION["userLogin"]["id"] = $userDB["id"];
@@ -58,7 +58,7 @@ class UserDAO extends BasicDAO {
                     $stmt->bindValue(':password', password_hash($user->getPassword(), PASSWORD_DEFAULT));
                     $stmt->execute();
                 }
-            //}
+            }
         }
 
     }
