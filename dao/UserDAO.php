@@ -35,8 +35,7 @@ class UserDAO extends BasicDAO {
 
 
 
-    public function readAll($user)
-    {
+    public function readAll(User $user){
         $stmt = $this->pdoInstance->prepare('
             SELECT * FROM "User" WHERE email = :email');
         $stmt->bindValue(':email', $user->getEmail());
@@ -53,7 +52,7 @@ class UserDAO extends BasicDAO {
                     $stmt = $this->pdoInstance->prepare('
                 UPDATE "User" SET password=:password WHERE id = :id;');
                     $stmt->bindValue(':id', $userDB["id"]);
-                    $stmt->bindValue(':password', password_hash($userDB["password"], PASSWORD_DEFAULT));
+                    $stmt->bindValue(':password', password_hash($user->getPassword(), PASSWORD_DEFAULT));
                     $stmt->execute();
                 }
             }
