@@ -2,11 +2,11 @@
 
 namespace dao;
 
-use domain\Mieter;
+
 use domain\Rechnungen;
 use domain\Kosten;
 use database\Database;
-use dao\MieterDAO;
+
 
 /**
  * @access public
@@ -16,8 +16,8 @@ class RechnungenDAO extends BasicDAO {
 
     /**
      * @access public
-     * @param Rechnugen
-     * @return Rechnungen
+     * @param Rechnungen $rechnungen
+     * @return void
      * @ParamType rechnungen Rechnungen
      * @ReturnType Rechnungen
      */
@@ -70,8 +70,8 @@ class RechnungenDAO extends BasicDAO {
 
     /**
      * @access public
-     * @param Rechnungen
-     * @return Rechnungen
+     * @param Rechnungen $rechnungen
+     * @return void
      * @ParamType  Rechnungen
      * @ReturnType Rechnungen
      */
@@ -114,7 +114,7 @@ class RechnungenDAO extends BasicDAO {
 
     /**
      * @access public
-     * @param Rechnungen
+     * @param Rechnungen $rechnungen
      * @ParamType  Rechnungen
      */
     public function delete(Rechnungen $rechnungen) {

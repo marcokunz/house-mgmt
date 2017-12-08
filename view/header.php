@@ -6,11 +6,9 @@
  * Time: 16:59
  */
 
-use view\View;
-use dao\EinnahmeDAO;
-use domain\Einnahme;
+
 use dao\MieterDAO;
-use domain\Mieter;
+
 
 ?>
 <!DOCTYPE html>

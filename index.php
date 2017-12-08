@@ -1,6 +1,5 @@
 <?php
 
-
 require_once("config/Autoloader.php");
 require_once("view/layout.php");
 
@@ -8,7 +7,7 @@ use router\Router;
 use database\Database;
 use dao\RechnungenDAO;
 use dao\KostenDAO;
-use domain\Kosten;
+
 use domain\Rechnungen;
 use dao\MieterDAO;
 use domain\Mieter;

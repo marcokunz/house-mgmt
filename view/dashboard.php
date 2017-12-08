@@ -6,13 +6,10 @@
  * Time: 14:15
  */
 
-use view\View;
-use dao\RechnungenDAO;
+
 use dao\MieterDAO;
 use domain\Mieter;
-use domain\Rechnungen;
-use domain\Einnahme;
-use dao\EinnahmeDAO;
+
 
 require_once("config/Autoloader.php");
 include "formatierung.php";

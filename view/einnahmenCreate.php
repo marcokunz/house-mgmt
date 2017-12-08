@@ -6,7 +6,7 @@
  * Time: 17:06
  */
 global $einnahmen;
-use domain\Mieter;
+
 
 ?>
 <div class="container">

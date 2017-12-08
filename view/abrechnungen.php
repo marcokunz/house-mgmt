@@ -5,11 +5,11 @@
  * Date: 13.09.2017
  * Time: 16:59
  */
-use view\View;
-use dao\MieterDAO;
+
+
 use dao\KostenDAO;
-use domain\Mieter;
-use domain\Einnahme;
+
+
 use dao\EinnahmeDAO;
 
 require_once("config/Autoloader.php");

@@ -6,9 +6,7 @@
  * Time: 14:15
  */
 
-use view\View;
-use dao\RechnungenDAO;
-use domain\Rechnungen;
+
 require_once("config/Autoloader.php");
 include "formatierung.php";
 ?>
