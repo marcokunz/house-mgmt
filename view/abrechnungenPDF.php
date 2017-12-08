@@ -62,7 +62,7 @@ class PDF extends FPDF
         $this->SetLineWidth(.3);
         $this->SetFont('Helvetica','B');
         // Header
-        $w = array(75, 75, 75, 75);
+        $w = array(65, 65, 65, 65);
         for($i=0;$i<count($header);$i++)
             $this->Cell($w[$i],15,$header[$i],1,0,'L',true);
         $this->Ln();
