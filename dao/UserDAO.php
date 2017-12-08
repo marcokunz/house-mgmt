@@ -8,6 +8,9 @@
 
 namespace dao;
 
+require_once("config/Autoloader.php");
+
+
 use domain\Mieter;
 use database\Database;
 use dao\KostenDAO;
