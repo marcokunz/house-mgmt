@@ -33,7 +33,7 @@ include "formatierung.php";
 
         if($counter%3==0):
             ?>
-    <div class="row" style="margin:0px;padding:0px;">
+    <div class="row">
 
 
     <?php endif; ?>

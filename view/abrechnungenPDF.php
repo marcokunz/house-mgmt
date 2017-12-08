@@ -96,4 +96,4 @@ $pdf->AddPage();
 $pdf->Ln();
 $pdf->FancyTable($header,$data, $data1, $data2);
 $pdf->Output();
-?>
+

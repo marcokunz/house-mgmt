@@ -95,4 +95,4 @@ $pdf->AddPage();
 $pdf->Ln();
 $pdf->FancyTable($header,$data);
 $pdf->Output();
-?>
+

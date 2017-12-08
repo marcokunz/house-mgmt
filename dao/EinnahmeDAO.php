@@ -121,4 +121,3 @@ class EinnahmeDAO extends BasicDAO {
 
 
 }
-?>
