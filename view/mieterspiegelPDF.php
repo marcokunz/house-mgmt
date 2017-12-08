@@ -18,19 +18,19 @@ class PDF extends FPDF
         // Move to the right
         $this->Cell(50);
         // Title
-        $this->Cell(10,10,'Dein',0,0,'C');
+        $this->Cell('','','Dein ',0,0,'C');
         $this->SetFont('Helvetica','B',30);
-        $this->Cell(85,10,'Mieterspiegel.',0,0,'C');
+        $this->Cell('','','Mieterspiegel.',0,0,'C');
 
         // Line break
-        $this->Ln(20);
+        $this->Ln(30);
         //Adresse
         $this->SetFont('Helvetica','',12);
         $this->Cell('','',$this->adresse,0,0,'L');
         $this->Ln(5);
         $this->Cell('','',$this->plz.' '.$this->ort,0,0,'L');
         // Line break
-        $this->Ln(20);
+        $this->Ln(30);
     }
 // Daten übergeben
     function LoadData()
