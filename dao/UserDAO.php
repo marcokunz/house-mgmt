@@ -53,7 +53,7 @@ class UserDAO extends BasicDAO {
                     $stmt = $this->pdoInstance->prepare('
                 UPDATE "User" SET password=:password WHERE id = :id;');
                     $stmt->bindValue(':id', $userDB["id"]);
-                    $stmt->bindValue(':password', password_hash($user->getPassword(), PASSWORD_DEFAULT));
+                    $stmt->bindValue(':password', password_hash($userDB["password"], PASSWORD_DEFAULT));
                     $stmt->execute();
                 }
             }
