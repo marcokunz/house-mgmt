@@ -80,16 +80,20 @@ class PDF extends FPDF
             $einn = $EinnahmeDAO->getTotalEinnahmen($data->getId());
                 $this->Cell($w[0], 6, iconv('UTF-8', 'windows-1252', $data->getVorname()." ".$data->getNachname()), 'LR', 0, 'L', $fill);
                 $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', zahl_format($heizkost), 'LR', 0, 'L', $fill));
-                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($nebkost)), 'LR', 0, 'L', $fill);
+                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($nebkost), 'LR', 0, 'L', $fill));
                 $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', zahl_format($einn)), 'LR', 0, 'L', $fill);
 
                 $this->Ln(30);
 
 
-        // Closing line
         $total = $heizkost + $nebkost -$einn;
         $this->SetFont('Helvetica','B');
-        $this->Cell('','','Total ausstehender Betrag: '. zahl_format($total),0,0,'L');
+        if($total >= 0){
+        $this->Cell('','','Total ausstehender Betrag zu unseren Gunsten: '. zahl_format($total),0,0,'L');
+        }
+        else{
+            $this->Cell('','','Total ausstehender Betrag zu ihren Gunsten: '. zahl_format($total),0,0,'L');
+        }
     }
 }
 
