@@ -7,7 +7,9 @@ require('fpdf/fpdf.php');
 
 class PDF extends FPDF
 {
-
+    var $adresse = 'Hagenholzstrasse 62';
+    var $plz = 8050;
+    var $ort = 'Zürich';
     // Page header
     function Header()
     {
@@ -19,6 +21,12 @@ class PDF extends FPDF
         $this->Cell(10,10,'Dein',0,0,'C');
         $this->SetFont('Helvetica','B',30);
         $this->Cell(85,10,'Mieterspiegel.',0,0,'C');
+
+        // Line break
+        $this->Ln(20);
+        //Adresse
+        $this->Cell(100,30,$this->adresse,0,0,'C');
+        $this->Cell(100,40,$this->plz.' '.$this->ort,0,0,'C');
         // Line break
         $this->Ln(20);
     }
@@ -29,7 +37,11 @@ class PDF extends FPDF
         return $mieter;
     }
 
-
+    function setAdresse($adresse, $plz, $ort){
+        $this->$adresse = $adresse;
+        $this->plz = $plz;
+        $this-> ort = $ort;
+    }
 // Colored table
     function FancyTable($header, $data)
     {
