@@ -17,6 +17,7 @@ use dao\KostenDAO;
 use domain\Kosten;
 use domain\Einnahme;
 use domain\user;
+use dao\BasicDAO;
 
 
 class UserDAO extends BasicDAO {
@@ -44,7 +45,7 @@ class UserDAO extends BasicDAO {
         $stmt->bindValue(':email', $user->getEmail());
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
-            $userDB = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+            $userDB = $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
             $epasswort = $user->getPassword();
             $upasswort = $userDB["password"];
             if (password_verify($epasswort, $upasswort)) {
