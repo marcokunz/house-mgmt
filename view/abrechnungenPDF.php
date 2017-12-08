@@ -75,16 +75,21 @@ class PDF extends FPDF
 
             $KostenDAO = new KostenDAO();
             $EinnahmeDAO = new EinnahmeDAO();
-
+            $heizkost = $KostenDAO->getTotalKosten($data->getId(), "Heizkosten");
+            $nebkost = $KostenDAO->getTotalKosten($data->getId(), "Nebenkosten");
+            $einn = $EinnahmeDAO->getTotalEinnahmen($data->getId());
                 $this->Cell($w[0], 6, iconv('UTF-8', 'windows-1252', $data->getVorname()." ".$data->getNachname()), 'LR', 0, 'L', $fill);
-                $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', zahl_format($KostenDAO->getTotalKosten($data->getId(), "Heizkosten"))), 'LR', 0, 'L', $fill);
-                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($KostenDAO->getTotalKosten($data->getId(), "Nebenkosten"))), 'LR', 0, 'L', $fill);
-                $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', zahl_format($EinnahmeDAO->getTotalEinnahmen($data->getId()))), 'LR', 0, 'R', $fill);
+                $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', zahl_format($heizkost), 'LR', 0, 'L', $fill));
+                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($nebkost)), 'LR', 0, 'L', $fill);
+                $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', zahl_format($einn)), 'LR', 0, 'L', $fill);
 
                 $this->Ln();
-                $fill = !$fill;
+
 
         // Closing line
+        $total = $heizkost + $nebkost -$einn;
+        $this->SetFont('Helvetica','B');
+        $this->Cell('','','Total ausstehender Betrag: '. zahl_format($total),0,0,'L');
     }
 }
 
