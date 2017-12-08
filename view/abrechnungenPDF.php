@@ -18,10 +18,8 @@ class PDF extends FPDF
         $Adresse = new Adresse();
         // Arial bold 15
         $this->SetFont('Helvetica','',30);
-        // Move to the right
-        $this->Cell(50);
         // Title
-        $this->Cell(100,10,'Abrechnung',0,0,'C');
+        $this->Cell('','','Abrechnung',0,0,'C');
         $this->SetFont('Helvetica','B',20);
         $this->Ln(30);
         //Adresse
@@ -63,7 +61,7 @@ class PDF extends FPDF
         $this->SetLineWidth(.3);
         $this->SetFont('Helvetica','B');
         // Header
-        $w = array(100, 100, 100, 100);
+        $w = array(80, 80, 80, 80);
         for($i=0;$i<count($header);$i++)
             $this->Cell($w[$i],15,$header[$i],1,0,'L',true);
         $this->Ln();
