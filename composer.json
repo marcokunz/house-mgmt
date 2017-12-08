@@ -1,9 +1,9 @@
 {
-    "name": "andreas.martin/stage-t1",
+    "name": "composer",
     "authors": [
         {
-            "name": "Andreas Martin",
-            "email": "andreas.martin@andreasmartin.ch"
+            "name": "Marco Kunz",
+            "email": "marco.kunz@students.fhnw.ch"
         }
     ],
     "autoload": {
