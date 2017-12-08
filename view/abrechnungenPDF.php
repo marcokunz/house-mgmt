@@ -79,8 +79,8 @@ class PDF extends FPDF
             $nebkost = $KostenDAO->getTotalKosten($data->getId(), "Nebenkosten");
             $einn = $EinnahmeDAO->getTotalEinnahmen($data->getId());
                 $this->Cell($w[0], 6, iconv('UTF-8', 'windows-1252', $data->getVorname()." ".$data->getNachname()), 'LR', 0, 'L', $fill);
-                $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', zahl_format($heizkost), 'LR', 0, 'L', $fill));
-                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($nebkost), 'LR', 0, 'L', $fill));
+                $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', zahl_format($heizkost)), 'LR', 0, 'L', $fill);
+                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($nebkost)), 'LR', 0, 'L', $fill);
                 $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', zahl_format($einn)), 'LR', 0, 'L', $fill);
 
                 $this->Ln(30);
