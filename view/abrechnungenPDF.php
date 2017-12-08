@@ -83,7 +83,7 @@ class PDF extends FPDF
                 $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($nebkost)), 'LR', 0, 'L', $fill);
                 $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', zahl_format($einn)), 'LR', 0, 'L', $fill);
 
-                $this->Ln();
+                $this->Ln(30);
 
 
         // Closing line
