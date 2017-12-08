@@ -5,10 +5,6 @@
             "name": "Marco Kunz",
             "email": "marco.kunz@students.fhnw.ch"
         }
-    ],
-    "autoload": {
-        "psr-4": {
-            "HelloWorld\\": "src/"
-        }
-    }
+    ]
+
 }
