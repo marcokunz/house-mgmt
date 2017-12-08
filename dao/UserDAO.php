@@ -64,4 +64,3 @@ class UserDAO extends BasicDAO {
 
     }
 }
-?>

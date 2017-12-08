@@ -99,4 +99,4 @@ $pdf->ImprovedTable($header,$data);
 $pdf->AddPage();
 $pdf->FancyTable($header,$data);
 $pdf->Output();
-?>
+

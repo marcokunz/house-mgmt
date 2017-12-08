@@ -124,4 +124,3 @@ class KostenDAO extends BasicDAO{
 
 
 }
-?>
