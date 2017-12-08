@@ -59,29 +59,11 @@ Router::route("POST", "/register", function () {
 });
 
 Router::route("POST", "/login", function () {
-    $email = $_POST["email"];
-    $pdoInstance = Database::connect();
-    $stmt = $pdoInstance->prepare('
-            SELECT * FROM "User" WHERE email = :email');
-    $stmt->bindValue(':email', $email);
-    $stmt->execute();
-    if ($stmt->rowCount() > 0) {
-        $user = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-        $epasswort = $_POST["password"];
-        $upasswort = $user["password"];
-        if (password_verify($epasswort, $upasswort)) {
-            $_SESSION["userLogin"]["name"] = $user["name"];
-            $_SESSION["userLogin"]["email"] = $email;
-            $_SESSION["userLogin"]["id"] = $user["id"];
-            if (password_needs_rehash($user["password"], PASSWORD_DEFAULT)) {
-                $stmt = $pdoInstance->prepare('
-                UPDATE "User" SET password=:password WHERE id = :id;');
-                $stmt->bindValue(':id', $user["id"]);
-                $stmt->bindValue(':password', password_hash($_POST["password"], PASSWORD_DEFAULT));
-                $stmt->execute();
-            }
-        }
-    }
+    $user = new User();
+    $user->setEmail($_POST["email"]);
+    $user->setPassword($_POST["password"]);
+    $userDAO = new UserDAO();
+    $userDAO->readAll($user);
     Router::redirect("/");
 });
 
