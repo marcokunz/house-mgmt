@@ -5,6 +5,7 @@ use dao\KostenDAO;
 use dao\EinnahmeDAO;
 require_once("config/Autoloader.php");
 require('fpdf/fpdf.php');
+require("Adresse.php");
 
 class PDF extends FPDF
 {
@@ -14,6 +15,7 @@ class PDF extends FPDF
     // Page header
     function Header()
     {
+        $Adresse = new Adresse();
         // Arial bold 15
         $this->SetFont('Helvetica','',30);
         // Move to the right
@@ -21,8 +23,12 @@ class PDF extends FPDF
         // Title
         $this->Cell(100,10,'Abrechnung',0,0,'C');
         $this->SetFont('Helvetica','B',20);
-        $this->Cell(200,10,'Kosten',0,0,'C');
-        // Line break
+        $this->Ln(30);
+        //Adresse
+        $this->SetFont('Helvetica','',12);
+        $this->Cell('','',$Adresse->getAdresse(),0,0,'L');
+        $this->Ln(5);
+        $this->Cell('','',$Adresse->getPLZ().' '.$Adresse->getOrt(),0,0,'L');
         $this->Ln(20);
     }
 
