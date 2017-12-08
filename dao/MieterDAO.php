@@ -4,8 +4,7 @@ namespace dao;
 
 use domain\Mieter;
 use database\Database;
-use dao\KostenDAO;
-use domain\Kosten;
+
 
 /**
  * @access public
@@ -13,13 +12,13 @@ use domain\Kosten;
  */
 class MieterDAO extends BasicDAO {
 
-	/**
-	 * @access public
-	 * @param Mieter
-	 * @return Mieter
-	 * @ParamType mieter Mieter
-	 * @ReturnType Mieter
-	 */
+    /**
+     * @access public
+     * @param Mieter $mieter
+     * @return void
+     * @ParamType mieter Mieter
+     * @ReturnType Mieter
+     */
 	public function create(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
             INSERT INTO mietertabelle (vorname, nachname, quadratmeter, mietzins)
@@ -48,13 +47,13 @@ class MieterDAO extends BasicDAO {
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "domain\Mieter")[0];
 	}
 
-	/**
-	 * @access public
-	 * @param Mieter
-	 * @return Mieter
-	 * @ParamType  Mieter
-	 * @ReturnType Mieter
-	 */
+    /**
+     * @access public
+     * @param Mieter $mieter
+     * @return void
+     * @ParamType  Mieter
+     * @ReturnType Mieter
+     */
     public function update(Mieter $mieter) {
         $stmt = $this->pdoInstance->prepare('
              UPDATE mietertabelle SET 
@@ -72,11 +71,11 @@ class MieterDAO extends BasicDAO {
         $stmt->execute();
 	}
 
-	/**
-	 * @access public
-	 * @param Mieter
-	 * @ParamType  Mieter
-	 */
+    /**
+     * @access public
+     * @param Mieter $mieter
+     * @ParamType  Mieter
+     */
 	public function delete(Mieter $mieter) {
 	    $kostendao = new KostenDAO();
 	    $kostendao->delete($mieter);

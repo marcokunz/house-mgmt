@@ -10,9 +10,9 @@ namespace dao;
 
 use database\Database;
 use domain\Kosten;
-use dao\MieterDAO;
+
 use domain\Mieter;
-use dao\BasicDAO;
+
 use domain\Rechnungen;
 
 class KostenDAO extends BasicDAO{
@@ -20,7 +20,7 @@ class KostenDAO extends BasicDAO{
 
     /**
      * @access public
-     * @param Kosten
+     * @param Kosten $kosten
      * @ParamType kosten Kosten
      * @ReturnType Kosten
      */
@@ -80,8 +80,8 @@ class KostenDAO extends BasicDAO{
 
     /**
      * @access public
-     * @param Mieter
-     * @return Mieter
+     * @param Kosten $kosten
+     * @return void
      * @ParamType  Mieter
      * @ReturnType Mieter
      */

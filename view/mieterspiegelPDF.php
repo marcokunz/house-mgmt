@@ -1,7 +1,6 @@
 <?php
-use view\View;
-use dao\MieterDAO;
-use domain\Mieter;
+
+
 require_once("config/Autoloader.php");
 require('fpdf/fpdf.php');
 

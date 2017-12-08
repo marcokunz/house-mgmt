@@ -63,7 +63,7 @@ class Kosten {
     }
 
     /**
-     * @param mixed $rechnungen
+     * @param $mieter
      */
     public function setMieter_fk($mieter)
     {

@@ -10,8 +10,8 @@ namespace dao;
 
 use domain\Mieter;
 use database\Database;
-use dao\KostenDAO;
-use domain\Kosten;
+
+
 use domain\Einnahme;
 
 
@@ -19,8 +19,8 @@ class EinnahmeDAO extends BasicDAO {
 
     /**
      * @access public
-     * @param Mieter
-     * @return Mieter
+     * @param Einnahme $einnahme
+     * @return void
      * @ParamType mieter Mieter
      * @ReturnType Mieter
      */
@@ -63,8 +63,8 @@ class EinnahmeDAO extends BasicDAO {
 
     /**
      * @access public
-     * @param Mieter
-     * @return Mieter
+     * @param Einnahme $einnahme
+     * @return void
      * @ParamType  Mieter
      * @ReturnType Mieter
      */
@@ -85,7 +85,7 @@ class EinnahmeDAO extends BasicDAO {
 
     /**
      * @access public
-     * @param Mieter
+     * @param Einnahme $einnahme
      * @ParamType  Mieter
      */
     public function delete(Einnahme $einnahme) {

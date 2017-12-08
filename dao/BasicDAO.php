@@ -11,11 +11,11 @@ abstract class BasicDAO {
 	 */
     protected $pdoInstance;
 
-	/**
-	 * @access public
-	 * @param PDO pdoInstance
-	 * @ParamType pdoInstance PDO
-	 */
+    /**
+     * @access public
+     * @param PDO|null $pdoInstance
+     * @ParamType pdoInstance PDO
+     */
 	public function __construct(PDO $pdoInstance = null) {
 		if(is_null($pdoInstance)){
             $this->pdoInstance = Database::connect();

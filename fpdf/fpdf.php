@@ -67,9 +67,14 @@ protected $LayoutMode;         // layout display mode
 protected $metadata;           // document properties
 protected $PDFVersion;         // PDF version number
 
-/*******************************************************************************
-*                               Public methods                                 *
-*******************************************************************************/
+    /*******************************************************************************
+     *                               Public methods                                 *
+     ******************************************************************************
+     * @param string $orientation
+     * @param string $unit
+     * @param string $size
+     * @throws Exception
+     */
 
 function __construct($orientation='P', $unit='mm', $size='A4')
 {

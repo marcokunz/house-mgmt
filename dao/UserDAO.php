@@ -11,13 +11,7 @@ namespace dao;
 require_once("config/Autoloader.php");
 
 
-use domain\Mieter;
-use database\Database;
-use dao\KostenDAO;
-use domain\Kosten;
-use domain\Einnahme;
 use domain\user;
-use dao\BasicDAO;
 
 
 class UserDAO extends BasicDAO {

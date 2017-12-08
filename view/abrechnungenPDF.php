@@ -1,7 +1,6 @@
 <?php
-use view\View;
-use dao\MieterDAO;
-use domain\Mieter;
+
+
 use dao\KostenDAO;
 use dao\EinnahmeDAO;
 require_once("config/Autoloader.php");
