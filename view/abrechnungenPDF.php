@@ -89,11 +89,11 @@ class PDF extends FPDF
         $total = $heizkost + $nebkost -$einn;
         $this->SetFont('Helvetica','B');
         if($total >= 0){
-        $this->Cell('','','Total ausstehender Betrag zu unseren Gunsten: '. zahl_format($total),0,0,'L');
+        $this->Cell('','','Saldo zu unseren Gunsten: '. zahl_format($total),0,0,'L');
         }
         else{
 
-            $this->Cell('','','Total ausstehender Betrag zu ihren Gunsten: '. zahl_format(abs($total)),0,0,'L');
+            $this->Cell('','','Saldo zu Ihren Gunsten: '. zahl_format(abs($total)),0,0,'L');
         }
     }
 }
