@@ -8,8 +8,8 @@ require('fpdf/fpdf.php');
 class PDF extends FPDF
 {
     var $adresse = 'Hagenholzstrasse 62';
-    var $plz = 8050;
-    var $ort = 'Zürich';
+    var $plz = 3800;
+    var $ort = 'Interlaken';
     // Page header
     function Header()
     {
@@ -25,6 +25,7 @@ class PDF extends FPDF
         // Line break
         $this->Ln(20);
         //Adresse
+        $this->SetFont('Helvetica','',12);
         $this->Cell(100,30,$this->adresse,0,0,'C');
         $this->Cell(100,40,$this->plz.' '.$this->ort,0,0,'C');
         // Line break
