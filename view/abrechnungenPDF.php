@@ -6,6 +6,7 @@ use dao\EinnahmeDAO;
 require_once("config/Autoloader.php");
 require('fpdf/fpdf.php');
 require("Adresse.php");
+require("formatierung.php");
 
 class PDF extends FPDF
 {
@@ -61,7 +62,7 @@ class PDF extends FPDF
         $this->SetLineWidth(.3);
         $this->SetFont('Helvetica','B');
         // Header
-        $w = array(80, 80, 80, 80);
+        $w = array(75, 75, 75, 75);
         for($i=0;$i<count($header);$i++)
             $this->Cell($w[$i],15,$header[$i],1,0,'L',true);
         $this->Ln();
@@ -76,9 +77,9 @@ class PDF extends FPDF
             $EinnahmeDAO = new EinnahmeDAO();
 
                 $this->Cell($w[0], 6, iconv('UTF-8', 'windows-1252', $data->getVorname()." ".$data->getNachname()), 'LR', 0, 'L', $fill);
-                $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', $KostenDAO->getTotalKosten($data->getId(), "Heizkosten")), 'LR', 0, 'L', $fill);
-                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', $KostenDAO->getTotalKosten($data->getId(), "Nebenkosten")), 'LR', 0, 'L', $fill);
-                $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', $EinnahmeDAO->getTotalEinnahmen($data->getId())), 'LR', 0, 'R', $fill);
+                $this->Cell($w[1], 6, iconv('UTF-8', 'windows-1252', zahl_format($KostenDAO->getTotalKosten($data->getId(), "Heizkosten"))), 'LR', 0, 'L', $fill);
+                $this->Cell($w[2], 6, iconv('UTF-8', 'windows-1252', zahl_format($KostenDAO->getTotalKosten($data->getId(), "Nebenkosten"))), 'LR', 0, 'L', $fill);
+                $this->Cell($w[3], 6, iconv('UTF-8', 'windows-1252', zahl_format($EinnahmeDAO->getTotalEinnahmen($data->getId()))), 'LR', 0, 'R', $fill);
 
                 $this->Ln();
                 $fill = !$fill;
