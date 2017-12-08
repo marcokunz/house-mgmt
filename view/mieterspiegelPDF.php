@@ -3,15 +3,16 @@
 
 require_once("config/Autoloader.php");
 require('fpdf/fpdf.php');
+require("Adresse.php");
+
 
 class PDF extends FPDF
 {
-    var $adresse = 'Hagenholzstrasse 62';
-    var $plz = 3800;
-    var $ort = 'Interlaken';
+
     // Page header
     function Header()
     {
+        $Adresse = new Adresse();
         $this->SetFont('Helvetica','',30);
         // Title
         $this->Cell(0,0,'Dein Mieterspiegel',0,0, 'C');
@@ -20,9 +21,9 @@ class PDF extends FPDF
         $this->Ln(30);
         //Adresse
         $this->SetFont('Helvetica','',12);
-        $this->Cell('','',$this->adresse,0,0,'L');
+        $this->Cell('','',$Adresse->getAdresse(),0,0,'L');
         $this->Ln(5);
-        $this->Cell('','',$this->plz.' '.$this->ort,0,0,'L');
+        $this->Cell('','',$Adresse->getPLZ().' '.$Adresse->getOrt(),0,0,'L');
         // Line break
         $this->Ln(30);
     }
@@ -33,11 +34,7 @@ class PDF extends FPDF
         return $mieter;
     }
 
-    function setAdresse($adresse, $plz, $ort){
-        $this->$adresse = $adresse;
-        $this->plz = $plz;
-        $this-> ort = $ort;
-    }
+
 // Colored table
     function FancyTable($header, $data)
     {
