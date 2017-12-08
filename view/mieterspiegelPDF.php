@@ -69,6 +69,7 @@ class PDF extends FPDF
             $this->Ln();
             $fill = !$fill;
         }
+        $this->Ln(5);
         $this->setFont('', 'B');
         $this->Cell($w[0],6,"TOTAL",'LR',0,'L',$fill);
         $this->Cell($w[1],6,"",'LR',0,'L',$fill);
