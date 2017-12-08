@@ -1,10 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: andreas.martin
- * Date: 12.09.2017
- * Time: 21:30
- */
+
+
 require_once("config/Autoloader.php");
 require_once("view/layout.php");
 
