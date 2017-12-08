@@ -17,7 +17,7 @@ class PDF extends FPDF
         $this->SetFont('Helvetica','',30);
         // Move to the right
         // Title
-        $this->Cell('','','Dein ',0,0,'C');
+        $this->Cell('','','Dein ',0,0);
         $this->SetFont('Helvetica','B','');
         $this->Cell(0,0,'Mieterspiegel.',0,0);
 
