@@ -92,7 +92,8 @@ class PDF extends FPDF
         $this->Cell('','','Total ausstehender Betrag zu unseren Gunsten: '. zahl_format($total),0,0,'L');
         }
         else{
-            $this->Cell('','','Total ausstehender Betrag zu ihren Gunsten: '. zahl_format($total),0,0,'L');
+
+            $this->Cell('','','Total ausstehender Betrag zu ihren Gunsten: '. zahl_format(abs($total)),0,0,'L');
         }
     }
 }
