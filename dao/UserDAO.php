@@ -47,18 +47,18 @@ class UserDAO extends BasicDAO {
             $userDB = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
             $epasswort = $user->getPassword();
             $upasswort = $userDB["password"];
-            if (password_verify($epasswort, $upasswort)) {
+            /*if (password_verify($epasswort, $upasswort)) {*/
                 $_SESSION["userLogin"]["name"] = $userDB["name"];
                 $_SESSION["userLogin"]["email"] = $user->getEmail();
                 $_SESSION["userLogin"]["id"] = $userDB["id"];
-                /*if (password_needs_rehash($userDB["password"], PASSWORD_DEFAULT)) {
+                if (password_needs_rehash($userDB["password"], PASSWORD_DEFAULT)) {
                     $stmt = $this->pdoInstance->prepare('
                 UPDATE "User" SET password=:password WHERE id = :id;');
                     $stmt->bindValue(':id', $userDB["id"]);
                     $stmt->bindValue(':password', password_hash($user->getPassword(), PASSWORD_DEFAULT));
                     $stmt->execute();
-                }*/
-            }
+                }
+            //}
         }
 
     }
