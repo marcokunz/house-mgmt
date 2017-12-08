@@ -27,7 +27,7 @@ class PDF extends FPDF
         //Adresse
         $this->SetFont('Helvetica','',12);
         $this->Cell(100,30,$this->adresse,0,0,'C');
-        $this->Cell(100,40,$this->plz.' '.$this->ort,0,0,'C');
+        $this->Cell(100,50,$this->plz.' '.$this->ort,0,0,'C');
         // Line break
         $this->Ln(20);
     }
